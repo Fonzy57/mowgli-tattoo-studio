@@ -1,5 +1,11 @@
+// REACT & NEXT
 import { ReactNode } from "react";
 
+// COMPONENTS
+import Header from "../header/header";
+import HeaderMobile from "../header/header-mobile";
+
+// TYPING
 export interface LayoutProps {
   children: ReactNode;
 }
@@ -7,11 +13,11 @@ export interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
-      <div>
-        <p>HEADER</p>
+      <div className="sticky top-0 z-50 hidden lg:block">
+        <Header />
       </div>
-      <div className="hidden tablet:block mobile:block">
-        <p>HEADER MOBILE</p>
+      <div className="block lg:hidden">
+        <HeaderMobile />
       </div>
       <main className="">{children}</main>
       {/* <Footer /> */}
