@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 // COMPONENTS
 import Header from "../header/header";
 import HeaderMobile from "../header/header-mobile";
+import Footer from "../footer/footer";
 
 // TYPING
 export interface LayoutProps {
@@ -20,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
         <HeaderMobile />
       </div>
       <main className="">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

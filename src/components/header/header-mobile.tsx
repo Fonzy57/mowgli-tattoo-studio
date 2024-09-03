@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/config/nav";
 
 const HeaderMobile = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
