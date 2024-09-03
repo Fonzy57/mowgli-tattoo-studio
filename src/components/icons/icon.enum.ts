@@ -4,4 +4,5 @@ export enum IconName {
   Location,
   At,
   Envelope,
+  Wordpress,
 }

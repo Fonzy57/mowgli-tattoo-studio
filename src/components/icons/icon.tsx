@@ -5,6 +5,7 @@ import {
   FaLocationDot,
   FaAt,
   FaEnvelope,
+  FaWordpress,
 } from "react-icons/fa6"; // Font Awesome 6 library
 
 // ENUM & Typing
@@ -23,6 +24,7 @@ export const iconComponents = {
   [IconName.Facebook]: FaFacebook,
   [IconName.Instagram]: FaSquareInstagram,
   [IconName.Location]: FaLocationDot,
+  [IconName.Wordpress]: FaWordpress,
 };
 
 export const CustomIcon = ({
