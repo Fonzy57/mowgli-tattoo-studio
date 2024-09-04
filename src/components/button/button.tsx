@@ -25,7 +25,7 @@ export const Button = ({
   iconName,
   disabled,
 }: ButtonProps) => {
-  let classes = `${className} rounded-lg font-semibold transition-all duration-200 ease-in-out flex items-center justify-center gap-x-2 disabled:opacity-60 `;
+  let classes = `${className} rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center justify-center gap-x-2 disabled:opacity-60 `;
   let sizeOfButton;
   let iconSize = 18;
 
