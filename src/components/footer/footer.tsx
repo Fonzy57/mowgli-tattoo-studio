@@ -8,6 +8,7 @@ import { IconName } from "../icons/icon.enum";
 
 // CONFIG
 import { version } from "@/config/version";
+import { socialsLinks } from "@/config/socials-links";
 
 const year = new Date().getFullYear();
 
@@ -30,13 +31,13 @@ const socialsMowgli = [
     name: "insta",
     label: "Instagram",
     icon: <CustomIcon name={IconName.Instagram} size={20} />,
-    url: "https://www.instagram.com/mowgli_tattoostudio/",
+    url: socialsLinks.instagram,
   },
   {
     name: "facebook",
     label: "Facebook",
     icon: <CustomIcon name={IconName.Facebook} size={20} />,
-    url: "https://www.facebook.com/mowglitattoostudio",
+    url: socialsLinks.facebook,
   },
 ];
 
