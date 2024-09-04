@@ -13,7 +13,7 @@ export interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
+    <div className="bg-bgDark">
       <div className="sticky top-0 z-50 hidden lg:block">
         <Header />
       </div>
