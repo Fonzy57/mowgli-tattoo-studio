@@ -9,27 +9,30 @@ import { IconName } from "@/components/icons/icon.enum";
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
 
-// STYLES
-import styles from "../styles/hero.module.css";
-
 const Home = () => {
   return (
     <>
-      <section
-        className={`${styles.hero} flex justify-center items-center relative h-[calc(100vh-80px)]`}
+      <header
+        className="h-[calc(100vh-80px)] bg-fixed bg-center bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: "url('/pictures/mowgli-hero.jpg')",
+        }}
       >
-        <h1 className="font-cera text-center text-9xl font-semibold text-main">
-          The Mowgli Tattoo Studio
-        </h1>
-        <div>
-          <CustomIcon
-            name={IconName.ArrowDown}
-            size={32}
-            className="text-main cursor-pointer absolute bottom-14 left-1/2 animate-pulse border broder-main p-2 rounded-full hover:animate-none transition-all duration-300 ease-in-out"
-            onClick={() => handleClickAnchor("about", 80)}
-          />
+        <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
+          <h1 className="font-cera text-center text-9xl font-semibold text-main">
+            The Mowgli Tattoo Studio
+          </h1>
+          <div>
+            <CustomIcon
+              name={IconName.ArrowDown}
+              size={32}
+              className="text-main cursor-pointer absolute bottom-14 left-1/2 animate-pulse border broder-main p-2 rounded-full hover:animate-none transition-all duration-300 ease-in-out"
+              onClick={() => handleClickAnchor("about", 80)}
+            />
+          </div>
         </div>
-      </section>
+      </header>
+
       <section
         className="flex justify-center items-center gap-x-32 py-48"
         id="about"
