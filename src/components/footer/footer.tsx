@@ -112,6 +112,7 @@ const Footer = () => {
               {socialsMowgli.map((item, index) => {
                 return (
                   <Link
+                    key={index}
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -137,8 +138,8 @@ const Footer = () => {
                       {item.socials.map((social, index2) => {
                         return (
                           <Link
-                            href={social.url}
                             key={index2}
+                            href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
