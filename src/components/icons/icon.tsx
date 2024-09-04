@@ -1,11 +1,11 @@
 // ICONS FROM react-icons
 import {
-  FaFacebook,
-  FaSquareInstagram,
+  FaFacebookF,
+  FaInstagram,
   FaLocationDot,
   FaAt,
   FaEnvelope,
-  FaWordpress,
+  FaWordpressSimple,
   FaArrowDown,
   FaCouch,
   FaEye,
@@ -25,10 +25,10 @@ interface CustomIconProps {
 export const iconComponents = {
   [IconName.At]: FaAt,
   [IconName.Envelope]: FaEnvelope,
-  [IconName.Facebook]: FaFacebook,
-  [IconName.Instagram]: FaSquareInstagram,
+  [IconName.Facebook]: FaFacebookF,
+  [IconName.Instagram]: FaInstagram,
   [IconName.Location]: FaLocationDot,
-  [IconName.Wordpress]: FaWordpress,
+  [IconName.Wordpress]: FaWordpressSimple,
   [IconName.ArrowDown]: FaArrowDown,
   [IconName.Couch]: FaCouch,
   [IconName.Eye]: FaEye,
