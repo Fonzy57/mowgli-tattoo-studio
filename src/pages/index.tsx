@@ -8,6 +8,29 @@ import { IconName } from "@/components/icons/icon.enum";
 
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
+import { SkillCard } from "@/components/card/skill-card";
+
+// CONSTANTS
+const skills = [
+  {
+    icon: IconName.Medal,
+    title: "Artiste expérimenté",
+    content:
+      "The Mowgli Tattoo est un studio de tatouage de premier ordre dédié au tatouage réaliste et à la satisfaction totale du client.",
+  },
+  {
+    icon: IconName.Eye,
+    title: "Votre vision appliquée",
+    content:
+      "Apportez-moi vos idées et je vous aiderai à les transformer en un tatouage unique et personnel. J'ai l'expérience à laquelle vous pouvez faire confiance !",
+  },
+  {
+    icon: IconName.Couch,
+    title: "Ambiance détendue",
+    content:
+      "Le studio est propre et professionnel, mais aussi détendu et confortable. Je suis très fiers de chaque tatouage que je crée.",
+  },
+];
 
 const Home = () => {
   return (
@@ -33,6 +56,7 @@ const Home = () => {
         </div>
       </header>
 
+      {/* ABOUT SECTION */}
       <section
         className="flex justify-center items-center gap-x-32 py-48"
         id="about"
@@ -71,6 +95,25 @@ const Home = () => {
           <div className="absolute inset-0 rounded-lg shadow-full-main animate-pulse"></div>
         </div>
       </section>
+
+      {/* SKILLS SECTION */}
+      <section className="w-full py-20">
+        <div className="flex items-stretch justify-center gap-20 flex-wrap">
+          {skills.map((skill, index) => {
+            return (
+              <SkillCard
+                key={index}
+                icon={skill.icon}
+                title={skill.title}
+                content={skill.content}
+              />
+            );
+          })}
+        </div>
+      </section>
+
+      {/* NEXT SECTION */}
+      <section className="py-20"></section>
     </>
   );
 };
