@@ -1,14 +1,18 @@
 // REACT & NEXT
 import Image from "next/image";
+import Link from "next/link";
 
 // COMPONENTS
 import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
 import { IconName } from "@/components/icons/icon.enum";
+import { SkillCard } from "@/components/card/skill-card";
 
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
-import { SkillCard } from "@/components/card/skill-card";
+
+// CONFIG
+import { socialsLinks } from "@/config/socials-links";
 
 // CONSTANTS
 const skills = [
@@ -122,8 +126,42 @@ const Home = () => {
         </div>
       </section>
 
-      {/* NEXT SECTION */}
-      <section className="py-20"></section>
+      {/* INSTAGRAM SECTION */}
+      <section className="bg-main text-text py-20 flex items-center justify-center gap-x-10">
+        <h4 className="font-cera font-bold text-5xl ">
+          Suivez moi sur Instagram et Facebook
+        </h4>
+        <div className="flex items-center gap-x-5">
+          <Link
+            href={socialsLinks.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+          >
+            <CustomIcon name={IconName.Instagram} size={50} />
+          </Link>
+          <Link
+            href={socialsLinks.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+          >
+            <CustomIcon name={IconName.Facebook} size={50} />
+          </Link>
+        </div>
+      </section>
+
+      {/* PROJECTS SECTION */}
+      {/* TODO ICI METTRE LES AUTRES PROJETS COMME LA VIRGULE ET AUTRE */}
+
+      {/* LAST TATTOO SECTION */}
+      {/* TODO ICI RECUPERER LES 3 OU 4 DERNIERS POSTS INSTA POUR AFFICHER LES PHOTOS */}
+      <section className="py-20">
+        <h2 className="font-cera text-center text-7xl font-semibold text-main">
+          Derniers tattoo
+        </h2>
+        {/* TODO RECUPERER LES IMAGES AVEC API INSTAGRAM */}
+      </section>
     </>
   );
 };
