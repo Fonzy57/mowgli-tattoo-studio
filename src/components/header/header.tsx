@@ -23,6 +23,7 @@ const Header = () => {
             {navLinks.map((navitem, index) => {
               return (
                 <Link
+                  key={index}
                   href={navitem.url}
                   className="font-bold text-xl text-text hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
                 >

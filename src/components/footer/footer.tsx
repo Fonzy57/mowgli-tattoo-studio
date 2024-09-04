@@ -8,6 +8,7 @@ import { IconName } from "../icons/icon.enum";
 
 // CONFIG
 import { version } from "@/config/version";
+import { socialsLinks } from "@/config/socials-links";
 
 const year = new Date().getFullYear();
 
@@ -30,13 +31,13 @@ const socialsMowgli = [
     name: "insta",
     label: "Instagram",
     icon: <CustomIcon name={IconName.Instagram} size={20} />,
-    url: "https://www.instagram.com/mowgli_tattoostudio/",
+    url: socialsLinks.instagram,
   },
   {
     name: "facebook",
     label: "Facebook",
     icon: <CustomIcon name={IconName.Facebook} size={20} />,
-    url: "https://www.facebook.com/mowglitattoostudio",
+    url: socialsLinks.facebook,
   },
 ];
 
@@ -78,6 +79,7 @@ const other = [
 const Footer = () => {
   const titleStyle =
     "font-cera uppercase font-bold text-xl text-text cursor-default";
+  const listStyle = "mt-4 text-text flex flex-col gap-y-3";
 
   return (
     <div className="bg-main pt-20 pb-6">
@@ -91,7 +93,7 @@ const Footer = () => {
         <div className="flex justify-between w-1/2">
           <div className="">
             <h4 className={titleStyle}>A propos</h4>
-            <div className="mt-2 text-text flex flex-col gap-y-3">
+            <div className={listStyle}>
               {about.map((item, index) => {
                 return (
                   <div key={index} className="flex items-center gap-x-3">
@@ -107,10 +109,11 @@ const Footer = () => {
           </div>
           <div className="">
             <h4 className={titleStyle}>Reseaux</h4>
-            <div className="mt-2 text-text flex flex-col gap-y-3">
+            <div className={listStyle}>
               {socialsMowgli.map((item, index) => {
                 return (
                   <Link
+                    key={index}
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -127,7 +130,7 @@ const Footer = () => {
           </div>
           <div className="">
             <h4 className={titleStyle}>Autres</h4>
-            <div className="mt-2 text-text flex flex-col gap-y-3">
+            <div className={listStyle}>
               {other.map((item, index) => {
                 return (
                   <div key={index} className="flex items-center gap-x-4">
@@ -136,8 +139,8 @@ const Footer = () => {
                       {item.socials.map((social, index2) => {
                         return (
                           <Link
-                            href={social.url}
                             key={index2}
+                            href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"

@@ -94,6 +94,8 @@ const HeaderMobile = () => {
           </div>
         </div>
       </div>
+
+      {/* TODO NE PAS FAIRE UNE CONDITION ICI MAIS DANS LE CSS POUR FAIRE VENIR LE MENU DE LA GAUCHE */}
       {open && (
         <nav className="w-full bg-main z-50 h-[calc(100vh-71px)] fixed inset-x-0 top-[71px] bottom-0">
           <ul className="px-5 pt-5 flex flex-col gap-5">

@@ -16,6 +16,8 @@ const config: Config = {
     },
     colors: {
       white: "#FFF",
+      black: "#000",
+      bgDark: "#1E1E1E",
       main: {
         DEFAULT: "#FFD161",
         hover: "#FFBA45",
@@ -34,7 +36,7 @@ const config: Config = {
         light: "#F1CEA1",
         dark: "#B85C0E",
       },
-      text: "#46320F",
+      text: { DEFAULT: "#46320F", light: "#F5F5F5" },
     },
     extend: {
       fontFamily: {
@@ -45,6 +47,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      boxShadow: {
+        "full-main": "0 0 50px rgb(255 209 97 / 0.2)",
       },
     },
   },
