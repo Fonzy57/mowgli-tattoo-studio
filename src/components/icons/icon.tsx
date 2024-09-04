@@ -6,16 +6,17 @@ import {
   FaAt,
   FaEnvelope,
   FaWordpress,
+  FaArrowDown,
 } from "react-icons/fa6"; // Font Awesome 6 library
 
 // ENUM & Typing
 import { IconName } from "./icon.enum";
 
-interface DashIconProps {
+interface CustomIconProps {
   size: number;
   name: IconName;
   className?: string;
-  onClick?: () => void;
+  onClick?: any;
 }
 
 export const iconComponents = {
@@ -25,6 +26,7 @@ export const iconComponents = {
   [IconName.Instagram]: FaSquareInstagram,
   [IconName.Location]: FaLocationDot,
   [IconName.Wordpress]: FaWordpress,
+  [IconName.ArrowDown]: FaArrowDown,
 };
 
 export const CustomIcon = ({
@@ -32,7 +34,7 @@ export const CustomIcon = ({
   name,
   className,
   onClick,
-}: DashIconProps) => {
+}: CustomIconProps) => {
   const Icon = iconComponents[name];
 
   return (
