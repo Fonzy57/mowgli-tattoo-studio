@@ -156,11 +156,21 @@ const Home = () => {
 
       {/* LAST TATTOO SECTION */}
       {/* TODO ICI RECUPERER LES 3 OU 4 DERNIERS POSTS INSTA POUR AFFICHER LES PHOTOS */}
-      <section className="py-20">
+      <section className="py-48">
         <h2 className="font-cera text-center text-7xl font-semibold text-main">
           Derniers tattoo
         </h2>
         {/* TODO RECUPERER LES IMAGES AVEC API INSTAGRAM */}
+        <div className="mt-20 flex items-center justify-center gap-8">
+          <div className="bg-main-altLight w-[250px] h-[250px] rounded-lg"></div>
+          <div className="bg-main-altLight w-[250px] h-[250px] rounded-lg"></div>
+          <div className="bg-main-altLight w-[250px] h-[250px] rounded-lg"></div>
+          <div className="bg-main-altLight w-[250px] h-[250px] rounded-lg"></div>
+        </div>
+        {/* TODO METTRE LE LIEN DE LA PAGE QUAND ELLE SERA CREE */}
+        <LinkButton url="#" className="w-max mx-auto mt-24">
+          Voir la galerie
+        </LinkButton>
       </section>
     </>
   );
