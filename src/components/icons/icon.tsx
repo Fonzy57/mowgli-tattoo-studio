@@ -7,6 +7,9 @@ import {
   FaEnvelope,
   FaWordpress,
   FaArrowDown,
+  FaCouch,
+  FaEye,
+  FaMedal,
 } from "react-icons/fa6"; // Font Awesome 6 library
 
 // ENUM & Typing
@@ -27,6 +30,9 @@ export const iconComponents = {
   [IconName.Location]: FaLocationDot,
   [IconName.Wordpress]: FaWordpress,
   [IconName.ArrowDown]: FaArrowDown,
+  [IconName.Couch]: FaCouch,
+  [IconName.Eye]: FaEye,
+  [IconName.Medal]: FaMedal,
 };
 
 export const CustomIcon = ({

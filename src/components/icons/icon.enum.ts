@@ -6,4 +6,7 @@ export enum IconName {
   Envelope,
   Wordpress,
   ArrowDown,
+  Couch,
+  Eye,
+  Medal,
 }
