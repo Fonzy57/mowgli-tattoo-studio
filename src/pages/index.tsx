@@ -96,8 +96,18 @@ const Home = () => {
         </div>
       </section>
 
+      {/* PARALLAX SECTION */}
+      <div
+        className="h-[450px] bg-fixed bg-center bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: "url('/pictures/parallax-1.jpg')",
+        }}
+      >
+        <div className="flex items-center justify-center h-full bg-black/20 "></div>
+      </div>
+
       {/* SKILLS SECTION */}
-      <section className="w-full py-20">
+      <section className="w-full py-48">
         <div className="flex items-stretch justify-center gap-20 flex-wrap">
           {skills.map((skill, index) => {
             return (
