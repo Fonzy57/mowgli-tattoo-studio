@@ -8,7 +8,10 @@ import { IconName } from "../icons/icon.enum";
 
 // CONFIG
 import { version } from "@/config/version";
-import { socialsLinks } from "@/config/socials-links";
+import {
+  socialsLinksMowgli,
+  socialsLinksNewbyPics,
+} from "@/config/socials-links";
 
 const year = new Date().getFullYear();
 
@@ -31,13 +34,13 @@ const socialsMowgli = [
     name: "insta",
     label: "Instagram",
     icon: <CustomIcon name={IconName.Instagram} size={20} />,
-    url: socialsLinks.instagram,
+    url: socialsLinksMowgli.instagram,
   },
   {
     name: "facebook",
     label: "Facebook",
     icon: <CustomIcon name={IconName.Facebook} size={20} />,
-    url: socialsLinks.facebook,
+    url: socialsLinksMowgli.facebook,
   },
 ];
 
@@ -65,12 +68,12 @@ const other = [
       {
         name: "instagram",
         label: <CustomIcon name={IconName.Instagram} size={20} />,
-        url: "https://www.instagram.com/newby.pics/",
+        url: socialsLinksNewbyPics.instagram,
       },
       {
         name: "fb",
         label: <CustomIcon name={IconName.Facebook} size={20} />,
-        url: "https://www.facebook.com/people/Newbypics/61563660336691/",
+        url: socialsLinksNewbyPics.facebook,
       },
     ],
   },

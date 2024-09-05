@@ -12,7 +12,10 @@ import { SkillCard } from "@/components/card/skill-card";
 import { handleClickAnchor } from "@/utils/scroll-to";
 
 // CONFIG
-import { socialsLinks } from "@/config/socials-links";
+import {
+  socialsLinksMowgli,
+  socialsLinksNewbyPics,
+} from "@/config/socials-links";
 
 // CONSTANTS
 const skills = [
@@ -70,13 +73,13 @@ const Home = () => {
             A propos de moi
           </h2>
           <div className="flex flex-col gap-y-4 mt-20">
-            <p className="text-text-light">
+            <p className="text-text-light text-lg">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam,
               optio. Aperiam, non quae provident modi qui corporis! Est,
               accusantium commodi numquam culpa, dicta exercitationem
               necessitatibus cumque, velit atque eum quibusdam?
             </p>
-            <p className="text-text-light">
+            <p className="text-text-light text-lg">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam,
               optio. Aperiam, non quae provident modi qui corporis! Est,
               accusantium commodi numquam culpa, dicta exercitationem
@@ -133,7 +136,7 @@ const Home = () => {
         </h4>
         <div className="flex items-center gap-x-5">
           <Link
-            href={socialsLinks.instagram}
+            href={socialsLinksMowgli.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
@@ -141,7 +144,7 @@ const Home = () => {
             <CustomIcon name={IconName.Instagram} size={50} />
           </Link>
           <Link
-            href={socialsLinks.facebook}
+            href={socialsLinksMowgli.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
@@ -171,6 +174,49 @@ const Home = () => {
         <LinkButton url="#" className="w-max mx-auto mt-24">
           Voir la galerie
         </LinkButton>
+      </section>
+
+      {/* PHOTOGRAPH SECTION */}
+      {/* TODO VOIR SI FRED VEUT SON NOM OU BIEN SON PSEUDO INSTA POUR LA SECTION */}
+      <section className="flex items-center justify-center gap-20 pb-48">
+        <Image
+          src="/pictures/newby.pics.jpg"
+          width={250}
+          height={250}
+          alt="Portrait noir et blanc du photographe Newby.pics"
+          className="rounded-full"
+        />
+        <div className="w-[750px]">
+          <h3 className="font-cera text-main font-bold text-6xl text-center">
+            Newby Pics
+          </h3>
+          <p className="mt-10 text-text-light text-lg w-[500px] mx-auto">
+            Un grand merci à Newby.pics pour les magnifiques photos capturant
+            l'essence du studio et de mon travail. Son œil artistique et son
+            talent pour immortaliser les moments authentiques en font un
+            photographe exceptionnel. Chaque cliché reflète non seulement
+            l'atmosphère unique du salon, mais aussi la passion que je mets dans
+            chaque tatouage.
+          </p>
+          <div className="flex items-center gap-x-5 w-max mx-auto text-main mt-10">
+            <Link
+              href={socialsLinksNewbyPics.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+            >
+              <CustomIcon name={IconName.Instagram} size={50} />
+            </Link>
+            <Link
+              href={socialsLinksNewbyPics.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+            >
+              <CustomIcon name={IconName.Facebook} size={50} />
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );
