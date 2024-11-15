@@ -2,7 +2,12 @@
 export const navLinks = [
   /* { name: "home", label: "Accueil", url: "#", isActive: false }, */
   { name: "studio", label: "Le studio", url: "#", isActive: false },
-  { name: "realisation", label: "Mes realisations", url: "#", isActive: false },
+  {
+    name: "realisation",
+    label: "Mes realisations",
+    url: "/gallerie",
+    isActive: false,
+  },
   { name: "projects", label: "Mes autres projets", url: "#", isActive: false },
   { name: "contact", label: "Contact", url: "#", isActive: false },
 ];
