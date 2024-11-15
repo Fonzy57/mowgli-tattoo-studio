@@ -88,9 +88,10 @@ const Home = () => {
           </div>
           <div className="mx-auto w-max mt-20">
             {/* TODO METTRE LE LIEN DE LA PAGE QUAND ELLE SERA FAITE */}
-            <LinkButton url="#">Voir mes réalisations</LinkButton>
+            <LinkButton url="realisations">Voir mes réalisations</LinkButton>
           </div>
         </div>
+
         <div className="relative">
           <Image
             src="/pictures/pierre-emmanuel-bauer-hero.jpg"
@@ -170,8 +171,7 @@ const Home = () => {
           <div className="bg-main-altLight w-[250px] h-[250px] rounded-lg"></div>
           <div className="bg-main-altLight w-[250px] h-[250px] rounded-lg"></div>
         </div>
-        {/* TODO METTRE LE LIEN DE LA PAGE QUAND ELLE SERA CREE */}
-        <LinkButton url="#" className="w-max mx-auto mt-24">
+        <LinkButton url="realisations" className="w-max mx-auto mt-24">
           Voir la galerie
         </LinkButton>
       </section>
@@ -179,6 +179,7 @@ const Home = () => {
       {/* PHOTOGRAPH SECTION */}
       {/* TODO VOIR SI FRED VEUT SON NOM OU BIEN SON PSEUDO INSTA POUR LA SECTION */}
       <section className="flex items-center justify-center gap-20 pb-48">
+        {/* TODO METTRE BORDURE OU SHADOW SUR LA PHOTO */}
         <Image
           src="/pictures/newby.pics.jpg"
           width={250}

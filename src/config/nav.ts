@@ -5,7 +5,7 @@ export const navLinks = [
   {
     name: "realisation",
     label: "Mes realisations",
-    url: "/gallerie",
+    url: "/realisations",
     isActive: false,
   },
   { name: "projects", label: "Mes autres projets", url: "#", isActive: false },
