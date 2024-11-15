@@ -87,7 +87,6 @@ const Home = () => {
             </p>
           </div>
           <div className="mx-auto w-max mt-20">
-            {/* TODO METTRE LE LIEN DE LA PAGE QUAND ELLE SERA FAITE */}
             <LinkButton url="realisations">Voir mes réalisations</LinkButton>
           </div>
         </div>
@@ -95,7 +94,7 @@ const Home = () => {
         <div className="relative">
           <Image
             src="/pictures/pierre-emmanuel-bauer-hero.jpg"
-            alt="Photo en noir et blanc de Pierre-Emmanuel Bauer, aka Mowgli"
+            alt="Photo en noir et blanc du tatoueur Mowgli"
             width={700}
             height={561}
             className="rounded-lg"
@@ -185,7 +184,8 @@ const Home = () => {
           width={250}
           height={250}
           alt="Portrait noir et blanc du photographe Newby.pics"
-          className="rounded-full"
+          /* TODO TEST DE LA BORDURE, PEUT ETRE BOX SHADOW A LA PLACE */
+          className="rounded-full border border-main"
         />
         <div className="w-[750px]">
           <h3 className="font-cera text-main font-bold text-6xl text-center">
