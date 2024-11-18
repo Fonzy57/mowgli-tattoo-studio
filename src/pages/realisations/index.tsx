@@ -27,17 +27,17 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
   return (
     <>
       <Seo page="realisations" />
-      <h1 className="font-cera text-center text-8xl font-semibold text-main pt-20">
+      <h1 className="font-cera text-center font-semibold text-main pt-16 text-4xl sm:pt-20 sm:text-5xl md:text-6xl lg:text-8xl">
         Mes tatouages
       </h1>
-      <p className="text-text-light text-lg w-[700px] mx-auto mt-8">
+      <p className="px-5 text-text-light text-justify w-full mx-auto mt-8 sm:text-lg sm:mt-10 md:px-0 md:text-left md:w-[700px] lg:mt-12">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
         similique in beatae perspiciatis atque dicta rem praesentium, eos
         inventore reiciendis commodi debitis, odio animi, nesciunt enim possimus
         quam cupiditate molestias.
       </p>
       {posts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1560px] mx-auto mt-10 pb-10">
+        <div className="grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 pb-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10">
           {posts.map((post: any, index: number) => {
             return (
               <div key={index}>

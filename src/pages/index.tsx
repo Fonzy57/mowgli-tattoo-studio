@@ -46,7 +46,7 @@ const Home = () => {
       <Seo page="home" />
       <header className="py-16 px-5 sm:py-20 sm:px-0 md:p-0 md:h-[calc(100vh-71px)] bg-fixed bg-center bg-cover bg-no-repeat lg:h-screen lg:-mt-[80px] md:bg-[url('/pictures/mowgli-hero.jpg')]">
         <div className="flex items-center justify-center h-full md:bg-black md:bg-opacity-50">
-          <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl lg:text-9xl ">
+          <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl lg:text-9xl">
             The Mowgli Tattoo Studio
           </h1>
           <div className="hidden md:block">
