@@ -26,6 +26,7 @@ const about = [
     label: "2a Rue des Pépinières,",
     label2: "57050 Longeville-lès-Metz",
     icon: <CustomIcon name={IconName.Location} size={20} />,
+    url: "https://www.google.com/maps/place/Mowgli+Tattoo+Studio/@49.1142368,6.1513987,17z/data=!3m1!4b1!4m6!3m5!1s0x4794db436d6f191b:0x934c49988085554a!8m2!3d49.1142333!4d6.1539736!16s%2Fg%2F11rxbs3sxs?authuser=0&entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
@@ -85,20 +86,36 @@ const Footer = () => {
   const listStyle = "mt-4 text-text flex flex-col gap-y-3";
 
   return (
-    <div className="bg-main pt-20 pb-6">
-      <div className="flex justify-between items-center w-[1170px] mx-auto xl:w-[1560px]">
+    <div className="bg-main pt-14 pb-6 px-5 sm:pt-20">
+      <div className="flex flex-col justify-center items-center mx-auto lg:flex-row lg:justify-between lg:w-[1325px] xl:w-[1560px]">
         <Image
           src="/images/the-mowgli-studio-logo-brown.svg"
           alt="Logo de The Mowgli Studio"
           width={286}
           height={107}
         />
-        <div className="flex justify-between w-1/2">
+        <div className="flex flex-col w-full justify-center mt-14 gap-y-10 sm:flex-row sm:gap-x-20 lg:w-1/2 lg:justify-between lg:gap-x-0">
           <div className="">
             <h4 className={titleStyle}>A propos</h4>
             <div className={listStyle}>
               {about.map((item, index) => {
-                return (
+                return item.url ? (
+                  <Link
+                    href={item.url}
+                    key={index}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+                  >
+                    <div className="flex items-center gap-x-3">
+                      <div>{item.icon}</div>
+                      <div>
+                        <p>{item.label}</p>
+                        {item.label2 && <p>{item.label2}</p>}
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
                   <div key={index} className="flex items-center gap-x-3">
                     <div>{item.icon}</div>
                     <div>
@@ -115,18 +132,19 @@ const Footer = () => {
             <div className={listStyle}>
               {socialsMowgli.map((item, index) => {
                 return (
-                  <Link
-                    key={index}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
-                  >
-                    <div key={index} className="flex items-center gap-x-3">
-                      <div>{item.icon}</div>
-                      <p>{item.label}</p>
-                    </div>
-                  </Link>
+                  <div className="w-max" key={index}>
+                    <Link
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+                    >
+                      <div key={index} className="flex items-center gap-x-3">
+                        <div>{item.icon}</div>
+                        <p>{item.label}</p>
+                      </div>
+                    </Link>
+                  </div>
                 );
               })}
             </div>
@@ -138,7 +156,7 @@ const Footer = () => {
                 return (
                   <div key={index} className="flex items-center gap-x-4">
                     <p className="cursor-default">{item.label}</p>
-                    <div className="flex items-center gap-x-2">
+                    <div className="flex items-center gap-x-4 sm:gap-x-3 lg:gap-x-2">
                       {item.socials.map((social, index2) => {
                         return (
                           <Link
