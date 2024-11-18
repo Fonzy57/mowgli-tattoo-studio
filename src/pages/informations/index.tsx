@@ -109,7 +109,7 @@ const Informations = () => {
               width={636}
               height={508}
               alt="Aiguilles emballées utilisées pour faire un tatouage"
-              className="md:rounded-lg"
+              className="md:rounded-lg md:shadow-full-main"
             />
           </div>
         </div>
@@ -121,7 +121,7 @@ const Informations = () => {
               width={636}
               height={508}
               alt="Aiguilles emballées utilisées pour faire un tatouage"
-              className="md:rounded-lg"
+              className="md:rounded-lg md:shadow-full-main"
             />
           </div>
           <div className="md:w-1/2">
