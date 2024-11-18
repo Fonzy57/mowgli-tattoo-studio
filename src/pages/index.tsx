@@ -45,7 +45,7 @@ const Home = () => {
     <>
       <Seo page="home" />
       <header
-        className="h-[calc(100vh-80px)] bg-fixed bg-center bg-cover bg-no-repeat"
+        className="h-[calc(100vh-71px)] bg-fixed bg-center bg-cover bg-no-repeat lg:h-screen lg:-mt-[80px]"
         style={{
           backgroundImage: "url('/pictures/mowgli-hero.jpg')",
         }}
