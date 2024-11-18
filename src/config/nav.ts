@@ -7,4 +7,6 @@ export const navLinks = [
     isActive: false,
   },
   { name: "projects", label: "Mes autres projets", url: "#", isActive: false },
+  /* TODO FAIRE UNE PAGE INFORMATIONS POUR LA PRISE DE RDV, LES SOINS ETC */
+  { name: "informations", label: "Informations", url: "#", isActive: false },
 ];
