@@ -9,4 +9,10 @@ export enum IconName {
   Couch,
   Eye,
   Medal,
+  Bandage,
+  Soap,
+  Shower,
+  HandHeart,
+  Swimming,
+  MedicalPump,
 }
