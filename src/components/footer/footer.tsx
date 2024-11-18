@@ -47,7 +47,7 @@ const socialsMowgli = [
 const other = [
   {
     name: "grigri",
-    label: "Le Grigri Tatoo",
+    label: "Le Grigri Tattoo",
     socials: [
       {
         name: "instagram",
@@ -161,7 +161,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-text text-xs text-center mt-20">
-        © Mowgli Tatoo Studio {year} - Tous droits réservés | v{version}
+        © Mowgli Tattoo Studio {year} - Tous droits réservés | v{version}
       </p>
       <p className="text-text text-xs text-center mt-2">
         Site développé par{" "}
