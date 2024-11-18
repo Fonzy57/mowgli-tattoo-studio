@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="fr">
       <Head>
-        <link rel="icon" href="./images/mowgli-tatoo-studio-logo.png" />
+        <link rel="icon" href="./images/mowgli-tattoo-studio-logo.png" />
       </Head>
       <body>
         <Main />

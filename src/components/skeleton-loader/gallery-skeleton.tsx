@@ -6,16 +6,12 @@ interface PostLoaderProps {
 const PostLoader = ({ numberOfPosts }: PostLoaderProps) => {
   const fakeData = Array(numberOfPosts).fill(0);
   return (
-    /*
-      TODO CHANGER LES GRIDS ET LES TAILLES SI JAMAIS JE CHANGE LES IMAGES
-      A VOIR AVEC PE QUAND JE LUI AURAIS MONTRE
-    */
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1560px] mx-auto mt-10 pb-10">
+    <div className="grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 pb-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10">
       {fakeData.map((post: any, index: number) => {
         return (
           <div
             key={index}
-            className="w-[378px] h-[378px] bg-[#7f7f7f] rounded-lg animate-pulse"
+            className="w-full h-[300px] sm:h-[354px] md:h-[315px] lg:h-[326px] xl:h-[360px] bg-[#7f7f7f] rounded-lg animate-pulse"
           ></div>
         );
       })}

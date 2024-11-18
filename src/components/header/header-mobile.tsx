@@ -63,10 +63,10 @@ const HeaderMobile = () => {
           {/* TODO ICI METTRE UNE IMAGE DIFFERENTE DE LA NAV CLASSIQUE */}
           <Link href={"/"}>
             <Image
-              src={"/images/mowgli-tatoo-studio-logo.png"}
+              src={"/images/mowgli-tattoo-studio-logo.png"}
               width={50}
               height={50}
-              alt="Logo de Mowgli Studio Tatoo"
+              alt="Logo de Mowgli Studio Tattoo"
             />
           </Link>
         </div>

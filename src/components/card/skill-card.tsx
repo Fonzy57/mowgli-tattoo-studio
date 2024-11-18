@@ -9,7 +9,7 @@ export interface SkillCardProps {
 
 export const SkillCard = ({ icon, title, content }: SkillCardProps) => {
   return (
-    <div className="w-[350px] border border-main rounded-lg p-5 cursor-default shadow-[0px_10px_25px_0px] shadow-secondary/50">
+    <div className="w-full border border-main rounded-lg p-5 cursor-default shadow-[0px_5px_15px_0px] shadow-secondary/50 sm:w-[450px] sm:shadow-[0px_10px_25px_0px] sm:shadow-secondary/50 md:w-[600px] lg:w-full ">
       <div className="w-max mx-auto text-main">
         <CustomIcon name={icon} size={50} />
       </div>
