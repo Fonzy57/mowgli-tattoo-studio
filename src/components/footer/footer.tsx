@@ -18,7 +18,7 @@ const year = new Date().getFullYear();
 const about = [
   {
     name: "mail",
-    label: "mail.mowgli@gmail.com", // TODO METTRE LA BONNE ADRESSE
+    label: "mowgli.bauer@gmail.com",
     icon: <CustomIcon name={IconName.Envelope} size={20} />,
   },
   {
