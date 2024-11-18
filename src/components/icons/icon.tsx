@@ -1,18 +1,18 @@
 // ICONS FROM react-icons
 import {
   FaFacebookF,
-  FaInstagram,
   FaLocationDot,
   FaAt,
   FaEnvelope,
-  FaWordpressSimple,
+  FaWordpress,
   FaArrowDown,
   FaCouch,
   FaEye,
   FaMedal,
 } from "react-icons/fa6"; // Font Awesome 6 library
+import { AiFillInstagram } from "react-icons/ai"; // Ant Design Icons Library
 
-// ENUM & Typing
+// ENUM & TYPING
 import { IconName } from "./icon.enum";
 
 interface CustomIconProps {
@@ -26,9 +26,9 @@ export const iconComponents = {
   [IconName.At]: FaAt,
   [IconName.Envelope]: FaEnvelope,
   [IconName.Facebook]: FaFacebookF,
-  [IconName.Instagram]: FaInstagram,
+  [IconName.Instagram]: AiFillInstagram,
   [IconName.Location]: FaLocationDot,
-  [IconName.Wordpress]: FaWordpressSimple,
+  [IconName.Wordpress]: FaWordpress,
   [IconName.ArrowDown]: FaArrowDown,
   [IconName.Couch]: FaCouch,
   [IconName.Eye]: FaEye,
