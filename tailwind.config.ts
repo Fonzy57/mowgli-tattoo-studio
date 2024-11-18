@@ -51,6 +51,28 @@ const config: Config = {
       boxShadow: {
         "full-main": "0 0 50px rgb(255 209 97 / 0.2)",
       },
+      keyframes: {
+        heartbeat: {
+          "0%": {
+            transform: "scale(0.75)",
+          },
+          "30%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(0.75)",
+          },
+          "80%": {
+            transform: "scale(1)",
+          },
+          "100%": {
+            transform: "scale(0.75)",
+          },
+        },
+      },
+      animation: {
+        heartbeat: "heartbeat 3.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

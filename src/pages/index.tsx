@@ -7,6 +7,7 @@ import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
 import { IconName } from "@/components/icons/icon.enum";
 import { SkillCard } from "@/components/card/skill-card";
+import Seo from "@/components/seo/seo";
 
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
@@ -42,6 +43,7 @@ const skills = [
 const Home = () => {
   return (
     <>
+      <Seo page="home" />
       <header
         className="h-[calc(100vh-80px)] bg-fixed bg-center bg-cover bg-no-repeat"
         style={{
@@ -87,7 +89,6 @@ const Home = () => {
             </p>
           </div>
           <div className="mx-auto w-max mt-20">
-            {/* TODO METTRE LE LIEN DE LA PAGE QUAND ELLE SERA FAITE */}
             <LinkButton url="realisations">Voir mes réalisations</LinkButton>
           </div>
         </div>
@@ -95,7 +96,7 @@ const Home = () => {
         <div className="relative">
           <Image
             src="/pictures/pierre-emmanuel-bauer-hero.jpg"
-            alt="Photo en noir et blanc de Pierre-Emmanuel Bauer, aka Mowgli"
+            alt="Photo en noir et blanc du tatoueur Mowgli"
             width={700}
             height={561}
             className="rounded-lg"
@@ -185,7 +186,8 @@ const Home = () => {
           width={250}
           height={250}
           alt="Portrait noir et blanc du photographe Newby.pics"
-          className="rounded-full"
+          /* TODO TEST DE LA BORDURE, PEUT ETRE BOX SHADOW A LA PLACE */
+          className="rounded-full border border-main"
         />
         <div className="w-[750px]">
           <h3 className="font-cera text-main font-bold text-6xl text-center">

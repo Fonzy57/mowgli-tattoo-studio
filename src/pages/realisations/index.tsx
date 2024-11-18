@@ -1,6 +1,10 @@
 // NEXT
 import Link from "next/link";
 
+// COMPONENTS
+import PostLoader from "@/components/skeleton-loader/gallery-skeleton";
+import Seo from "@/components/seo/seo";
+
 // TYPING
 export interface PostProps {
   caption: string;
@@ -19,9 +23,10 @@ export interface PostsProps {
 const RealisationsPage = ({ data, error }: PostsProps) => {
   const posts = data;
 
-  /* TODO FAIRE UN LOADER LE TEMPS QUE CA CHARGE ET FAIRE UNE SNACK BAR S'IL Y A UNE ERREUR LORS DU CHARGEMENT */
+  /* TODO FAIRE UNE SNACK BAR S'IL Y A UNE ERREUR LORS DU CHARGEMENT */
   return (
     <>
+      <Seo page="realisations" />
       <h1 className="font-cera text-center text-8xl font-semibold text-main pt-20">
         Mes tatouages
       </h1>
@@ -31,10 +36,9 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
         inventore reiciendis commodi debitis, odio animi, nesciunt enim possimus
         quam cupiditate molestias.
       </p>
-      {posts && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1560px] mx-auto mt-10 pb-10">
+      {posts.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1560px] mx-auto mt-10 pb-10">
           {posts.map((post: any, index: number) => {
-            console.log("Post Instagram : ", post);
             return (
               <div key={index}>
                 <Link
@@ -52,6 +56,8 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
             );
           })}
         </div>
+      ) : (
+        <PostLoader numberOfPosts={12} />
       )}
     </>
   );

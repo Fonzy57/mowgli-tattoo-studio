@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 // COMPONENTS
 import Layout from "@/components/layout/layout";
+import FullPageLoader from "@/components/loader/full-page";
 
 // STYLE
 import "@/styles/globals.css";
@@ -52,7 +53,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <main className={`${fontInter.variable} ${cera.variable} font-inter`}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
       </Head>
+      {/* TODO VOIR POUR LE CHARGEMENT DES PAGES */}
+      {/* <FullPageLoader /> */}
       <Layout>
         <Component {...pageProps} />
       </Layout>
