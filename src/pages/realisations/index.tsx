@@ -3,6 +3,7 @@ import Link from "next/link";
 
 // COMPONENTS
 import PostLoader from "@/components/skeleton-loader/gallery-skeleton";
+import Seo from "@/components/seo/seo";
 
 // TYPING
 export interface PostProps {
@@ -25,6 +26,7 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
   /* TODO FAIRE UNE SNACK BAR S'IL Y A UNE ERREUR LORS DU CHARGEMENT */
   return (
     <>
+      <Seo page="realisations" />
       <h1 className="font-cera text-center text-8xl font-semibold text-main pt-20">
         Mes tatouages
       </h1>

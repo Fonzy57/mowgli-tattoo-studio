@@ -7,6 +7,7 @@ import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
 import { IconName } from "@/components/icons/icon.enum";
 import { SkillCard } from "@/components/card/skill-card";
+import Seo from "@/components/seo/seo";
 
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
@@ -42,6 +43,7 @@ const skills = [
 const Home = () => {
   return (
     <>
+      <Seo page="home" />
       <header
         className="h-[calc(100vh-80px)] bg-fixed bg-center bg-cover bg-no-repeat"
         style={{
