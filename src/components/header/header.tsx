@@ -48,7 +48,7 @@ const Header = () => {
       }`}
     >
       <div
-        className={`flex items-center justify-between w-[1170px] mx-auto xl:w-[1560px] transition duration-300 ease-in-out`}
+        className={`flex items-center justify-between w-[1325px] mx-auto xl:w-[1560px] transition duration-300 ease-in-out`}
       >
         <Link href={"/"}>
           <Image
