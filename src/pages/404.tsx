@@ -19,7 +19,7 @@ const Error404 = () => {
             className="md:drop-shadow-[0_20px_20px_rgb(255_209_97_/_0.2)]"
             priority
           />
-          <div className="flex flex-col items-center gap-4 text-text-light">
+          <div className="flex flex-col items-center gap-4 text-text-light md:gap-10">
             <h1 className="text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
               Erreur 404
             </h1>
@@ -27,7 +27,7 @@ const Error404 = () => {
               Cette page n'existe pas, mais votre prochain tatouage, lui, est
               bien réel.
             </p>
-            <div className="w-max mt-8">
+            <div className="w-max mt-8 md:mt-2">
               <LinkButton url="/">Revenir au studio</LinkButton>
             </div>
           </div>
