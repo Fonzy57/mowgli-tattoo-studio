@@ -6,11 +6,11 @@ export const navLinks = [
     url: "/realisations",
     isActive: false,
   },
-  { name: "projects", label: "autres projets", url: "#", isActive: false },
   {
     name: "informations",
     label: "Informations",
     url: "/informations",
     isActive: false,
   },
+  { name: "hobbies", label: "hobbies", url: "/hobbies", isActive: false },
 ];
