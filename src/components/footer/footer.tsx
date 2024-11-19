@@ -150,7 +150,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="">
-            <h4 className={titleStyle}>Autres</h4>
+            <h4 className={titleStyle}>Collaborations</h4>
             <div className={listStyle}>
               {other.map((item, index) => {
                 return (
