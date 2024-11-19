@@ -5,9 +5,11 @@ import Link from "next/link";
 // COMPONENTS
 import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
-import { IconName } from "@/components/icons/icon.enum";
 import { SkillCard } from "@/components/card/skill-card";
 import Seo from "@/components/seo/seo";
+
+// ENUM & TYPING
+import { IconName } from "@/components/icons/icon.enum";
 
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
@@ -88,7 +90,6 @@ const Home = () => {
             <LinkButton url="realisations">Voir mes réalisations</LinkButton>
           </div>
         </div>
-
         <div className="relative sm:w-1/2 lg:w-auto">
           <Image
             src="/pictures/pierre-emmanuel-bauer-hero.jpg"
@@ -102,13 +103,27 @@ const Home = () => {
       </section>
 
       {/* PARALLAX SECTION */}
-      <div className="h-[300px] mt-20 bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/pictures/parallax-1.jpg')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px] ">
-        <div className="flex items-center justify-center h-full bg-black/20 "></div>
+      <div className="h-[300px] mt-20 bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/pictures/parallax-1.jpg')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
+        <div className="flex items-center justify-center h-full bg-black/20"></div>
       </div>
 
+      {/* EXPLICATION SECTION */}
+      <section className="mt-20 px-5 sm:px-0 sm:w-[700px] sm:mx-auto lg:w-[900px] lg:mt-32 xl:w-[1050px]">
+        <h3 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+          Pourquoi choisir un tatouage en noir et gris ?
+        </h3>
+        <p className="mt-6 text-text-light text-justify sm:mt-10 lg:text-left lg:mt-14 xl:mt-20 lg:text-lg lg:w-[750px] lg:mx-auto">
+          Le tatouage réaliste en noir et gris est un style intemporel qui met
+          en avant les détails et les nuances pour un rendu saisissant. Que ce
+          soit un portrait, une scène ou un motif symbolique, ce style permet
+          d’ajouter une profondeur unique à vos projets et s’adapte parfaitement
+          à différentes zones du corps.
+        </p>
+      </section>
+
       {/* SKILLS SECTION */}
-      <section className="w-full px-5 py-20 sm:px-0 lg:py-32 lg:w-[1325px] lg:mx-auto xl:w-[1560px] xl:py-48">
-        <div className="flex flex-col items-center justify-center gap-20 lg:flex-row lg:items-stretch lg:justigy-between">
+      <section className="w-full px-5 py-20 sm:px-0 lg:py-32 lg:w-[1325px] lg:mx-auto xl:w-[1560px]">
+        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-20 lg:items-stretch lg:justigy-between">
           {skills.map((skill, index) => {
             return (
               <SkillCard
@@ -147,9 +162,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
-      {/* TODO ICI METTRE LES AUTRES PROJETS COMME LA VIRGULE ET AUTRE */}
-
       {/* LAST TATTOO SECTION */}
       {/* TODO ICI RECUPERER LES 4 DERNIERS POSTS INSTA POUR AFFICHER LES PHOTOS */}
       <section className="px-5 py-14 sm:py-20 sm:px-0 lg:py-32 xl:py-48">
@@ -172,9 +184,21 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CONTACT SECTION */}
+      <section className="h-[300px] bg-center bg-cover bg-no-repeat bg-[url('/pictures/pierre-emmanuel-bauer-bureau.jpg')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
+        <div className="h-full bg-black/50 px-5 flex flex-col items-center justify-center gap-y-16 sm:px-0 sm:gap-24">
+          <h4 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
+            Quel sera votre prochain tattoo ?
+          </h4>
+          <LinkButton url="informations" className="w-max mx-auto">
+            Me contacter
+          </LinkButton>
+        </div>
+      </section>
+
       {/* PHOTOGRAPH SECTION */}
       {/* TODO VOIR SI FRED VEUT SON NOM OU BIEN SON PSEUDO INSTA POUR LA SECTION */}
-      <section className="flex items-center justify-center flex-col-reverse px-5 py-14 gap-16 md:flex-row md:py-28 xl:pt-10 xl:pb-48">
+      <section className="flex items-center justify-center flex-col-reverse px-5 py-14 gap-16 md:px-0 md:flex-row md:py-28 xl:pt-40 xl:pb-48">
         <Image
           src="/pictures/newby.pics.jpg"
           width={250}

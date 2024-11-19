@@ -9,6 +9,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      xs: "375px", // mobile => @media (min-width: 375px)
       sm: "768px", //  tablet portrait => @media (min-width: 720px)
       md: "1024px", // tablet paysage => @media (min-width: 1020px)
       lg: "1440px", // laptop => @media (min-width: 1435px)

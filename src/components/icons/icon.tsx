@@ -9,6 +9,12 @@ import {
   FaCouch,
   FaEye,
   FaMedal,
+  FaBandage,
+  FaPumpSoap,
+  FaShower,
+  FaPumpMedical,
+  FaHandHoldingHeart,
+  FaPersonSwimming,
 } from "react-icons/fa6"; // Font Awesome 6 library
 import { AiFillInstagram } from "react-icons/ai"; // Ant Design Icons Library
 
@@ -33,6 +39,12 @@ export const iconComponents = {
   [IconName.Couch]: FaCouch,
   [IconName.Eye]: FaEye,
   [IconName.Medal]: FaMedal,
+  [IconName.Bandage]: FaBandage,
+  [IconName.Soap]: FaPumpSoap,
+  [IconName.Shower]: FaShower,
+  [IconName.HandHeart]: FaHandHoldingHeart,
+  [IconName.Swimming]: FaPersonSwimming,
+  [IconName.MedicalPump]: FaPumpMedical,
 };
 
 export const CustomIcon = ({
