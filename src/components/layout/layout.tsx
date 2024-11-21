@@ -1,6 +1,6 @@
 // REACT & NEXT
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 // FRAMER MOTION
 import { AnimatePresence } from "framer-motion";
@@ -27,7 +27,11 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="block lg:hidden">
         <HeaderMobile />
       </div>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => window.scrollTo({ top: 0 })}
+      >
         <PageTransition key={router.pathname}>{children}</PageTransition>
       </AnimatePresence>
       <Footer />
