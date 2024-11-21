@@ -14,7 +14,6 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      /* TODO VOIR LE SCROLL SELON LE DEVICE S'IL FAUT LE CHANGER OU PAS */
       setScrolled(window.scrollY > 90);
     };
 

@@ -60,7 +60,6 @@ const HeaderMobile = () => {
         }`}
       >
         <div>
-          {/* TODO ICI METTRE UNE IMAGE DIFFERENTE DE LA NAV CLASSIQUE */}
           <Link href={"/"}>
             <Image
               src={"/images/mowgli-tattoo-studio-logo.png"}

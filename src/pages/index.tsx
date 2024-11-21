@@ -56,7 +56,6 @@ const Home = () => {
               name={IconName.ArrowDown}
               size={32}
               className="text-main cursor-pointer absolute bottom-9 lg:bottom-10 xl:bottom-14 left-1/2 animate-pulse border broder-main p-2 rounded-full hover:animate-none transition-all duration-300 ease-in-out"
-              /* TODO CHANGER L'OFFSET SELON LA TAILLE D'ECRAN */
               onClick={() => handleClickAnchor("about", 80)}
             />
           </div>
