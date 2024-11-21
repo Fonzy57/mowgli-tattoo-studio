@@ -3,6 +3,7 @@ import Image from "next/image";
 
 // COMPONENTS
 import CareCard from "@/components/card/care-card";
+import Seo from "@/components/seo/seo";
 
 // ENUM
 import { IconName } from "@/components/icons/icon.enum";
@@ -67,6 +68,7 @@ const careItems = [
 const Informations = () => {
   return (
     <>
+      <Seo page="informations" />
       <div className="py-16 px-5 sm:py-20 sm:px-0 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
         <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl lg:text-9xl">
           Informations

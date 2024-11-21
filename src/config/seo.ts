@@ -1,22 +1,30 @@
 export const seoConfig = {
   home: {
-    title: "Accueil | The Mowgli Tattoo Studio",
-    /* TODO METTRE DESCRIPTION QUAND TEXTE DES PAGES RECU */
-    description: "",
+    title:
+      "Accueil - Mowgli Tattoo Studio | Tatouages réalistes en noir et gris",
+    description:
+      "Bienvenue au Mowgli Tattoo Studio. Tatouages réalistes en noir et gris, réalisés avec passion et précision. Explorez notre univers artistique",
   },
   realisations: {
-    title: "Mes réalisations | The Mowgli Tattoo Studio",
-    /* TODO METTRE DESCRIPTION QUAND TEXTE DES PAGES RECU */
-    description: "",
+    title:
+      "Réalisations - Mowgli Tattoo Studio | Galerie de tatouages réalistes",
+    description:
+      "Galerie des réalisations du Mowgli Tattoo Studio. Des tatouages réalistes en noir et gris, empreints d'art et de détails minutieux.",
+  },
+  informations: {
+    title:
+      "Informations - Mowgli Tattoo Studio | Rendez-vous et soins tatouages",
+    description:
+      "Prenez rendez-vous au Mowgli Tattoo Studio et apprenez à soigner votre tatouage réaliste noir et gris pour une cicatrisation parfaite et durable.",
   },
   hobbies: {
-    title: "Autres projets | The Mowgli Tattoo Studio",
-    /* TODO METTRE DESCRIPTION QUAND TEXTE DES PAGES RECU */
-    description: "",
+    title: "Hobbies - Mowgli Tattoo Studio | Projets et passions artistiques",
+    description:
+      "Explorez les hobbies et projets artistiques du tatoueur du Mowgli Tattoo Studio. Au-delà du tatouage, découvrez un artiste passionné.",
   },
   "404": {
-    title: "Erreur 404 | The Mowgli Tattoo Studio",
+    title: "Erreur 404 - Mowgli Tattoo Studio | Page introuvable",
     description:
-      "Page introuvable, mais nos tatouages réalistes en noir et gris, eux, sont bien réels. Découvrez nos créations uniques et prenez rendez-vous.",
+      "Erreur 404 : cette page est introuvable, mais nos tatouages réalistes en noir et gris, eux, sont là pour inspirer. Explorez nos créations.",
   },
 };
