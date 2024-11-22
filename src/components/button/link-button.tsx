@@ -40,7 +40,7 @@ export const LinkButton = ({
   }
 
   return (
-    <Link href={url} target={target} rel={rel}>
+    <Link href={url} target={target} rel={rel} scroll={false}>
       <Button
         color={color}
         width={width}

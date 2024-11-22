@@ -12,7 +12,7 @@ const HeaderMobile = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Empêche le défilement de la page lorsque le menu est ouvert
+    // Prevents page scrolling when menu is open
     const disableScroll = () => {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
@@ -22,7 +22,7 @@ const HeaderMobile = () => {
       document.documentElement.style.width = "100%";
     };
 
-    // Réactive le défilement de la page lorsque le menu est fermé
+    // Re-enables page scrolling when menu is closed
     const enableScroll = () => {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
@@ -42,11 +42,11 @@ const HeaderMobile = () => {
       enableScroll();
     }
 
-    // Ferme le menu mobile quand la route a changé
+    // Closes mobile menu when route has changed
     router.events.on("routeChangeComplete", closeMenu);
 
     return () => {
-      // Réactive le défilement de la page lorsque le composant est démonté
+      // Re-enables page scrolling when component is unmounted
       enableScroll();
       router.events.off("routeChangeComplete", closeMenu);
     };
@@ -55,12 +55,10 @@ const HeaderMobile = () => {
   return (
     <>
       <div
-        className={`w-full flex items-center justify-between bg-main border-b border-secondary-hover px-5 py-2.5 ${
-          open ? "fixed inset-x-0 top-0 z-50" : ""
-        }`}
+        /* ${open ? "fixed inset-x-0 top-0 z-50" : ""} WAS BEFORE BUT NON NECESSARY */
+        className={`w-full flex items-center justify-between bg-main border-b border-secondary-hover px-5 py-2.5`}
       >
         <div>
-          {/* TODO ICI METTRE UNE IMAGE DIFFERENTE DE LA NAV CLASSIQUE */}
           <Link href={"/"}>
             <Image
               src={"/images/mowgli-tattoo-studio-logo.png"}
@@ -95,26 +93,28 @@ const HeaderMobile = () => {
         </div>
       </div>
 
-      {/* TODO NE PAS FAIRE UNE CONDITION ICI MAIS DANS LE CSS POUR FAIRE VENIR LE MENU DE LA GAUCHE */}
-      {open && (
-        <nav className="w-full bg-main z-50 h-[calc(100vh-71px)] fixed inset-x-0 top-[71px] bottom-0">
-          <ul className="px-5 pt-5 flex flex-col gap-5">
-            {navLinks.map((navitem, index) => {
-              return (
-                <Link
-                  href={navitem.url}
-                  key={index}
-                  className="text-lg uppercase text-text font-semibold active:text-secondary-active transition-all duration-300 ease-in-out"
-                >
-                  <li className="w-full pb-5 border-b border-border-dark">
-                    {navitem.label}
-                  </li>
-                </Link>
-              );
-            })}
-          </ul>
-        </nav>
-      )}
+      {/* NAVIGATION APPEARS FROM THE LEFT  */}
+      <nav
+        className={`w-full bg-main z-50 h-[calc(100vh-71px)] fixed inset-x-0 top-[71px] bottom-0 transition-all duration-300 ease-in-out ${
+          open ? "left-0" : "-left-full"
+        } `}
+      >
+        <ul className="px-5 pt-5 flex flex-col gap-5">
+          {navLinks.map((navitem, index) => {
+            return (
+              <Link
+                href={navitem.url}
+                key={index}
+                className="text-lg uppercase text-text font-semibold active:text-secondary-active transition-all duration-300 ease-in-out"
+              >
+                <li className="w-full pb-5 border-b border-border-dark">
+                  {navitem.label}
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      </nav>
     </>
   );
 };

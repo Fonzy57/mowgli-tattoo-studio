@@ -1,10 +1,15 @@
 // REACT & NEXT
-import { ReactNode } from "react";
+import { useRouter } from "next/router";
+import { ReactNode, useEffect, useState } from "react";
+
+// FRAMER MOTION
+import { AnimatePresence } from "framer-motion";
 
 // COMPONENTS
 import Header from "../header/header";
 import HeaderMobile from "../header/header-mobile";
 import Footer from "../footer/footer";
+import PageTransition from "../page-transition/page-transition";
 
 // TYPING
 export interface LayoutProps {
@@ -12,6 +17,8 @@ export interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const router = useRouter();
+
   return (
     <div className="bg-bgDark">
       <div className="sticky top-0 z-50 hidden lg:block">
@@ -20,7 +27,13 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="block lg:hidden">
         <HeaderMobile />
       </div>
-      <main className="">{children}</main>
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => window.scrollTo({ top: 0 })}
+      >
+        <PageTransition key={router.pathname}>{children}</PageTransition>
+      </AnimatePresence>
       <Footer />
     </div>
   );

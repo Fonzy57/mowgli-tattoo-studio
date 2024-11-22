@@ -30,11 +30,6 @@ export const Button = ({
   let iconSize = 18;
 
   switch (color) {
-    /* TODO VOIR SI J'AI BESOIN D'UN GHOST, SINON SUPPRIMER */
-    /* case ButtonColor.Ghost:
-      classes +=
-        " bg-background ring-1 ring-border ring-inset text-black hover:ring-black hover:text-black active:bg-buttonPress disabled:hover:ring-border disabled:active:bg-background ";
-      break; */
     case ButtonColor.Secondary:
       classes +=
         " bg-secondary text-black hover:bg-secondary-hover active:bg-secondary active:ring active:ring-secondary/30 disabled:hover:bg-secondary disabled:active:ring-0 ";

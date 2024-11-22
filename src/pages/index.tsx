@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <>
       <Seo page="home" />
-      <header className="py-16 px-5 sm:py-20 sm:px-0 md:p-0 md:h-[calc(100vh-71px)] bg-fixed bg-center bg-cover bg-no-repeat lg:h-screen lg:-mt-[80px] md:bg-[url('/pictures/mowgli-hero.jpg')]">
+      <header className="py-16 px-5 sm:py-20 sm:px-0 md:p-0 md:h-[calc(100vh-71px)] bg-fixed bg-center bg-cover bg-no-repeat lg:h-screen lg:-mt-[80px] md:bg-[url('/pictures/mowgli-hero.webp')]">
         <div className="flex items-center justify-center h-full md:bg-black md:bg-opacity-50">
           <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl lg:text-9xl">
             The Mowgli Tattoo Studio
@@ -56,7 +56,6 @@ const Home = () => {
               name={IconName.ArrowDown}
               size={32}
               className="text-main cursor-pointer absolute bottom-9 lg:bottom-10 xl:bottom-14 left-1/2 animate-pulse border broder-main p-2 rounded-full hover:animate-none transition-all duration-300 ease-in-out"
-              /* TODO CHANGER L'OFFSET SELON LA TAILLE D'ECRAN */
               onClick={() => handleClickAnchor("about", 80)}
             />
           </div>
@@ -92,7 +91,7 @@ const Home = () => {
         </div>
         <div className="relative sm:w-1/2 lg:w-auto">
           <Image
-            src="/pictures/pierre-emmanuel-bauer-hero.jpg"
+            src="/pictures/pierre-emmanuel-bauer-hero.webp"
             alt="Photo en noir et blanc du tatoueur Mowgli"
             width={700}
             height={561}
@@ -103,7 +102,7 @@ const Home = () => {
       </section>
 
       {/* PARALLAX SECTION */}
-      <div className="h-[300px] mt-20 bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/pictures/parallax-1.jpg')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
+      <div className="h-[300px] mt-20 bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/pictures/parallax-1.webp')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
         <div className="flex items-center justify-center h-full bg-black/20"></div>
       </div>
 
@@ -185,7 +184,7 @@ const Home = () => {
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="h-[300px] bg-center bg-cover bg-no-repeat bg-[url('/pictures/pierre-emmanuel-bauer-bureau.jpg')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
+      <section className="h-[300px] bg-center bg-cover bg-no-repeat bg-[url('/pictures/pierre-emmanuel-bauer-bureau.webp')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
         <div className="h-full bg-black/50 px-5 flex flex-col items-center justify-center gap-y-16 sm:px-0 sm:gap-24">
           <h4 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             Quel sera votre prochain tattoo ?
