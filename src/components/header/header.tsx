@@ -14,7 +14,6 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      /* TODO VOIR LE SCROLL SELON LE DEVICE S'IL FAUT LE CHANGER OU PAS */
       setScrolled(window.scrollY > 90);
     };
 
@@ -50,7 +49,7 @@ const Header = () => {
       <div
         className={`flex items-center justify-between w-[1325px] mx-auto xl:w-[1560px] transition duration-300 ease-in-out`}
       >
-        <Link href={"/"}>
+        <Link href={"/"} scroll={false}>
           <Image
             src={"/images/mowgli-tattoo-studio-logo.png"}
             width={70}
@@ -68,6 +67,7 @@ const Header = () => {
                 <Link
                   key={index}
                   href={navitem.url}
+                  scroll={false}
                   className={`font-bold text-xl hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out ${
                     isHomePage ? homeLinksStyle : globallinksStyle
                   }`}
