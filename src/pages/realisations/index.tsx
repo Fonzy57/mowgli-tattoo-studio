@@ -48,6 +48,7 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
                 >
                   <img
                     src={post.media_url}
+                    /* TODO POUR LE ALT VERIFIER QU'IL Y AIT UN CAPTION SINON METRE UN ALT PAR DEFAUT */
                     alt={post.caption}
                     className="aspect-square rounded-lg hover:shadow-full-main transition-all duration-300 ease-in-out"
                   />
