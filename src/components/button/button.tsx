@@ -32,12 +32,12 @@ export const Button = ({
   switch (color) {
     case ButtonColor.Secondary:
       classes +=
-        " bg-secondary text-black hover:bg-secondary-hover active:bg-secondary active:ring active:ring-secondary/30 disabled:hover:bg-secondary disabled:active:ring-0 ";
+        " bg-secondary text-black hover:bg-secondary-hover active:bg-secondary active:ring active:ring-secondary/40 disabled:hover:bg-secondary disabled:active:ring-0 ";
       break;
     case ButtonColor.Primary:
     default:
       classes +=
-        " bg-main text-text hover:bg-main-hover active:bg-main active:ring active:ring-main/30 disabled:hover:bg-main disabled:active:ring-0";
+        " bg-main text-text hover:bg-main-hover active:bg-main active:ring active:ring-main/40 disabled:hover:bg-main disabled:active:ring-0";
       break;
   }
 
