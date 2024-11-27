@@ -17,6 +17,9 @@ const Header = () => {
       setScrolled(window.scrollY > 90);
     };
 
+    // Checks the initial scroll position
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
