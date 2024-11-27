@@ -195,6 +195,7 @@ const Footer = () => {
       <Link
         href={"/mentions-legales"}
         className="text-text text-xs text-center mt-2 block mx-auto underline hover:no-underline hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+        scroll={false}
       >
         Mentions légales
       </Link>
