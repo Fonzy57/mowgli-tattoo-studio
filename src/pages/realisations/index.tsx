@@ -81,7 +81,7 @@ const RealisationsPage = () => {
                       post.caption ||
                       "Photo d'un tatouage au style réaliste en noir et gris"
                     }
-                    className="aspect-square rounded-lg hover:shadow-full-main transition-all duration-300 ease-in-out"
+                    className="aspect-square rounded-lg"
                   />
                 </Link>
               </div>
