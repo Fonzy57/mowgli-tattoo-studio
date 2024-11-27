@@ -22,6 +22,12 @@ export const seoConfig = {
     description:
       "Explorez les hobbies et projets artistiques du tatoueur du Mowgli Tattoo Studio. Au-delà du tatouage, découvrez un artiste passionné.",
   },
+  mentionsLegales: {
+    title:
+      "Mentions légales - Mowgli Tattoo Studio | Informations et conformité",
+    description:
+      "Consultez les mentions légales du site Mowgli Tattoo Studio. Retrouvez les informations sur l'éditeur, l'hébergement et la protection des contenus artistiques.",
+  },
   "404": {
     title: "Erreur 404 - Mowgli Tattoo Studio | Page introuvable",
     description:
