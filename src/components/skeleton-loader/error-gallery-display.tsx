@@ -4,7 +4,7 @@ import { LinkButton } from "../button/link-button";
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
 
-const ApiErrorGalleryHome = () => {
+const ApiErrorGalleryDisplay = () => {
   return (
     <div className="flex justify-center items-center max-w-[950px] px-2 py-10 mx-auto mt-20 bg-[#7f7f7f]/50 rounded-lg md:px-0">
       <div className="flex flex-col items-center gap-y-10">
@@ -23,4 +23,4 @@ const ApiErrorGalleryHome = () => {
   );
 };
 
-export default ApiErrorGalleryHome;
+export default ApiErrorGalleryDisplay;

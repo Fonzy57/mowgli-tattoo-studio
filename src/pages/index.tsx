@@ -11,7 +11,7 @@ import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
 import { SkillCard } from "@/components/card/skill-card";
 import PostHomeLoader from "@/components/skeleton-loader/gallery-home-skeleton";
-import ApiErrorGalleryHome from "@/components/skeleton-loader/error-gallery-home";
+import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
 
 // ENUM & TYPING
 import { IconName } from "@/components/icons/icon.enum";
@@ -183,7 +183,7 @@ const Home = () => {
         {(isFetching || isLoading) && <PostHomeLoader />}
 
         {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
-        {apiError && <ApiErrorGalleryHome />}
+        {apiError && <ApiErrorGalleryDisplay />}
 
         {/* DISPLAYING LAST 4 INSTAGRAM POSTS */}
         {!isFetching && !isLoading && posts && posts.length > 0 && (
