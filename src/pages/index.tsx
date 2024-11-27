@@ -177,7 +177,7 @@ const Home = () => {
       {/* LAST TATTOO SECTION */}
       <section className="px-5 py-14 sm:py-20 md:py-24 lg:px-0 lg:py-32 xl:py-48">
         <h2 className="font-cera text-center text-4xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
-          Derniers tattoo
+          Derniers tattoos
         </h2>
         {/* LOADER WHILE FETCHING INSTAGRAM POSTS */}
         {(isFetching || isLoading) && <PostHomeLoader />}
@@ -187,10 +187,10 @@ const Home = () => {
 
         {/* DISPLAYING LAST 4 INSTAGRAM POSTS */}
         {!isFetching && !isLoading && posts && posts.length > 0 && (
-          <div className="grid grid-cols-1 gap-5 max-w-[1350px] mx-auto mt-20 sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden">
+          <div className="grid grid-cols-1 gap-5 max-w-[1350px] mx-auto mt-20 sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container">
             {posts.slice(0, 4).map((post: Post, index: number) => {
               return (
-                <div key={index}>
+                <div key={index} className="gallery-item">
                   <Link
                     href={post.permalink}
                     target="_blank"
@@ -202,7 +202,7 @@ const Home = () => {
                         post.caption ||
                         "Photo d'un tatouage au style réaliste en noir et gris"
                       }
-                      className="aspect-square rounded-lg hover:shadow-full-main transition-all duration-300 ease-in-out"
+                      className="aspect-square rounded-lg"
                     />
                   </Link>
                 </div>

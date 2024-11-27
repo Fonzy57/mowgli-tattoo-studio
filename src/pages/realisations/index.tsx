@@ -59,7 +59,7 @@ const RealisationsPage = () => {
       {/* DISPLAYING LAST 40 INSTAGRAM POSTS */}
       {!isFetching && !isLoading && posts && posts.length > 0 && (
         <motion.div
-          className={`grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden`}
+          className={`grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container`}
           initial={{ maxHeight: 700 }}
           animate={{ maxHeight: seeMore ? 20000 : 700 }}
           transition={{
@@ -69,7 +69,7 @@ const RealisationsPage = () => {
         >
           {posts.map((post: Post, index: number) => {
             return (
-              <div key={index}>
+              <div key={index} className="gallery-item">
                 <Link
                   href={post.permalink}
                   target="_blank"
