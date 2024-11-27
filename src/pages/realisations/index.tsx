@@ -12,17 +12,23 @@ import { easeInOut, motion } from "framer-motion";
 import { socialsLinksMowgli } from "@/config/socials-links";
 
 // COMPONENTS
-import PostLoader from "@/components/skeleton-loader/gallery-skeleton";
 import Seo from "@/components/seo/seo";
+import PostLoader from "@/components/skeleton-loader/gallery-skeleton";
 import { LinkButton } from "@/components/button/link-button";
 import { Button } from "@/components/button/button";
+import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
 
 // TYPING
 import { Post } from "@/dto/posts.dto";
 
 const RealisationsPage = () => {
   // FETCHING DATA WITH RTK QUERY
-  const { data: posts, error, isFetching, isLoading } = useGetPostsQuery();
+  const {
+    data: posts,
+    error: apiError,
+    isFetching,
+    isLoading,
+  } = useGetPostsQuery();
 
   const [seeMore, setSeeMore] = useState(false);
 
@@ -44,7 +50,13 @@ const RealisationsPage = () => {
         inventore reiciendis commodi debitis, odio animi, nesciunt enim possimus
         quam cupiditate molestias.
       </p>
+      {/* LOADER WHILE FETCHING INSTAGRAM POSTS */}
       {(isFetching || isLoading) && <PostLoader numberOfPosts={8} />}
+
+      {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
+      {apiError && <ApiErrorGalleryDisplay />}
+
+      {/* DISPLAYING LAST 40 INSTAGRAM POSTS */}
       {!isFetching && !isLoading && posts && posts.length > 0 && (
         <motion.div
           className={`grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden`}
@@ -102,9 +114,11 @@ const RealisationsPage = () => {
           ease: easeInOut,
         }}
       >
-        <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
-          Voir tous mes tatouages
-        </LinkButton>
+        {!apiError && (
+          <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
+            Voir tous mes tatouages
+          </LinkButton>
+        )}
       </motion.div>
     </>
   );
