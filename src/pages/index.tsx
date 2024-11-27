@@ -99,7 +99,7 @@ const Home = () => {
             </p>
           </div>
           <div className="mx-auto w-max mt-10 lg:mt-14 xl:mt-20">
-            <LinkButton url="realisations">Voir mes réalisations</LinkButton>
+            <LinkButton url="/realisations">Voir mes réalisations</LinkButton>
           </div>
         </div>
         <div className="relative sm:w-1/2 lg:w-auto">
@@ -213,7 +213,7 @@ const Home = () => {
         {!apiError && (
           <div className="mx-auto w-max">
             <LinkButton
-              url="realisations"
+              url="/realisations"
               className="w-max mx-auto mt-12 sm:mt-24 lg:mt-24 xl:mt-32"
             >
               Voir la galerie
@@ -228,7 +228,7 @@ const Home = () => {
           <h4 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             Quel sera votre prochain tattoo ?
           </h4>
-          <LinkButton url="informations" className="w-max mx-auto">
+          <LinkButton url="/rdv-et-soins" className="w-max mx-auto">
             Me contacter
           </LinkButton>
         </div>

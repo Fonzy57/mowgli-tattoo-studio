@@ -96,7 +96,7 @@ const Footer = () => {
         />
         <div className="flex flex-col w-full justify-center mt-14 gap-y-10 sm:flex-row sm:gap-x-20 lg:w-1/2 lg:justify-between lg:gap-x-0">
           <div className="">
-            <h4 className={titleStyle}>A propos</h4>
+            <p className={titleStyle}>A propos</p>
             <div className={listStyle}>
               {about.map((item, index) => {
                 return item.url ? (
@@ -128,7 +128,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="">
-            <h4 className={titleStyle}>Reseaux</h4>
+            <p className={titleStyle}>Reseaux</p>
             <div className={listStyle}>
               {socialsMowgli.map((item, index) => {
                 return (
@@ -150,7 +150,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="">
-            <h4 className={titleStyle}>Collaborations</h4>
+            <p className={titleStyle}>Collaborations</p>
             <div className={listStyle}>
               {other.map((item, index) => {
                 return (
@@ -195,6 +195,7 @@ const Footer = () => {
       <Link
         href={"/mentions-legales"}
         className="text-text text-xs text-center mt-2 block mx-auto underline hover:no-underline hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+        scroll={false}
       >
         Mentions légales
       </Link>

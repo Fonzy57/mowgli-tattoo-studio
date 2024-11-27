@@ -1,9 +1,13 @@
 // NEXT
 import Image from "next/image";
+import Link from "next/link";
 
 // COMPONENTS
 import CareCard from "@/components/card/care-card";
 import Seo from "@/components/seo/seo";
+
+// CONFIG
+import { socialsLinksMowgli } from "@/config/socials-links";
 
 // ENUM
 import { IconName } from "@/components/icons/icon.enum";
@@ -65,34 +69,34 @@ const careItems = [
   },
 ];
 
-const Informations = () => {
+const RdvEtSoins = () => {
   return (
     <>
-      <Seo page="informations" />
-      <div className="py-16 px-5 sm:py-20 sm:px-0 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
-        <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl lg:text-9xl">
-          Informations
-        </h1>
-      </div>
+      <Seo page="rdvEtSoins" />
 
       {/* APPOINTMENT SECTIONS */}
-      <section className="px-5 w-full md:mt-20 lg:mt-10 xl:mt-20">
-        <h2 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
+      <section className="px-5 pt-16 w-full sm:pt-20 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
+        <h1 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Prendre RDV
-        </h2>
+        </h1>
 
         <div className="md:mt-20 md:flex md:items-center md:gap-x-20 md:w-[948px] md:mx-auto lg:w-[1125px] lg:justify-center xl:w-[1400px]">
           <div className="text-text-light md:w-1/2">
-            <h3 className="mt-8 text-lg italic text-justify lg:text-2xl">
+            <h2 className="mt-8 text-lg italic text-justify lg:text-2xl">
               Prise de rendez-vous pour un tatouage réaliste en noir et gris.
-            </h3>
+            </h2>
             <div className="mt-6 flex flex-col gap-y-4 sm:gap-y-2 lg:text-lg lg:gap-y-4">
               <p>
                 Pour planifier votre prochaine séance de tatouage, vous pouvez
                 me contacter directement via{" "}
-                <span className="text-main font-semibold">
+                <Link
+                  href={socialsLinksMowgli.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-main font-semibold hover:text-main-hover active:underline transition duration-300 ease-in-out"
+                >
                   DM sur Instagram
-                </span>{" "}
+                </Link>{" "}
                 ou par <span className="text-main font-semibold">email</span>.
               </p>
               <p>
@@ -127,12 +131,12 @@ const Informations = () => {
             />
           </div>
           <div className="md:w-1/2">
-            <h4 className="underline text-lg lg:text-2xl">
+            <h3 className="underline text-lg lg:text-2xl">
               Les informations essentielles à fournir
-            </h4>
+            </h3>
             <div className="mt-3 flex flex-col gap-y-4 lg:text-lg lg:mt-10">
               <div>
-                <h5 className="text-main font-bold">Description du projet :</h5>
+                <h4 className="text-main font-bold">Description du projet :</h4>
                 <p className="text-justify">
                   Expliquez en quelques lignes votre idée de tatouage. Plus
                   votre description est précise, mieux je pourrai répondre à vos
@@ -140,7 +144,7 @@ const Informations = () => {
                 </p>
               </div>
               <div>
-                <h5 className="text-main font-bold">Images d’inspiration :</h5>
+                <h4 className="text-main font-bold">Images d’inspiration :</h4>
                 <p className="text-justify">
                   Joignez des photos ou des références qui reflètent le style ou
                   les éléments que vous souhaitez intégrer à votre tatouage.
@@ -148,9 +152,9 @@ const Informations = () => {
                 </p>
               </div>
               <div>
-                <h5 className="text-main font-bold">
+                <h4 className="text-main font-bold">
                   Taille et emplacement souhaités :
-                </h5>
+                </h4>
                 <p className="text-justify">
                   Indiquez la taille approximative du tatouage et la zone du
                   corps où vous souhaitez qu’il soit réalisé. Cela permet de
@@ -164,13 +168,13 @@ const Informations = () => {
 
       {/* CARE SECTION */}
       <section className="w-full mt-16 md:mt-24 md:w-[948px] md:mx-auto xl:w-[1300px]">
-        <h2 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl ">
+        <h1 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl ">
           Les soins
-        </h2>
+        </h1>
         <div className="px-5 text-text-light md:px-0 xl:w-[850px]">
-          <h3 className="mt-8 text-lg italic text-justify lg:text-2xl">
+          <h2 className="mt-8 text-lg italic text-justify lg:text-2xl">
             Prendre soin de votre tatouage pour un résultat parfait !
-          </h3>
+          </h2>
           <div className="mt-6 flex flex-col gap-y-4 sm:gap-y-2 lg:text-lg lg:gap-y-4">
             <p>
               Après votre séance de tatouage, il est essentiel de bien suivre
@@ -199,4 +203,4 @@ const Informations = () => {
   );
 };
 
-export default Informations;
+export default RdvEtSoins;
