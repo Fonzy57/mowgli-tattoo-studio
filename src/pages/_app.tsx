@@ -3,9 +3,12 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 
+// REDUX
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
+
 // COMPONENTS
 import Layout from "@/components/layout/layout";
-import FullPageLoader from "@/components/loader/full-page";
 
 // STYLE
 import "@/styles/globals.css";
@@ -50,16 +53,16 @@ const cera = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${fontInter.variable} ${cera.variable} font-inter`}>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="UTF-8" />
-      </Head>
-      {/* TODO VOIR POUR LE CHARGEMENT DES PAGES */}
-      {/* <FullPageLoader /> */}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </main>
+    <Provider store={store}>
+      <main className={`${fontInter.variable} ${cera.variable} font-inter`}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="UTF-8" />
+        </Head>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </main>
+    </Provider>
   );
 }

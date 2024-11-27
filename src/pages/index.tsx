@@ -2,14 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// REDUX
+import { useGetPostsQuery } from "@/store/apiSlice";
+
 // COMPONENTS
+import Seo from "@/components/seo/seo";
 import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
 import { SkillCard } from "@/components/card/skill-card";
-import Seo from "@/components/seo/seo";
+import PostHomeLoader from "@/components/skeleton-loader/gallery-home-skeleton";
+import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
 
 // ENUM & TYPING
 import { IconName } from "@/components/icons/icon.enum";
+import { Post } from "@/dto/posts.dto";
 
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
@@ -43,6 +49,13 @@ const skills = [
 ];
 
 const Home = () => {
+  const {
+    data: posts,
+    error: apiError,
+    isFetching,
+    isLoading,
+  } = useGetPostsQuery();
+
   return (
     <>
       <Seo page="home" />
@@ -162,25 +175,51 @@ const Home = () => {
       </section>
 
       {/* LAST TATTOO SECTION */}
-      {/* TODO ICI RECUPERER LES 4 DERNIERS POSTS INSTA POUR AFFICHER LES PHOTOS */}
-      <section className="px-5 py-14 sm:py-20 sm:px-0 lg:py-32 xl:py-48">
+      <section className="px-5 py-14 sm:py-20 md:py-24 lg:px-0 lg:py-32 xl:py-48">
         <h2 className="font-cera text-center text-4xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
-          Derniers tattoo
+          Derniers tattoos
         </h2>
-        <div className="flex items-center justify-center gap-8 flex-col mt-10 sm:gap-10 md:flex-row md:mt-16 lg:mt-20">
-          <div className="bg-main-altLight w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] rounded-lg"></div>
-          <div className="bg-main-altLight w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] rounded-lg"></div>
-          <div className="bg-main-altLight w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] rounded-lg"></div>
-          <div className="bg-main-altLight w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] rounded-lg"></div>
-        </div>
-        <div className="mx-auto w-max">
-          <LinkButton
-            url="realisations"
-            className="w-max mx-auto mt-12 sm:mt-20 lg:mt-24 xl:mt-32"
-          >
-            Voir la galerie
-          </LinkButton>
-        </div>
+        {/* LOADER WHILE FETCHING INSTAGRAM POSTS */}
+        {(isFetching || isLoading) && <PostHomeLoader />}
+
+        {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
+        {apiError && <ApiErrorGalleryDisplay />}
+
+        {/* DISPLAYING LAST 4 INSTAGRAM POSTS */}
+        {!isFetching && !isLoading && posts && posts.length > 0 && (
+          <div className="grid grid-cols-1 gap-5 max-w-[1350px] mx-auto mt-20 sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container">
+            {posts.slice(0, 4).map((post: Post, index: number) => {
+              return (
+                <div key={index} className="gallery-item">
+                  <Link
+                    href={post.permalink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={post.media_url}
+                      alt={
+                        post.caption ||
+                        "Photo d'un tatouage au style réaliste en noir et gris"
+                      }
+                      className="aspect-square rounded-lg"
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {!apiError && (
+          <div className="mx-auto w-max">
+            <LinkButton
+              url="realisations"
+              className="w-max mx-auto mt-12 sm:mt-24 lg:mt-24 xl:mt-32"
+            >
+              Voir la galerie
+            </LinkButton>
+          </div>
+        )}
       </section>
 
       {/* CONTACT SECTION */}

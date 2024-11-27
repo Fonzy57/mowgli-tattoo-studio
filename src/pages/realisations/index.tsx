@@ -1,32 +1,41 @@
 // NEXT
 import Link from "next/link";
-import { GetServerSideProps } from "next";
+import { useState } from "react";
+
+// REDUX
+import { useGetPostsQuery } from "@/store/apiSlice";
+
+// FRAMER MOTION
+import { easeInOut, motion } from "framer-motion";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
 
 // COMPONENTS
-import PostLoader from "@/components/skeleton-loader/gallery-skeleton";
 import Seo from "@/components/seo/seo";
+import PostLoader from "@/components/skeleton-loader/gallery-skeleton";
 import { LinkButton } from "@/components/button/link-button";
+import { Button } from "@/components/button/button";
+import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
 
 // TYPING
-export interface PostProps {
-  caption: string;
-  id: string;
-  media_type: string;
-  media_url: string;
-  permalink: string;
-  timestamp: string;
-}
+import { Post } from "@/dto/posts.dto";
 
-export interface PostsProps {
-  data: PostProps[];
-  error: boolean;
-}
+const RealisationsPage = () => {
+  // FETCHING DATA WITH RTK QUERY
+  const {
+    data: posts,
+    error: apiError,
+    isFetching,
+    isLoading,
+  } = useGetPostsQuery();
 
-const RealisationsPage = ({ data, error }: PostsProps) => {
-  const posts = data;
+  const [seeMore, setSeeMore] = useState(false);
+
+  const handleSeeMore = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setSeeMore(true);
+  };
 
   /* TODO FAIRE UNE SNACK BAR S'IL Y A UNE ERREUR LORS DU CHARGEMENT */
   return (
@@ -41,11 +50,26 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
         inventore reiciendis commodi debitis, odio animi, nesciunt enim possimus
         quam cupiditate molestias.
       </p>
-      {posts.length > 0 ? (
-        <div className="grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 pb-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10">
-          {posts.map((post: any, index: number) => {
+      {/* LOADER WHILE FETCHING INSTAGRAM POSTS */}
+      {(isFetching || isLoading) && <PostLoader numberOfPosts={8} />}
+
+      {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
+      {apiError && <ApiErrorGalleryDisplay />}
+
+      {/* DISPLAYING LAST 40 INSTAGRAM POSTS */}
+      {!isFetching && !isLoading && posts && posts.length > 0 && (
+        <motion.div
+          className={`grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container`}
+          initial={{ maxHeight: 700 }}
+          animate={{ maxHeight: seeMore ? 20000 : 700 }}
+          transition={{
+            duration: 3,
+            ease: easeInOut,
+          }}
+        >
+          {posts.map((post: Post, index: number) => {
             return (
-              <div key={index}>
+              <div key={index} className="gallery-item">
                 <Link
                   href={post.permalink}
                   target="_blank"
@@ -53,72 +77,51 @@ const RealisationsPage = ({ data, error }: PostsProps) => {
                 >
                   <img
                     src={post.media_url}
-                    /* TODO POUR LE ALT VERIFIER QU'IL Y AIT UN CAPTION SINON METRE UN ALT PAR DEFAUT */
-                    alt={post.caption}
+                    alt={
+                      post.caption ||
+                      "Photo d'un tatouage au style réaliste en noir et gris"
+                    }
                     className="aspect-square rounded-lg hover:shadow-full-main transition-all duration-300 ease-in-out"
                   />
                 </Link>
               </div>
             );
           })}
-        </div>
-      ) : (
-        <PostLoader numberOfPosts={12} />
+          <motion.div
+            className={`inset-x-0 bottom-0 flex justify-center pt-44 pb-10 bg-gradient-to-t from-bgDark absolute xs:pt-56 xs:pb-20 sm:pt-52 md:pt-60 md:pb-24 lg:pt-56 lg:pb-20 xl:pt-48`}
+            initial={{ opacity: 1, pointerEvents: "auto" }}
+            animate={{
+              opacity: seeMore ? 0 : 1,
+              pointerEvents: seeMore ? "none" : "auto", // DISABLES CLICKS WHEN OPACITY IS 0
+            }}
+            transition={{
+              duration: 3,
+              ease: easeInOut,
+            }}
+          >
+            <Button onClick={handleSeeMore}>Voir plus</Button>
+          </motion.div>
+        </motion.div>
       )}
-      <div className="w-max mx-auto mb-20">
-        <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
-          Voir tous mes tatouages
-        </LinkButton>
-      </div>
+      <motion.div
+        className={`w-max mx-auto mb-20`}
+        initial={{ marginTop: 150 }}
+        animate={{
+          marginTop: seeMore ? 80 : 150,
+        }}
+        transition={{
+          duration: 3,
+          ease: easeInOut,
+        }}
+      >
+        {!apiError && (
+          <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
+            Voir tous mes tatouages
+          </LinkButton>
+        )}
+      </motion.div>
     </>
   );
 };
 
 export default RealisationsPage;
-
-export const getServerSideProps: GetServerSideProps<PostsProps> = async () => {
-  // NUMBER OF POSTS LIMIT
-  const limit = 40;
-
-  /* TODO FAIRE EN SORTE DE FILTRER TOUT CE QUI N'EST PAS UNE VIDEO
-    ET FAIRE EN SORTE D'EN AVOIR TOUJOURS 40
-    TODO UTILISER RTK QUERY POUR FAIRE CA AVEC UN CACHE DE 24h minimum ou invalider le cache si les données changes
-    VOIR SI JE FAIS AUSSI UN FILTRE SUR LES CAPTIONS QUI NE PARLE QUE DES TATTOOS
-  */
-
-  // Construire l'URL en fonction du curseur disponible
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&limit=${limit}&access_token=${process.env.INSTAGRAM_TOKEN}`;
-
-  let data = [];
-  let errorAPI = false;
-
-  try {
-    const response = await fetch(url);
-
-    if (response.ok) {
-      const result = await response.json();
-
-      if (result && result.data) {
-        data = result.data;
-      } else {
-        console.error("Données invalides reçues de l'API Instagram.");
-        errorAPI = true;
-      }
-    } else {
-      console.error(
-        `Erreur API : ${response.statusText} (code ${response.status})`
-      );
-      errorAPI = true;
-    }
-  } catch (error) {
-    console.error("Erreur lors du call API : ", error);
-    errorAPI = true;
-  }
-
-  return {
-    props: {
-      data,
-      error: errorAPI,
-    },
-  };
-};
