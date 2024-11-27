@@ -11,9 +11,8 @@ export const seoConfig = {
     description:
       "Galerie des réalisations du Mowgli Tattoo Studio. Des tatouages réalistes en noir et gris, empreints d'art et de détails minutieux.",
   },
-  informations: {
-    title:
-      "Informations - Mowgli Tattoo Studio | Rendez-vous et soins tatouages",
+  rdvEtSoins: {
+    title: "Rendez-vous et soins tatouages - Mowgli Tattoo Studio",
     description:
       "Prenez rendez-vous au Mowgli Tattoo Studio et apprenez à soigner votre tatouage réaliste noir et gris pour une cicatrisation parfaite et durable.",
   },

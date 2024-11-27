@@ -6,9 +6,9 @@ export const navLinks = [
     isActive: false,
   },
   {
-    name: "informations",
-    label: "Informations",
-    url: "/informations",
+    name: "rdv-et-soins",
+    label: "RDV et Soins",
+    url: "/rdv-et-soins",
     isActive: false,
   },
   { name: "hobbies", label: "hobbies", url: "/hobbies", isActive: false },

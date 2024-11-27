@@ -228,7 +228,7 @@ const Home = () => {
           <h4 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             Quel sera votre prochain tattoo ?
           </h4>
-          <LinkButton url="informations" className="w-max mx-auto">
+          <LinkButton url="rdv-et-soins" className="w-max mx-auto">
             Me contacter
           </LinkButton>
         </div>
