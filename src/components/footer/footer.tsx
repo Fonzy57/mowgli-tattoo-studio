@@ -86,7 +86,7 @@ const Footer = () => {
   const listStyle = "mt-4 text-text flex flex-col gap-y-3";
 
   return (
-    <div className="bg-main pt-14 pb-6 px-5 sm:pt-20">
+    <div className="bg-main pt-14 pb-6 px-5 sm:pt-20 lg:pt-8">
       <div className="flex flex-col justify-center items-center mx-auto lg:flex-row lg:justify-between lg:w-[1325px] xl:w-[1560px]">
         <Image
           src="/images/the-mowgli-studio-logo-brown.svg"
@@ -178,7 +178,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-text text-xs text-center mt-20">
+      <p className="text-text text-xs text-center mt-20 lg:mt-14 xl:mt-16">
         © Mowgli Tattoo Studio {year} - Tous droits réservés | v{version}
       </p>
       <p className="text-text text-xs text-center mt-2">
@@ -192,6 +192,12 @@ const Footer = () => {
           Stéphane Scheeres
         </Link>
       </p>
+      <Link
+        href={"/mentions-legales"}
+        className="text-text text-xs text-center mt-2 block mx-auto underline hover:no-underline hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+      >
+        Mentions légales
+      </Link>
     </div>
   );
 };
