@@ -37,19 +37,37 @@ const RealisationsPage = () => {
     setSeeMore(true);
   };
 
-  /* TODO FAIRE UNE SNACK BAR S'IL Y A UNE ERREUR LORS DU CHARGEMENT */
   return (
     <>
       <Seo page="realisations" />
       <h1 className="font-cera text-center font-semibold text-main pt-16 text-4xl sm:pt-20 sm:text-5xl md:text-6xl lg:text-8xl">
         Mes derniers tatouages
       </h1>
-      <p className="px-5 text-text-light text-justify w-full mx-auto mt-8 sm:text-lg sm:mt-10 md:px-0 md:text-left md:w-[700px] lg:mt-12">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-        similique in beatae perspiciatis atque dicta rem praesentium, eos
-        inventore reiciendis commodi debitis, odio animi, nesciunt enim possimus
-        quam cupiditate molestias.
-      </p>
+      <div className="px-5 flex flex-col gap-y-8 text-text-light text-justify w-full mx-auto mt-8 sm:text-lg sm:mt-10 md:px-0 md:text-left md:w-[700px] lg:mt-12">
+        <p>
+          Bienvenue dans mon univers du{" "}
+          <strong className="font-normal">
+            tatouage réaliste en noir et gris
+          </strong>
+          . Chaque tatouage que je réalise est pensé pour capturer l’émotion, le
+          détail et la profondeur qui rendent chaque pièce unique. J’aime
+          travailler sur des projets personnalisés qui racontent votre histoire,
+          qu’il s’agisse d’un portrait, d’une scène ou d’un motif symbolique.
+          Mon style se concentre sur le contraste et la finesse des nuances de
+          gris, pour un rendu à la fois subtil et puissant.
+        </p>
+        <p>
+          Basé à Metz, je suis fier de proposer des{" "}
+          <strong className="font-normal">tatouages personnalisés</strong> à
+          celles et ceux qui recherchent un artiste spécialisé en tatouage
+          réaliste.
+        </p>
+        <p>
+          Explorez mes derniers tatouages et laissez-vous inspirer. Chaque
+          réalisation est une aventure artistique que je partage avec vous, pour
+          transformer vos idées en une œuvre intemporelle.
+        </p>
+      </div>
       {/* LOADER WHILE FETCHING INSTAGRAM POSTS */}
       {(isFetching || isLoading) && <PostLoader numberOfPosts={8} />}
 
