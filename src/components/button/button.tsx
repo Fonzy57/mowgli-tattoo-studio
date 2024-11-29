@@ -69,7 +69,7 @@ export const Button = ({
       disabled={disabled}
     >
       {children}
-      {iconName && <CustomIcon name={iconName} size={iconSize} />}
+      {iconName ? <CustomIcon name={iconName} size={iconSize} /> : <p>🍌</p>}
     </button>
   );
 };
