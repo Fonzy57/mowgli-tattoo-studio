@@ -75,7 +75,7 @@ const RdvEtSoins = () => {
       <Seo page="rdvEtSoins" />
 
       {/* APPOINTMENT SECTIONS */}
-      <section className="px-5 pt-16 w-full sm:pt-20 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
+      <section className="px-5 pt-10 w-full sm:pt-14 md:p-0 md:pt-20">
         <h1 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Prendre RDV
         </h1>
