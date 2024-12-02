@@ -45,6 +45,7 @@ const Hobbies = () => {
           height={1000}
           alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
           className="mt-4 rounded-lg shadow-full-main sm:w-1/2 md:mt-8 xl:w-1/3"
+          priority
         />
       </section>
 
