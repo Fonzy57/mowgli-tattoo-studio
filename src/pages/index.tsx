@@ -12,6 +12,7 @@ import { CustomIcon } from "@/components/icons/icon";
 import { SkillCard } from "@/components/card/skill-card";
 import PostHomeLoader from "@/components/skeleton-loader/gallery-home-skeleton";
 import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
+import TextLink from "@/components/link/text-link";
 
 // ENUM & TYPING
 import { IconName } from "@/components/icons/icon.enum";
@@ -22,6 +23,7 @@ import { handleClickAnchor } from "@/utils/scroll-to";
 
 // CONFIG
 import {
+  socialsLinksGrigri,
   socialsLinksMowgli,
   socialsLinksNewbyPics,
 } from "@/config/socials-links";
@@ -77,25 +79,42 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
       <section
-        className="flex justify-center items-center flex-col-reverse px-5 md:flex-row md:gap-x-10 md:py-28 lg:w-[1325px] lg:px-0 lg:mx-auto lg:gap-x-28 xl:w-[1560px] xl:gap-x-0 xl:justify-between xl:py-48"
+        className="flex justify-center items-center flex-col-reverse px-5 md:flex-row md:gap-x-10 md:py-28 lg:w-[1325px] lg:px-0 lg:mx-auto lg:gap-x-16 xl:w-[1560px] xl:gap-x-0 xl:justify-between xl:py-48"
         id="about"
       >
-        <div className="w-full mt-10 sm:mt-20 md:w-1/2 md:mt-0 lg:w-[750px]">
+        <div className="w-full mt-10 sm:mt-20 md:w-1/2 md:mt-0 xl:w-[750px]">
           <h2 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
             A propos de moi
           </h2>
-          <div className="flex flex-col gap-y-4 mt-6 text-text-light text-justify sm:gap-y-6 sm:mt-10 md:text-left lg:mt-14 xl:mt-20 lg:text-lg">
+          <div className="flex flex-col gap-y-4 mt-6 text-text-light text-justify sm:gap-y-6 sm:mt-10 md:text-left lg:mt-14 lg:text-lg xl:mt-20 xl:w-[700px] xl:mx-auto">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam,
-              optio. Aperiam, non quae provident modi qui corporis! Est,
-              accusantium commodi numquam culpa, dicta exercitationem
-              necessitatibus cumque, velit atque eum quibusdam?
+              Depuis l’âge de 16 ans, le tatouage est bien plus qu’une passion
+              pour moi : c’est une véritable vocation. Mon parcours artistique a
+              commencé à l’université de Metz, où j’ai obtenu une licence d’art
+              en trois ans, avant de rejoindre les Beaux-Arts en équivalence
+              pour décrocher mon Diplôme National d’Art en deux ans.
             </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam,
-              optio. Aperiam, non quae provident modi qui corporis! Est,
-              accusantium commodi numquam culpa, dicta exercitationem
-              necessitatibus cumque, velit atque eum quibusdam?
+              C’est au sein du studio{" "}
+              <TextLink
+                href={"https://www.instagram.com/realistink_tattoo_carling/"}
+                blank={true}
+              >
+                Réalist’Ink
+              </TextLink>{" "}
+              que j’ai réellement affiné mon style et mes compétences. Pendant
+              sept années, j’y ai appris l’exigence, la précision et la
+              créativité qui font aujourd’hui partie intégrante de ma démarche.
+            </p>
+            <p>
+              En 2021, j’ai décidé de franchir un nouveau cap en ouvrant mon
+              propre studio. Depuis, je vis pleinement cette aventure artistique
+              et humaine, en partageant cet espace de création avec ma collègue
+              talentueuse,{" "}
+              <TextLink href={socialsLinksGrigri.site} blank={true}>
+                Le Grigri
+              </TextLink>
+              , depuis un an et demi.
             </p>
           </div>
           <div className="mx-auto w-max mt-10 lg:mt-14 xl:mt-20">
@@ -242,7 +261,6 @@ const Home = () => {
           width={250}
           height={250}
           alt="Portrait noir et blanc du photographe Newby.pics"
-          /* TODO TEST DE LA BORDURE, PEUT ETRE BOX SHADOW A LA PLACE */
           className="rounded-full border border-main"
         />
         <div className="w-full md:w-[550px] lg:w-[750px]">

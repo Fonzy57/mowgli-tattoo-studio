@@ -1,10 +1,10 @@
 // NEXT
 import Image from "next/image";
-import Link from "next/link";
 
 // COMPONENTS
 import CareCard from "@/components/card/care-card";
 import Seo from "@/components/seo/seo";
+import TextLink from "@/components/link/text-link";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
@@ -75,7 +75,7 @@ const RdvEtSoins = () => {
       <Seo page="rdvEtSoins" />
 
       {/* APPOINTMENT SECTIONS */}
-      <section className="px-5 pt-16 w-full sm:pt-20 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
+      <section className="px-5 pt-10 w-full sm:pt-14 md:p-0 md:pt-20">
         <h1 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Prendre RDV
         </h1>
@@ -89,14 +89,9 @@ const RdvEtSoins = () => {
               <p>
                 Pour planifier votre prochaine séance de tatouage, vous pouvez
                 me contacter directement via{" "}
-                <Link
-                  href={socialsLinksMowgli.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-main font-semibold hover:text-main-hover active:underline transition duration-300 ease-in-out"
-                >
+                <TextLink href={socialsLinksMowgli.instagram} blank={true}>
                   DM sur Instagram
-                </Link>{" "}
+                </TextLink>{" "}
                 ou par <span className="text-main font-semibold">email</span>.
               </p>
               <p>

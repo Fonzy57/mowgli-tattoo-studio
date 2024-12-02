@@ -9,6 +9,7 @@ import { IconName } from "../icons/icon.enum";
 // CONFIG
 import { version } from "@/config/version";
 import {
+  socialsLinksGrigri,
   socialsLinksMowgli,
   socialsLinksNewbyPics,
 } from "@/config/socials-links";
@@ -53,12 +54,12 @@ const other = [
       {
         name: "instagram",
         label: <CustomIcon name={IconName.Instagram} size={20} />,
-        url: "https://www.instagram.com/legrigritattoo/",
+        url: socialsLinksGrigri.instagram,
       },
       {
         name: "wp",
         label: <CustomIcon name={IconName.Wordpress} size={20} />,
-        url: "https://legrigritattoofr.wordpress.com/",
+        url: socialsLinksGrigri.site,
       },
     ],
   },

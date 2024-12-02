@@ -40,7 +40,7 @@ const RealisationsPage = () => {
   return (
     <>
       <Seo page="realisations" />
-      <h1 className="font-cera text-center font-semibold text-main pt-16 text-4xl sm:pt-20 sm:text-5xl md:text-6xl lg:text-8xl">
+      <h1 className="font-cera text-center font-semibold text-main pt-10 text-4xl sm:pt-14 sm:text-5xl md:text-6xl lg:pt-20 lg:text-8xl">
         Mes derniers tatouages
       </h1>
       <div className="px-5 flex flex-col gap-y-8 text-text-light text-justify w-full mx-auto mt-8 sm:text-lg sm:mt-10 sm:gap-y-4 md:px-0 md:text-left md:w-[700px] lg:mt-12 lg:gap-y-3">
