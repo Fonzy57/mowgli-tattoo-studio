@@ -6,7 +6,8 @@ Ce projet est un site web créé pour **Mowgli Tattoo Studio**, un studio de tat
 
 ---
 
-## Table des matières
+<details>
+<summary>Table des matières</summary>
 
 - [Technologies utilisées](#technologies-utilisées)
 - [Fonctionnalités principales](#fonctionnalités-principales)
@@ -15,6 +16,7 @@ Ce projet est un site web créé pour **Mowgli Tattoo Studio**, un studio de tat
   - [Étapes d'installation](#étapes-dinstallation)
 - [Ressources utiles](#ressources-utiles)
 - [Copyright](#copyright)
+</details>
 
 ---
 
