@@ -27,6 +27,11 @@ export const seoConfig = {
     description:
       "Consultez les mentions légales du site Mowgli Tattoo Studio. Retrouvez les informations sur l'éditeur, l'hébergement et la protection des contenus artistiques.",
   },
+  maintenance: {
+    title: "Site en maintenance - Mowgli Tattoo Studio",
+    description:
+      "Le site de Mowgli Tattoo Studio est actuellement en maintenance. Nous travaillons à vous offrir une meilleure expérience. Merci de votre patience et à très bientôt.",
+  },
   "404": {
     title: "Erreur 404 - Mowgli Tattoo Studio | Page introuvable",
     description:
