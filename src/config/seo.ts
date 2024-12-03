@@ -1,3 +1,26 @@
+import { socialsLinksMowgli } from "./socials-links";
+
+export const seoStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "TattooParlor",
+  name: "Mowgli Tattoo Studio",
+  description:
+    "Studio de tatouage spécialisé dans les tatouages réalistes en noir et gris.",
+  /* TODO VOIR SI L'IMAGE FONCTIONNE BIEN */
+  image: "https://www.mowglitattoo.com/images/mowgli-tattoo-studio-logo.png",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2a Rue des Pépinières",
+    addressLocality: "Longeville-lès-Metz",
+    postalCode: "57050",
+    addressCountry: "FR",
+  },
+  /* TODO CHANGER L'URL QUAND J'AURAIS LE NOM DE DOMAINE */
+  url: "https://www.mowglitattoo.com",
+  sameAs: [socialsLinksMowgli.instagram, socialsLinksMowgli.facebook],
+  openingHours: ["Tu-Sa 09:00-14:00"],
+};
+
 export const seoConfig = {
   home: {
     title:
