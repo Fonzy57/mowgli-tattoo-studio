@@ -6,7 +6,8 @@ This project is a website built for **Mowgli Tattoo Studio**, a tattoo studio sp
 
 ---
 
-## Table of Contents
+<details>
+<summary><h3>Table of Contents</h3></summary>
 
 - [Technologies Used](#technologies-used)
 - [Key Features](#key-features)
@@ -15,6 +16,7 @@ This project is a website built for **Mowgli Tattoo Studio**, a tattoo studio sp
   - [Installation Steps](#installation-steps)
 - [Useful Resources](#useful-resources)
 - [Copyright](#copyright)
+</details>
 
 ---
 
