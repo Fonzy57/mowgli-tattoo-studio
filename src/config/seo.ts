@@ -16,7 +16,7 @@ export const seoStructuredData = {
     addressCountry: "FR",
   },
   /* TODO CHANGER L'URL QUAND J'AURAIS LE NOM DE DOMAINE */
-  url: "https://www.mowglitattoo.com",
+  url: "https://www.mowgli-tattoo-studio.fr",
   sameAs: [socialsLinksMowgli.instagram, socialsLinksMowgli.facebook],
   openingHours: ["Tu-Sa 09:00-14:00"],
 };
