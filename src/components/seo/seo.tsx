@@ -2,7 +2,7 @@
 import Head from "next/head";
 
 // CONFIG
-import { seoConfig } from "@/config/seo";
+import { seoConfig, seoStructuredData } from "@/config/seo";
 import { useRouter } from "next/router";
 
 // TYPING
@@ -27,6 +27,10 @@ const Seo = ({ page }: SeoProps) => {
       <title>{seoTitle}</title>
       <meta name="description" content={seoDescription} />
       <link rel="canonical" href={currentUrl} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seoStructuredData) }}
+      />
     </Head>
   );
 };

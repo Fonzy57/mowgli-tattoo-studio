@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "@/store/store";
 
 // COMPONENTS
+import Maintenance from "@/components/maintenance/maintenance";
 import Layout from "@/components/layout/layout";
 
 // STYLE
@@ -52,6 +53,16 @@ const cera = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const isMaintenanceMode = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
+
+  if (isMaintenanceMode) {
+    return (
+      <Maintenance
+        className={`${fontInter.variable} ${cera.variable} font-inter`}
+      />
+    );
+  }
+
   return (
     <Provider store={store}>
       <main className={`${fontInter.variable} ${cera.variable} font-inter`}>

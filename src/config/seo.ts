@@ -1,3 +1,26 @@
+import { socialsLinksMowgli } from "./socials-links";
+
+export const seoStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "TattooParlor",
+  name: "Mowgli Tattoo Studio",
+  description:
+    "Studio de tatouage spécialisé dans les tatouages réalistes en noir et gris.",
+  /* TODO VOIR SI L'IMAGE FONCTIONNE BIEN */
+  image: "https://www.mowglitattoo.com/images/mowgli-tattoo-studio-logo.png",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2a Rue des Pépinières",
+    addressLocality: "Longeville-lès-Metz",
+    postalCode: "57050",
+    addressCountry: "FR",
+  },
+  /* TODO CHANGER L'URL QUAND J'AURAIS LE NOM DE DOMAINE */
+  url: "https://www.mowglitattoo.com",
+  sameAs: [socialsLinksMowgli.instagram, socialsLinksMowgli.facebook],
+  openingHours: ["Tu-Sa 09:00-14:00"],
+};
+
 export const seoConfig = {
   home: {
     title:
@@ -26,6 +49,11 @@ export const seoConfig = {
       "Mentions légales - Mowgli Tattoo Studio | Informations et conformité",
     description:
       "Consultez les mentions légales du site Mowgli Tattoo Studio. Retrouvez les informations sur l'éditeur, l'hébergement et la protection des contenus artistiques.",
+  },
+  maintenance: {
+    title: "Site en maintenance - Mowgli Tattoo Studio",
+    description:
+      "Le site de Mowgli Tattoo Studio est actuellement en maintenance. Nous travaillons à vous offrir une meilleure expérience. Merci de votre patience et à très bientôt.",
   },
   "404": {
     title: "Erreur 404 - Mowgli Tattoo Studio | Page introuvable",

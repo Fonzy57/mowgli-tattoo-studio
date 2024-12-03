@@ -94,6 +94,8 @@ const RealisationsPage = () => {
                   rel="noopener noreferrer"
                 >
                   <img
+                    width={"auto"}
+                    height={"auto"}
                     src={post.media_url}
                     alt={
                       post.caption ||

@@ -1,0 +1,10 @@
+# Robots.txt pour Mowgli Tattoo Studio
+User-agent: *
+Disallow: /maintenance
+Disallow: /api/
+Allow: /
+
+# Indique l'emplacement de votre sitemap
+# TODO CHANGER LE SITEMAP QUAND J'AURAIS LE NOM DE DOMAINE
+# TODO AJOUTER SITEMAP
+Sitemap: https://www.mowglitattoo.com/sitemap.xml
