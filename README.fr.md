@@ -1,4 +1,4 @@
-# Mowgli Tattoo Studio
+# Mowgli Tattoo Studio 🍌
 
 [🇬🇧 Read this document in English](./README.md)
 
