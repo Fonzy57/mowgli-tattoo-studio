@@ -17,6 +17,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v1.1.0] - 2024-12-04
+
+### Changed
+
+- **Removed RTK Query**: Replaced the usage of RTK Query for fetching Instagram posts with `getStaticProps` to generate static pages (for github pages).
+- **Static Export**: Adapted the project for full static export using `next export`, making it compatible with GitHub Pages.
+- **Enhanced Security**: Ensured the Instagram token is securely managed and used only during build time.
+
+### Fixed
+
+- **Image URLs**: Fixed issues with images not displaying correctly by adjusting the `basePath` and `assetPrefix` configurations in `next.config.js`.
+
+---
+
 ## [v1.0.0] - 2024-12-03
 
 - **Portfolio Gallery**: Displays the latest tattoos created by the studio.
