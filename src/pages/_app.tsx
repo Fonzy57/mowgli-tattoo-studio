@@ -3,10 +3,6 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 
-// REDUX
-import { Provider } from "react-redux";
-import { store } from "@/store/store";
-
 // COMPONENTS
 import Maintenance from "@/components/maintenance/maintenance";
 import Layout from "@/components/layout/layout";
@@ -64,16 +60,14 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <Provider store={store}>
-      <main className={`${fontInter.variable} ${cera.variable} font-inter`}>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta charSet="UTF-8" />
-        </Head>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
-    </Provider>
+    <main className={`${fontInter.variable} ${cera.variable} font-inter`}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </main>
   );
 }
