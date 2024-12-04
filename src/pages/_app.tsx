@@ -60,14 +60,17 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <main className={`${fontInter.variable} ${cera.variable} font-inter`}>
+    <div className={`${fontInter.variable} ${cera.variable} font-inter`}>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
         <meta charSet="UTF-8" />
       </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </main>
+    </div>
   );
 }
