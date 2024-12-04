@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO METTRE QUE AU DESSUS DE 1440PX */
 /* SPECIAL STYLE FOR HOME GALLERY */
 .gallery-item {
   transition: opacity 0.3s ease-in-out;
@@ -11,7 +12,8 @@
   opacity: 0.4;
 }
 
-/* ADD PADDING TO COVER THE NEW MOBILE SAFE AREA */
-.header-mobile-safe-are {
-  padding-top: env(safe-area-inset-top);
+/* TODO TEST MOBILE SUPPRIMER SI PAS BON */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
