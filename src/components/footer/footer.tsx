@@ -1,10 +1,10 @@
 // REACT & NEXT
-import Image from "next/image";
 import Link from "next/link";
 
 // COMPONENTS
 import { CustomIcon } from "../icons/icon";
 import { IconName } from "../icons/icon.enum";
+import BaseImage from "../image/base-image";
 
 // CONFIG
 import { version } from "@/config/version";
@@ -89,7 +89,7 @@ const Footer = () => {
   return (
     <div className="bg-main pt-14 pb-6 px-5 sm:pt-20 lg:pt-8">
       <div className="flex flex-col justify-center items-center mx-auto lg:flex-row lg:justify-between lg:w-[1325px] xl:w-[1560px]">
-        <Image
+        <BaseImage
           src="/images/the-mowgli-studio-logo-brown.svg"
           alt="Logo de The Mowgli Studio"
           width={286}

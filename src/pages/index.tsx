@@ -13,6 +13,7 @@ import { SkillCard } from "@/components/card/skill-card";
 import PostHomeLoader from "@/components/skeleton-loader/gallery-home-skeleton";
 import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
 import TextLink from "@/components/link/text-link";
+import BaseImage from "@/components/image/base-image";
 
 // ENUM & TYPING
 import { IconName } from "@/components/icons/icon.enum";
@@ -57,10 +58,6 @@ const Home = () => {
     isFetching,
     isLoading,
   } = useGetPostsQuery();
-
-  /* TODO SUPPRIMER APRES LES TESTS */
-  const isGithubPages = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
-  console.log("isGithubPages PAGE : ", isGithubPages);
 
   return (
     <>
@@ -126,7 +123,7 @@ const Home = () => {
           </div>
         </div>
         <div className="relative sm:w-1/2 lg:w-auto">
-          <Image
+          <BaseImage
             src="/pictures/pierre-emmanuel-bauer-hero.webp"
             alt="Photo en noir et blanc du tatoueur Mowgli"
             width={700}
@@ -262,7 +259,7 @@ const Home = () => {
       {/* PHOTOGRAPH SECTION */}
       {/* TODO VOIR SI FRED VEUT SON NOM OU BIEN SON PSEUDO INSTA POUR LA SECTION */}
       <section className="flex items-center justify-center flex-col-reverse px-5 py-14 gap-16 md:px-0 md:flex-row md:py-28 xl:pt-40 xl:pb-48">
-        <Image
+        <BaseImage
           src="/pictures/newby.pics.jpg"
           width={250}
           height={250}

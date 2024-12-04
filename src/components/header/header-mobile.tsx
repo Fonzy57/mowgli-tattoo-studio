@@ -1,8 +1,10 @@
 // REACT & NEXT
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+
+// COMPONENTS
+import BaseImage from "../image/base-image";
 
 // CONFIG
 import { navLinks } from "@/config/nav";
@@ -60,7 +62,7 @@ const HeaderMobile = () => {
       >
         <div>
           <Link href={"/"}>
-            <Image
+            <BaseImage
               src={"/images/mowgli-tattoo-studio-logo.png"}
               width={50}
               height={50}

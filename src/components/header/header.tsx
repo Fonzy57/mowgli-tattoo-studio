@@ -1,8 +1,10 @@
 // REACT & NEXT
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+
+// COMPONENTS
+import BaseImage from "../image/base-image";
 
 // CONFIG
 import { navLinks } from "@/config/nav";
@@ -53,7 +55,7 @@ const Header = () => {
         className={`flex items-center justify-between w-[1325px] mx-auto xl:w-[1560px] transition duration-300 ease-in-out`}
       >
         <Link href={"/"} scroll={false}>
-          <Image
+          <BaseImage
             src={"/images/mowgli-tattoo-studio-logo.png"}
             width={70}
             height={70}

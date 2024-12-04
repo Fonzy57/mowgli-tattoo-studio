@@ -1,9 +1,7 @@
-// NEXT
-import Image from "next/image";
-
 // COMPONENTS
 import Seo from "@/components/seo/seo";
 import TextLink from "@/components/link/text-link";
+import BaseImage from "@/components/image/base-image";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
@@ -39,7 +37,7 @@ const Hobbies = () => {
             Voici Boo et Frites-Mayo.
           </p>
         </div>
-        <Image
+        <BaseImage
           src={"/pictures/hobbies/Boo-et-Frites-Mayo.webp"}
           width={750}
           height={1000}
@@ -61,14 +59,14 @@ const Hobbies = () => {
           .
         </p>
         <div className="flex flex-col items-center mt-8 gap-y-4 sm:w-[700px] sm:mx-auto sm:flex-row sm:gap-x-4 sm:justify-center md:w-[800px] md:mt-10 lg:w-[1000px] lg:items-stretch lg:mt-14 lg:gap-x-10 xl:w-[1200px] xl:mt-20">
-          <Image
+          <BaseImage
             src={"/pictures/hobbies/La-Virgule-peinture-cadre.webp"}
             width={750}
             height={750}
             alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
-          <Image
+          <BaseImage
             src={"/pictures/hobbies/La-Virgule-peinture-noire.webp"}
             width={750}
             height={750}
@@ -87,14 +85,14 @@ const Hobbies = () => {
           deux exemples, une planche Star Wars et une Goldorak.
         </p>
         <div className="flex flex-col items-center mt-8 gap-y-4 sm:w-[700px] sm:mx-auto sm:flex-row sm:gap-x-4 sm:justify-center md:w-[800px] md:mt-10 lg:w-[1000px] lg:mt-14 lg:gap-x-10 xl:w-[1200px] xl:mt-20">
-          <Image
+          <BaseImage
             src={"/pictures/hobbies/mowgli-skate-star-wars.webp"}
             width={750}
             height={750}
             alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
-          <Image
+          <BaseImage
             src={"/pictures/hobbies/mowgli-skate-goldorak.webp"}
             width={750}
             height={750}
