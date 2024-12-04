@@ -1,19 +1,20 @@
+// USE TO CHECK IF IS DEPLOYING ON GITHUB PAGES
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-    /* ------------------------------------------------- */
-    /* TODO REMOVE WHEN DEPLOY ON OTHER THAN GITHUB PAGE */
-    'postcss-url': {
-      url: ({ url }) => {
-        const isProd = process.env.NODE_ENV === 'production';
-        const basePath = isProd ? '/mowgli-tattoo-studio' : '';
-        if (url.startsWith('/')) {
-          return `${basePath}${url}`;
-        }
-        return url;
+    ...(isGithubPages && {
+      'postcss-url': {
+        url: ({ url }) => {
+          const basePath = '/mowgli-tattoo-studio';
+          if (url.startsWith('/')) {
+            return `${basePath}${url}`;
+          }
+          return url;
+        },
       },
-    },
-    /* ------------------------------------------------- */
+    }),
   },
 };

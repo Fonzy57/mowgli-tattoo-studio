@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV == "production";
+// USE TO CHECK IF IS DEPLOYING ON GITHUB PAGES
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
 const nextConfig = {
-  /* ------------------------------------------------- */
-  /* TODO REMOVE WHEN DEPLOY ON OTHER THAN GITHUB PAGE */
-  basePath: isProd ? '/mowgli-tattoo-studio' : '',
-  assetPrefix: isProd ? '/mowgli-tattoo-studio/' : '',
-  /* ------------------------------------------------- */
+  basePath: isGithubPages ? '/mowgli-tattoo-studio' : '',
+  assetPrefix: isGithubPages ? '/mowgli-tattoo-studio/' : '',
   reactStrictMode: true,
 };
 
