@@ -58,6 +58,10 @@ const Home = () => {
     isLoading,
   } = useGetPostsQuery();
 
+  /* TODO SUPPRIMER APRES LES TESTS */
+  const isGithubPages = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
+  console.log("isGithubPages PAGE : ", isGithubPages);
+
   return (
     <>
       <Seo page="home" />
