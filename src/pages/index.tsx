@@ -2,9 +2,6 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
 
-// REDUX
-import { useGetPostsQuery } from "@/store/apiSlice";
-
 // COMPONENTS
 import Seo from "@/components/seo/seo";
 import { LinkButton } from "@/components/button/link-button";

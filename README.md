@@ -26,7 +26,6 @@ This project leverages the following technologies:
 
 - **[Next.js](https://nextjs.org/)** (v13.5.7): A React framework for server-side rendering (SSR) and modern web development features.
 - **[TypeScript](https://www.typescriptlang.org/)**: Adds static typing for a more robust and maintainable codebase.
-- **[RTK Query](https://redux-toolkit.js.org/introduction/getting-started)**: Manages API calls and client-side state efficiently.
 - **[Instagram Graph API](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)**: Dynamically fetches the artist’s Instagram posts.
 - **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for custom and responsive design.
 - **[Framer Motion](https://motion.dev/docs)**: Used to implement smooth animations and transitions across the website.
@@ -117,7 +116,6 @@ Here are its main features:
 ## Useful Resources
 
 - [Next.js Documentation](https://nextjs.org/docs/13/getting-started)
-- [Redux Toolkit Query Documentation](https://redux-toolkit.js.org/rtk-query/overview)
 - [Instagram Graph API Documentation](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
 - [Framer Motion Documentation](https://motion.dev/docs)

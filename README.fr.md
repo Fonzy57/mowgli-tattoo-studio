@@ -27,7 +27,6 @@ Ce projet a été développé avec les technologies suivantes :
 - **[Next.js](https://nextjs.org/)** (v13.5.7) : Framework React pour le rendu côté serveur (SSR) et les fonctionnalités modernes.
 - **[TypeScript](https://www.typescriptlang.org/)** : Ajout de typage statique pour un code plus robuste et maintenable.
 - **[Tailwind CSS](https://tailwindcss.com/)** : Framework CSS utilitaire pour un design personnalisé et réactif.
-- **[RTK Query](https://redux-toolkit.js.org/introduction/getting-started)** : Gestion des appels API et des états côté client.
 - **[Instagram Graph API](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)** : Pour récupérer dynamiquement les publications Instagram du tatoueur.
 - **[Framer Motion](https://motion.dev/docs)**: Utilisé pour créer des animations fluides et des transitions élégantes sur le site.
 
@@ -117,7 +116,6 @@ Voici ses principales fonctionnalités :
 ## Ressources utiles
 
 - [Next.js Documentation](https://nextjs.org/docs/13/getting-started)
-- [Redux Toolkit Query Documentation](https://redux-toolkit.js.org/rtk-query/overview)
 - [Instagram Graph API Documentation](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
 - [Framer Motion Documentation](https://motion.dev/docs)
