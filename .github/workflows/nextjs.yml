@@ -1,9 +1,9 @@
 name: Deploy Mowgli Tattoo Studio site to Pages
 
 on:
-  # Déclenche le workflow uniquement sur pushs vers la branche "gh-page"
+  # Déclenche le workflow sur les pushs vers la branche "main"
   push:
-    branches: ["gh-page"]
+    branches: ["main"]
 
   # Permet de lancer manuellement le workflow depuis l'interface GitHub Actions
   workflow_dispatch:
@@ -61,9 +61,7 @@ jobs:
         with:
           path: |
             .next/cache
-          # Génère une nouvelle clé de cache si les fichiers changent
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # Si le cache est absent, restaure depuis une clé précédente
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
@@ -92,5 +90,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          branch: 'gh-page' # Spécifie que la branche cible pour le déploiement est "gh-page"
