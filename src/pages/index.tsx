@@ -1,6 +1,6 @@
 // REACT & NEXT
-import Image from "next/image";
 import Link from "next/link";
+import { GetStaticProps } from "next";
 
 // REDUX
 import { useGetPostsQuery } from "@/store/apiSlice";
@@ -10,7 +10,6 @@ import Seo from "@/components/seo/seo";
 import { LinkButton } from "@/components/button/link-button";
 import { CustomIcon } from "@/components/icons/icon";
 import { SkillCard } from "@/components/card/skill-card";
-import PostHomeLoader from "@/components/skeleton-loader/gallery-home-skeleton";
 import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
 import TextLink from "@/components/link/text-link";
 import BaseImage from "@/components/image/base-image";
@@ -19,8 +18,14 @@ import BaseImage from "@/components/image/base-image";
 import { IconName } from "@/components/icons/icon.enum";
 import { Post } from "@/dto/posts.dto";
 
+interface HomeProps {
+  posts: Post[] | [];
+  error: boolean;
+}
+
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
+import { fetchInstagramPosts } from "@/utils/fetch-instagram-posts";
 
 // CONFIG
 import {
@@ -51,14 +56,7 @@ const skills = [
   },
 ];
 
-const Home = () => {
-  const {
-    data: posts,
-    error: apiError,
-    isFetching,
-    isLoading,
-  } = useGetPostsQuery();
-
+const Home = ({ posts, error }: HomeProps) => {
   return (
     <>
       <Seo page="home" />
@@ -199,14 +197,12 @@ const Home = () => {
         <h2 className="font-cera text-center text-4xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Derniers tattoos
         </h2>
-        {/* LOADER WHILE FETCHING INSTAGRAM POSTS */}
-        {(isFetching || isLoading) && <PostHomeLoader />}
 
         {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
-        {apiError && <ApiErrorGalleryDisplay />}
+        {error && <ApiErrorGalleryDisplay />}
 
         {/* DISPLAYING LAST 4 INSTAGRAM POSTS */}
-        {!isFetching && !isLoading && posts && posts.length > 0 && (
+        {posts.length > 0 && (
           <div className="grid grid-cols-1 gap-5 max-w-[1350px] mx-auto mt-20 sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container">
             {posts.slice(0, 4).map((post: Post, index: number) => {
               return (
@@ -232,7 +228,7 @@ const Home = () => {
             })}
           </div>
         )}
-        {!apiError && (
+        {!error && (
           <div className="mx-auto w-max">
             <LinkButton
               url="/realisations"
@@ -303,3 +299,16 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const token = process.env.INSTAGRAM_TOKEN as string;
+  const { posts, error } = await fetchInstagramPosts(token);
+
+  return {
+    props: {
+      posts,
+      error,
+    },
+    revalidate: 86400, // Rebuild la page toutes les 24h
+  };
+};
