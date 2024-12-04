@@ -1,4 +1,4 @@
-name: DeployMowgli Tattoo Studio site to Pages
+name: Deploy Mowgli Tattoo Studio site to Pages
 
 on:
   # Déclenche le workflow uniquement sur pushs vers la branche "gh-page"
