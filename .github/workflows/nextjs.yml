@@ -93,4 +93,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          branch: gh-page # Spécifie que la branche cible pour le déploiement est "gh-page"
+          branch: 'gh-page' # Spécifie que la branche cible pour le déploiement est "gh-page"
