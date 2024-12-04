@@ -26,6 +26,8 @@ const Seo = ({ page }: SeoProps) => {
     <Head>
       <title>{seoTitle}</title>
       <meta name="description" content={seoDescription} />
+      {/* TODO DELETE FOR PRODUCTION */}
+      <meta name="robots" content="noindex, nofollow" />
       <link rel="canonical" href={currentUrl} />
       <script
         type="application/ld+json"
