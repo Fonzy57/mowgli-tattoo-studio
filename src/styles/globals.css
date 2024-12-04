@@ -2,18 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO METTRE QUE AU DESSUS DE 1440PX */
 /* SPECIAL STYLE FOR HOME GALLERY */
-.gallery-item {
-  transition: opacity 0.3s ease-in-out;
-}
+@media (min-width: 1440px) {
+  .gallery-item {
+    transition: opacity 0.3s ease-in-out;
+  }
 
-.gallery-container:has(.gallery-item:hover) .gallery-item:not(:hover) {
-  opacity: 0.4;
+  .gallery-container:has(.gallery-item:hover) .gallery-item:not(:hover) {
+    opacity: 0.4;
+  }
 }
 
 /* TODO TEST MOBILE SUPPRIMER SI PAS BON */
-body {
-  padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
-}
+/* main {
+  padding: 0 max(env(safe-area-inset-right), 20px) 0
+    max(env(safe-area-inset-left), 20px);
+  background-color: #1e1e1e;
+} */
