@@ -10,6 +10,9 @@ const nextConfig = {
   basePath: isGithubPages ? '/mowgli-tattoo-studio' : '',
   assetPrefix: isGithubPages ? '/mowgli-tattoo-studio/' : '',
   reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  }
 };
 
 module.exports = nextConfig;
