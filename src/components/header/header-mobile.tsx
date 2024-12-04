@@ -58,7 +58,7 @@ const HeaderMobile = () => {
     <>
       <div
         /* ${open ? "fixed inset-x-0 top-0 z-50" : ""} WAS BEFORE BUT NON NECESSARY */
-        className={`w-full flex items-center justify-between bg-main border-b border-secondary-hover px-5 py-2.5 header-mobile-safe-are`}
+        className={`w-full flex items-center justify-between bg-main border-b border-secondary-hover px-5 py-2.5`}
       >
         <div>
           <Link href={"/"}>
