@@ -151,6 +151,5 @@ export const getStaticProps: GetStaticProps = async () => {
       posts,
       error,
     },
-    revalidate: 86400, // Rebuild la page toutes les 24h
   };
 };
