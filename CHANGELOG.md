@@ -17,6 +17,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v1.1.1] - 2024-12-04
+
+### Changed
+
+- **Removed RTK Query Dependencies**: Removed RTK Query and related dependencies, as Instagram posts are now fetched using `getStaticProps` to generate static pages compatible with GitHub Pages.
+
+---
+
 ## [v1.1.0] - 2024-12-04
 
 ### Changed
