@@ -15,4 +15,9 @@ const nextConfig = {
   }
 };
 
-module.exports = nextConfig;
+module.exports = {
+  ...nextConfig,
+  publicRuntimeConfig: {
+    basePath: nextConfig.basePath,
+  },
+};
