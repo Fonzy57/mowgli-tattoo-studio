@@ -12,7 +12,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-  }
+  },
+  /* TODO SUPPRIMER SI TESTS NON CONCLUANT POUR GITHUB PAGES */
+  output: 'export',
 };
 
 module.exports = {
