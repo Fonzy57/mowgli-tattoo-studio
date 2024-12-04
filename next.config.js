@@ -3,8 +3,9 @@
 // USE TO CHECK IF IS DEPLOYING ON GITHUB PAGES
 const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
-/* TODO SUPPRIMER APRES LES TESTS */
-console.log('isGithubPages NEXT config : ', isGithubPages);
+// CHECK IF IS PRODUCTION
+const isProd = process.env.NODE_ENV === 'production';
+
 
 const nextConfig = {
   basePath: isGithubPages ? '/mowgli-tattoo-studio' : '',
@@ -13,8 +14,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  /* TODO SUPPRIMER SI TESTS NON CONCLUANT POUR GITHUB PAGES */
-  output: 'export',
+  ...(isProd && { output: 'export' }),
 };
 
 module.exports = {
