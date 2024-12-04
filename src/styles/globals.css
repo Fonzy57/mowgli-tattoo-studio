@@ -10,3 +10,8 @@
 .gallery-container:has(.gallery-item:hover) .gallery-item:not(:hover) {
   opacity: 0.4;
 }
+
+/* ADD PADDING TO COVER THE NEW MOBILE SAFE AREA */
+.header-mobile-safe-are {
+  padding-top: env(safe-area-inset-top);
+}
