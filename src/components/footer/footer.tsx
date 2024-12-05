@@ -55,11 +55,13 @@ const other = [
         name: "instagram",
         label: <CustomIcon name={IconName.Instagram} size={20} />,
         url: socialsLinksGrigri.instagram,
+        ariaLabel: "Lien vers le profil Instagram Le Grigri Tattoo",
       },
       {
         name: "wp",
         label: <CustomIcon name={IconName.Wordpress} size={20} />,
         url: socialsLinksGrigri.site,
+        ariaLabel: "Lien vers le profil Wordpress Le Grigri Tattoo",
       },
     ],
   },
@@ -71,11 +73,13 @@ const other = [
         name: "instagram",
         label: <CustomIcon name={IconName.Instagram} size={20} />,
         url: socialsLinksNewbyPics.instagram,
+        ariaLabel: "Lien vers le profil Instagram de Newby Pics",
       },
       {
         name: "fb",
         label: <CustomIcon name={IconName.Facebook} size={20} />,
         url: socialsLinksNewbyPics.facebook,
+        ariaLabel: "Lien vers le profil Facebook de Newby Pics",
       },
     ],
   },
@@ -166,6 +170,7 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+                            aria-label={social.ariaLabel}
                           >
                             <div>{social.label}</div>
                           </Link>

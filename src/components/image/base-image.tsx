@@ -1,4 +1,7 @@
+// NEXT
 import Image, { ImageProps } from "next/image";
+
+// CONFIG
 import getConfig from "next/config";
 
 const { publicRuntimeConfig } = getConfig();

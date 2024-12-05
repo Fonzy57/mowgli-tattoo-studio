@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean:modules-lock": "rm -rf node_modules package-lock.json && npm install"
   },
   "dependencies": {
     "motion": "^11.11.17",
