@@ -175,6 +175,7 @@ const Home = ({ posts, error }: HomeProps) => {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+            aria-label="Lien vers le profil Instagram de Mowgli Tattoo Studio"
           >
             <CustomIcon name={IconName.Instagram} size={50} />
           </Link>
@@ -183,6 +184,7 @@ const Home = ({ posts, error }: HomeProps) => {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+            aria-label="Lien vers la page Facebook de Mowgli Tattoo Studio"
           >
             <CustomIcon name={IconName.Facebook} size={50} />
           </Link>
