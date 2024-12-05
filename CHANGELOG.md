@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Set up a database to store necessary project data, including Instagram access tokens.
 - Implement a cron job to refresh the Instagram access token every 60 days automatically.
 - Update the **legal notice** once the hosting provider is chosen.
-- Generate and integrate a **sitemap** for better SEO and site indexing.
+- Generate and integrate an automatic **sitemap** for better SEO and site indexing.
 - Add **Open Graph meta tags** to improve link previews on social media platforms.
 
 ---
