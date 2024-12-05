@@ -132,7 +132,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
       >
         {!error && (
           <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
-            Voir tous mes tatouages
+            Aller sur Instagram
           </LinkButton>
         )}
       </motion.div>
