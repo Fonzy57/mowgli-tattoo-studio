@@ -240,9 +240,9 @@ const Home = ({ posts, error }: HomeProps) => {
       {/* CONTACT SECTION */}
       <section className="h-[300px] bg-center bg-cover bg-no-repeat bg-[url('/pictures/pierre-emmanuel-bauer-bureau.webp')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
         <div className="h-full bg-black/50 px-5 flex flex-col items-center justify-center gap-y-16 sm:px-0 sm:gap-24">
-          <h4 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h3 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             Quel sera votre prochain tattoo ?
-          </h4>
+          </h3>
           <LinkButton url="/rdv-et-soins" className="w-max mx-auto">
             Me contacter
           </LinkButton>
@@ -250,7 +250,6 @@ const Home = ({ posts, error }: HomeProps) => {
       </section>
 
       {/* PHOTOGRAPH SECTION */}
-      {/* TODO VOIR SI FRED VEUT SON NOM OU BIEN SON PSEUDO INSTA POUR LA SECTION */}
       <section className="flex items-center justify-center flex-col-reverse px-5 py-14 gap-16 md:px-0 md:flex-row md:py-28 xl:pt-40 xl:pb-48">
         <BaseImage
           src="/pictures/newby.pics.jpg"

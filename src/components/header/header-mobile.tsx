@@ -104,15 +104,15 @@ const HeaderMobile = () => {
         <ul className="px-5 pt-5 flex flex-col gap-5">
           {navLinks.map((navitem, index) => {
             return (
-              <Link
-                href={navitem.url}
-                key={index}
-                className="text-lg uppercase text-text font-semibold active:text-secondary-active transition-all duration-300 ease-in-out"
-              >
-                <li className="w-full pb-5 border-b border-border-dark">
+              <li key={index} className="w-full">
+                <Link
+                  href={navitem.url}
+                  key={index}
+                  className="w-full block pb-5 border-b border-border-dark text-lg uppercase text-text font-semibold active:text-secondary-active transition-all duration-300 ease-in-out"
+                >
                   {navitem.label}
-                </li>
-              </Link>
+                </Link>
+              </li>
             );
           })}
         </ul>

@@ -69,16 +69,17 @@ const Header = () => {
           <ul className="flex gap-8 font-cera uppercase ">
             {navLinks.map((navitem, index) => {
               return (
-                <Link
-                  key={index}
-                  href={navitem.url}
-                  scroll={false}
-                  className={`font-bold text-xl hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out ${
-                    isHomePage ? homeLinksStyle : globallinksStyle
-                  }`}
-                >
-                  <li key={index}>{navitem.label}</li>
-                </Link>
+                <li key={index}>
+                  <Link
+                    href={navitem.url}
+                    scroll={false}
+                    className={`font-bold text-xl hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out ${
+                      isHomePage ? homeLinksStyle : globallinksStyle
+                    }`}
+                  >
+                    {navitem.label}
+                  </Link>
+                </li>
               );
             })}
           </ul>
