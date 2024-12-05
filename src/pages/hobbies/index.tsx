@@ -16,7 +16,7 @@ const Hobbies = () => {
       <div className="px-5 flex flex-col gap-y-4 text-text-light mt-8 text-justify mx-auto sm:px-0 sm:w-[700px] md:w-[800px] md:mt-10 lg:text-lg lg:mt-20">
         <p>
           En dehors du tatouage, je partage mon quotidien avec mes deux chats
-          Sphynx, Boo et Frites-Mayo. Je consacre aussi une partie de mon temps
+          Sphynx, Boo et Frite-Mayo. Je consacre aussi une partie de mon temps
           libre à <span className="italic font-semibold">La Virgule</span>, mon
           activité artistique où je réalise des peintures abstraites texturées
           et je customise des planches de skate.
@@ -34,14 +34,14 @@ const Hobbies = () => {
             Mes chats
           </h2>
           <p className="text-text-light text-center mt-4 lg:text-lg lg:w-[500px] mx-auto">
-            Voici Boo et Frites-Mayo.
+            Voici Boo et Frite-Mayo.
           </p>
         </div>
         <BaseImage
           src={"/pictures/hobbies/Boo-et-Frites-Mayo.webp"}
           width={750}
           height={1000}
-          alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
+          alt="Photo de deux chats Sphynx se nommant Boo et Frite-Mayo"
           className="mt-4 rounded-lg shadow-full-main sm:w-1/2 md:mt-8 xl:w-1/3"
           priority
         />
@@ -63,14 +63,14 @@ const Hobbies = () => {
             src={"/pictures/hobbies/La-Virgule-peinture-cadre.webp"}
             width={750}
             height={750}
-            alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
+            alt="Peinture abstraite texturée encadrée"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
           <BaseImage
             src={"/pictures/hobbies/La-Virgule-peinture-noire.webp"}
             width={750}
             height={750}
-            alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
+            alt="Peinture abstraite texturée"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
         </div>
@@ -89,14 +89,14 @@ const Hobbies = () => {
             src={"/pictures/hobbies/mowgli-skate-star-wars.webp"}
             width={750}
             height={750}
-            alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
+            alt="Planche de skate customisée Star Wars"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
           <BaseImage
             src={"/pictures/hobbies/mowgli-skate-goldorak.webp"}
             width={750}
             height={750}
-            alt="Photo de deux chats Sphynx se nommant Boo et Frites-Mayo"
+            alt="Planche de skate customisée Goldorak"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
         </div>

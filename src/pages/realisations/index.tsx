@@ -56,7 +56,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
           Basé à Metz, je suis fier de proposer des{" "}
           <strong className="font-normal">tatouages personnalisés</strong> à
           celles et ceux qui recherchent un artiste spécialisé en tatouage
-          réaliste.
+          réaliste, blackwork et dotwork.
         </p>
         <p>
           Explorez mes derniers tatouages et laissez-vous inspirer. Chaque

@@ -119,7 +119,7 @@ const RdvEtSoins = () => {
               src={"/pictures/decoration.webp"}
               width={636}
               height={508}
-              alt="Aiguilles emballées utilisées pour faire un tatouage"
+              alt="Photo d'un support sur lequel se trouve plusieurs machines à tatouer et une illustration d'un papillon de la mort"
               className="md:rounded-lg md:shadow-full-main"
             />
           </div>
