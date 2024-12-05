@@ -11,9 +11,10 @@ const nextConfig = {
   basePath: isGithubPages ? '/mowgli-tattoo-studio' : '',
   assetPrefix: isGithubPages ? '/mowgli-tattoo-studio/' : '',
   reactStrictMode: true,
-  /* images: {
+  // TODO REMOVE IMAGES WHEN ON REAL SERVER AND NOT ON GITHUB PAGES
+  images: {
     unoptimized: true,
-  }, */
+  },
   ...(isProd && { output: 'export' }),
 };
 
