@@ -13,7 +13,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Implement a cron job to refresh the Instagram access token every 60 days automatically.
 - Update the **legal notice** once the hosting provider is chosen.
 - Generate and integrate an automatic **sitemap** for better SEO and site indexing.
-- Add **Open Graph meta tags** to improve link previews on social media platforms.
+
+---
+
+## [v1.2.0] - 2024-12-05
+
+### Added
+
+- **Sitemap Integration**: Integrate sitemap to improve search engine indexing and site structure visibility.
+- **Open Graph Meta Tags**: Added Open Graph tags to enhance link previews across social media platforms.
+
+### Fixed
+
+- Minor bug and wording fixes and performance improvements.
 
 ---
 
