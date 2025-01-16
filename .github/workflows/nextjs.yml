@@ -9,8 +9,9 @@ on:
   workflow_dispatch:
 
   # Schedule the workflow to run every Sunday at 5 PM UTC
-  schedule:
-    - cron: "0 17 * * 0"
+  # Uncomment to re-enable the cron
+  # schedule:
+  #   - cron: "0 17 * * 0"
 
 # Permissions required for deployment
 permissions:
