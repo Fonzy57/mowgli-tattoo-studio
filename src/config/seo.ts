@@ -1,9 +1,7 @@
 // CONFIG
 import { socialsLinksMowgli } from "./socials-links";
-import getConfig from "next/config";
 
-const { publicRuntimeConfig } = getConfig();
-const { basePath } = publicRuntimeConfig;
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
 
 export const seoStructuredData = {
   "@context": "https://schema.org",
@@ -35,8 +33,8 @@ export const seoConfig = {
     ogTitle: "Accueil - Mowgli Tattoo Studio",
     ogDescription:
       "Découvrez le Mowgli Tattoo Studio, spécialiste des tatouages réalistes en noir et gris.",
-    ogImage: `${publicRuntimeConfig.basePath}/images/mowgli-tattoo-studio-logo.png`,
-    ogUrl: `${publicRuntimeConfig.basePath}/`,
+    ogImage: `${basePath}/images/mowgli-tattoo-studio-logo.png`,
+    ogUrl: `${basePath}/`,
   },
   realisations: {
     title:
