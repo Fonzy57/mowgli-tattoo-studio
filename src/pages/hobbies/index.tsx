@@ -1,7 +1,7 @@
 // COMPONENTS
-import Seo from "@/components/seo/seo";
-import TextLink from "@/components/link/text-link";
-import BaseImage from "@/components/image/base-image";
+import Seo from "@/common/components/seo/seo";
+import TextLink from "@/common/components/link/text-link";
+import BaseImage from "@/common/components/image/base-image";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";

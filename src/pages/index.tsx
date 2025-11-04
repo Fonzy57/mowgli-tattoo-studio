@@ -3,16 +3,16 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 
 // COMPONENTS
-import Seo from "@/components/seo/seo";
-import { LinkButton } from "@/components/button/link-button";
-import { CustomIcon } from "@/components/icons/icon";
-import { SkillCard } from "@/components/card/skill-card";
-import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
-import TextLink from "@/components/link/text-link";
-import BaseImage from "@/components/image/base-image";
+import Seo from "@/common/components/seo/seo";
+import { LinkButton } from "@/common/components/button/link-button";
+import { CustomIcon } from "@/common/components/icons/icon";
+import { SkillCard } from "@/common/components/card/skill-card";
+import ApiErrorGalleryDisplay from "@/common/components/skeleton-loader/error-gallery-display";
+import TextLink from "@/common/components/link/text-link";
+import BaseImage from "@/common/components/image/base-image";
 
 // ENUM & TYPING
-import { IconName } from "@/components/icons/icon.enum";
+import { IconName } from "@/common/components/icons/icon.enum";
 import { Post } from "@/dto/posts.dto";
 
 interface HomeProps {
@@ -52,6 +52,12 @@ const skills = [
       "Le studio est propre et professionnel, mais aussi détendu et confortable. Je suis très fiers de chaque tatouage que je crée.",
   },
 ];
+
+/* 
+
+  TODO FAIRE DES SECTIONS DES DIFFERENTES PARTIES POUR QUE LE CODE SOIT PLUS CLAIRE
+
+*/
 
 const Home = ({ posts, error }: HomeProps) => {
   return (

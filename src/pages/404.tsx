@@ -1,7 +1,7 @@
 // COMPONENTS
-import { LinkButton } from "@/components/button/link-button";
-import Seo from "@/components/seo/seo";
-import BaseImage from "@/components/image/base-image";
+import { LinkButton } from "@/common/components/button/link-button";
+import Seo from "@/common/components/seo/seo";
+import BaseImage from "@/common/components/image/base-image";
 
 const Error404 = () => {
   return (

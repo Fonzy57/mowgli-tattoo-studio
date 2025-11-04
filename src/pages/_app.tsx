@@ -4,8 +4,8 @@ import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 
 // COMPONENTS
-import Maintenance from "@/components/maintenance/maintenance";
-import Layout from "@/components/layout/layout";
+import Maintenance from "@/common/components/maintenance/maintenance";
+import Layout from "@/common/components/layout/layout";
 
 // STYLE
 import "@/styles/globals.css";

@@ -1,14 +1,14 @@
 // COMPONENTS
-import CareCard from "@/components/card/care-card";
-import Seo from "@/components/seo/seo";
-import TextLink from "@/components/link/text-link";
-import BaseImage from "@/components/image/base-image";
+import CareCard from "@/common/components/card/care-card";
+import Seo from "@/common/components/seo/seo";
+import TextLink from "@/common/components/link/text-link";
+import BaseImage from "@/common/components/image/base-image";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
 
 // ENUM
-import { IconName } from "@/components/icons/icon.enum";
+import { IconName } from "@/common/components/icons/icon.enum";
 
 // CONSTANTS
 const careItems = [

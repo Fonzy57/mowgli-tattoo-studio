@@ -1,5 +1,5 @@
 // COMPONENTS
-import Seo from "@/components/seo/seo";
+import Seo from "@/common/components/seo/seo";
 
 const MentionsLegales = () => {
   const containerStyle =

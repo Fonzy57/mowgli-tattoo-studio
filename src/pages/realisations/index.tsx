@@ -9,10 +9,10 @@ import { easeInOut, motion } from "framer-motion";
 import { socialsLinksMowgli } from "@/config/socials-links";
 
 // COMPONENTS
-import Seo from "@/components/seo/seo";
-import { LinkButton } from "@/components/button/link-button";
-import { Button } from "@/components/button/button";
-import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
+import Seo from "@/common/components/seo/seo";
+import { LinkButton } from "@/common/components/button/link-button";
+import { Button } from "@/common/components/button/button";
+import ApiErrorGalleryDisplay from "@/common/components/skeleton-loader/error-gallery-display";
 
 // TYPING
 import { Post } from "@/dto/posts.dto";
