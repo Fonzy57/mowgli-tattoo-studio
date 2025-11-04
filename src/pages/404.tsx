@@ -1,14 +1,14 @@
 // COMPONENTS
-import { LinkButton } from "@/components/button/link-button";
-import Seo from "@/components/seo/seo";
-import BaseImage from "@/components/image/base-image";
+import { LinkButton } from "@/common/components/button/link-button";
+import Seo from "@/common/components/seo/seo";
+import BaseImage from "@/common/components/image/base-image";
 
 const Error404 = () => {
   return (
     <>
       <Seo page="404" />
-      <div className="pb-10 xs:w-[375px] xs:mx-auto md:py-24 md:w-[944px] lg:w-[1200px] xl:w-[1440px]">
-        <div className="px-5 flex flex-col items-center justify-center gap-4 xs:px-0 md:flex-row md:gap-20 xl:gap-40">
+      <div className="pb-10 xs:mx-auto xs:w-[375px] md:w-[944px] md:py-24 lg:w-[1200px] xl:w-[1440px]">
+        <div className="flex flex-col items-center justify-center gap-4 px-5 xs:px-0 md:flex-row md:gap-20 xl:gap-40">
           <BaseImage
             src={"/images/404.png"}
             width={500}
@@ -18,14 +18,14 @@ const Error404 = () => {
             priority
           />
           <div className="flex flex-col items-center gap-4 text-text-light">
-            <h1 className="text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+            <h1 className="text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
               Erreur 404
             </h1>
             <p className="text-justify lg:text-lg">
               Cette page n'existe pas, mais votre prochain tatouage, lui, est
               bien réel.
             </p>
-            <div className="w-max mt-8">
+            <div className="mt-8 w-max">
               <LinkButton url="/">Revenir au studio</LinkButton>
             </div>
           </div>

@@ -6,21 +6,17 @@ const isGithubPages = process.env.GITHUB_PAGES === 'true';
 // CHECK IF IS PRODUCTION
 const isProd = process.env.NODE_ENV === 'production';
 
-
 const nextConfig = {
   basePath: isGithubPages ? '/mowgli-tattoo-studio' : '',
   assetPrefix: isGithubPages ? '/mowgli-tattoo-studio/' : '',
   reactStrictMode: true,
-  // TODO REMOVE IMAGES WHEN ON REAL SERVER AND NOT ON GITHUB PAGES
   images: {
-    unoptimized: true,
+    unoptimized: true, // TODO: remove when hosted on real server
   },
   ...(isProd && { output: 'export' }),
-};
-
-module.exports = {
-  ...nextConfig,
-  publicRuntimeConfig: {
-    basePath: nextConfig.basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? '/mowgli-tattoo-studio' : '',
   },
 };
+
+module.exports = nextConfig;

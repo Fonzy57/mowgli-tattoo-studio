@@ -1,5 +1,5 @@
 // COMPONENTS
-import Seo from "@/components/seo/seo";
+import Seo from "@/common/components/seo/seo";
 
 const MentionsLegales = () => {
   const containerStyle =
@@ -13,8 +13,8 @@ const MentionsLegales = () => {
   return (
     <>
       <Seo page="mentionsLegales" />
-      <div className="pt-16 pb-8 px-5 sm:pt-20 sm:pb-8 sm:px-0 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
-        <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl">
+      <div className="px-5 pb-8 pt-16 sm:px-0 sm:pb-8 sm:pt-20 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
+        <h1 className="text-center font-cera text-4xl font-semibold text-main sm:text-6xl md:text-7xl">
           Mentions legales
         </h1>
       </div>
