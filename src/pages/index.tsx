@@ -57,16 +57,16 @@ const Home = ({ posts, error }: HomeProps) => {
   return (
     <>
       <Seo page="home" />
-      <header className="py-16 px-5 sm:py-20 sm:px-0 md:p-0 md:h-[calc(100vh-71px)] bg-fixed bg-center bg-cover bg-no-repeat lg:h-screen lg:-mt-[80px] md:bg-[url('/pictures/mowgli-hero.webp')]">
-        <div className="flex items-center justify-center h-full md:bg-black md:bg-opacity-50">
-          <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl lg:text-9xl">
+      <header className="bg-cover bg-fixed bg-center bg-no-repeat px-5 py-16 sm:px-0 sm:py-20 md:h-[calc(100vh-71px)] md:bg-[url('/pictures/mowgli-hero.webp')] md:p-0 lg:-mt-[80px] lg:h-screen">
+        <div className="flex h-full items-center justify-center md:bg-black md:bg-opacity-50">
+          <h1 className="text-center font-cera text-4xl font-semibold text-main sm:text-6xl md:text-7xl lg:text-9xl">
             The Mowgli Tattoo Studio
           </h1>
           <div className="hidden md:block">
             <CustomIcon
               name={IconName.ArrowDown}
               size={32}
-              className="text-main cursor-pointer absolute bottom-9 lg:bottom-10 xl:bottom-14 left-1/2 animate-pulse border broder-main p-2 rounded-full hover:animate-none transition-all duration-300 ease-in-out"
+              className="broder-main absolute bottom-9 left-1/2 animate-pulse cursor-pointer rounded-full border p-2 text-main transition-all duration-300 ease-in-out hover:animate-none lg:bottom-10 xl:bottom-14"
               onClick={() => handleClickAnchor("about", 80)}
             />
           </div>
@@ -75,14 +75,14 @@ const Home = ({ posts, error }: HomeProps) => {
 
       {/* ABOUT SECTION */}
       <section
-        className="flex justify-center items-center flex-col-reverse px-5 md:flex-row md:gap-x-10 md:py-28 lg:w-[1325px] lg:px-0 lg:mx-auto lg:gap-x-16 xl:w-[1560px] xl:gap-x-0 xl:justify-between xl:py-48"
+        className="flex flex-col-reverse items-center justify-center px-5 md:flex-row md:gap-x-10 md:py-28 lg:mx-auto lg:w-[1325px] lg:gap-x-16 lg:px-0 xl:w-[1560px] xl:justify-between xl:gap-x-0 xl:py-48"
         id="about"
       >
-        <div className="w-full mt-10 sm:mt-20 md:w-1/2 md:mt-0 xl:w-[750px]">
-          <h2 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+        <div className="mt-10 w-full sm:mt-20 md:mt-0 md:w-1/2 xl:w-[750px]">
+          <h2 className="text-center font-cera text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             A propos de moi
           </h2>
-          <div className="flex flex-col gap-y-4 mt-6 text-text-light text-justify sm:gap-y-6 sm:mt-10 md:text-left lg:mt-14 lg:text-lg xl:mt-20 xl:w-[700px] xl:mx-auto">
+          <div className="mt-6 flex flex-col gap-y-4 text-justify text-text-light sm:mt-10 sm:gap-y-6 md:text-left lg:mt-14 lg:text-lg xl:mx-auto xl:mt-20 xl:w-[700px]">
             <p>
               Depuis l’âge de 16 ans, le tatouage est bien plus qu’une passion
               pour moi : c’est une véritable vocation. Mon parcours artistique a
@@ -113,7 +113,7 @@ const Home = ({ posts, error }: HomeProps) => {
               , depuis un an et demi.
             </p>
           </div>
-          <div className="mx-auto w-max mt-10 lg:mt-14 xl:mt-20">
+          <div className="mx-auto mt-10 w-max lg:mt-14 xl:mt-20">
             <LinkButton url="/realisations">Voir mes réalisations</LinkButton>
           </div>
         </div>
@@ -125,21 +125,21 @@ const Home = ({ posts, error }: HomeProps) => {
             height={561}
             className="rounded-lg"
           />
-          <div className="absolute inset-0 rounded-lg shadow-full-main animate-pulse"></div>
+          <div className="absolute inset-0 animate-pulse rounded-lg shadow-full-main"></div>
         </div>
       </section>
 
       {/* PARALLAX SECTION */}
-      <div className="hidden bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/pictures/parallax-1.webp')] sm:block sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
-        <div className="flex items-center justify-center h-full bg-black/20"></div>
+      <div className="hidden bg-[url('/pictures/parallax-1.webp')] bg-cover bg-fixed bg-center bg-no-repeat sm:mt-24 sm:block sm:h-[350px] md:mt-0 lg:h-[450px]">
+        <div className="flex h-full items-center justify-center bg-black/20"></div>
       </div>
 
       {/* EXPLICATION SECTION */}
-      <section className="mt-28 px-5 sm:px-0 sm:mt-20 sm:w-[700px] sm:mx-auto lg:w-[900px] lg:mt-32 xl:w-[1050px]">
-        <h3 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+      <section className="mt-28 px-5 sm:mx-auto sm:mt-20 sm:w-[700px] sm:px-0 lg:mt-32 lg:w-[900px] xl:w-[1050px]">
+        <h3 className="text-center font-cera text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Pourquoi choisir un tatouage en noir et gris ?
         </h3>
-        <p className="mt-6 text-text-light text-justify sm:mt-10 lg:text-left lg:mt-14 xl:mt-20 lg:text-lg lg:w-[750px] lg:mx-auto">
+        <p className="mt-6 text-justify text-text-light sm:mt-10 lg:mx-auto lg:mt-14 lg:w-[750px] lg:text-left lg:text-lg xl:mt-20">
           Le tatouage réaliste en noir et gris est un style intemporel qui met
           en avant les détails et les nuances pour un rendu saisissant. Que ce
           soit un portrait, une scène ou un motif symbolique, ce style permet
@@ -149,8 +149,8 @@ const Home = ({ posts, error }: HomeProps) => {
       </section>
 
       {/* SKILLS SECTION */}
-      <section className="w-full px-5 py-20 sm:px-0 lg:py-32 lg:w-[1325px] lg:mx-auto xl:w-[1560px]">
-        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-20 lg:items-stretch lg:justigy-between">
+      <section className="w-full px-5 py-20 sm:px-0 lg:mx-auto lg:w-[1325px] lg:py-32 xl:w-[1560px]">
+        <div className="lg:justigy-between flex flex-col items-center justify-center gap-10 lg:flex-row lg:items-stretch lg:gap-20">
           {skills.map((skill, index) => {
             return (
               <SkillCard
@@ -165,8 +165,8 @@ const Home = ({ posts, error }: HomeProps) => {
       </section>
 
       {/* INSTAGRAM SECTION */}
-      <section className="bg-main text-text px-5 py-20 flex flex-col items-center justify-center gap-12 md:gap-10 lg:flex-row lg:gap-24 xl:gap-20">
-        <h4 className="font-cera font-bold text-center text-3xl sm:text-4xl lg:text-left md:text-5xl xl:text-6xl">
+      <section className="flex flex-col items-center justify-center gap-12 bg-main px-5 py-20 text-text md:gap-10 lg:flex-row lg:gap-24 xl:gap-20">
+        <h4 className="text-center font-cera text-3xl font-bold sm:text-4xl md:text-5xl lg:text-left xl:text-6xl">
           Suivez moi sur Instagram et Facebook
         </h4>
         <div className="flex items-center gap-x-12 xl:gap-x-10">
@@ -174,7 +174,7 @@ const Home = ({ posts, error }: HomeProps) => {
             href={socialsLinksMowgli.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+            className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
             aria-label="Lien vers le profil Instagram de Mowgli Tattoo Studio"
           >
             <CustomIcon name={IconName.Instagram} size={50} />
@@ -183,7 +183,7 @@ const Home = ({ posts, error }: HomeProps) => {
             href={socialsLinksMowgli.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+            className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
             aria-label="Lien vers la page Facebook de Mowgli Tattoo Studio"
           >
             <CustomIcon name={IconName.Facebook} size={50} />
@@ -193,7 +193,7 @@ const Home = ({ posts, error }: HomeProps) => {
 
       {/* LAST TATTOO SECTION */}
       <section className="px-5 py-14 sm:py-20 md:py-24 lg:px-0 lg:py-32 xl:py-48">
-        <h2 className="font-cera text-center text-4xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
+        <h2 className="text-center font-cera text-4xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Derniers tattoos
         </h2>
 
@@ -202,7 +202,7 @@ const Home = ({ posts, error }: HomeProps) => {
 
         {/* DISPLAYING LAST 4 INSTAGRAM POSTS */}
         {posts.length > 0 && (
-          <div className="grid grid-cols-1 gap-5 max-w-[1350px] mx-auto mt-20 sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container">
+          <div className="gallery-container relative mx-auto mt-20 grid max-w-[1350px] grid-cols-1 gap-5 overflow-hidden sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:gap-10 xl:px-0">
             {posts.slice(0, 4).map((post: Post, index: number) => {
               return (
                 <div key={index} className="gallery-item">
@@ -231,7 +231,7 @@ const Home = ({ posts, error }: HomeProps) => {
           <div className="mx-auto w-max">
             <LinkButton
               url="/realisations"
-              className="w-max mx-auto mt-12 sm:mt-24 lg:mt-24 xl:mt-32"
+              className="mx-auto mt-12 w-max sm:mt-24 lg:mt-24 xl:mt-32"
             >
               Voir la galerie
             </LinkButton>
@@ -240,19 +240,19 @@ const Home = ({ posts, error }: HomeProps) => {
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="h-[300px] bg-center bg-cover bg-no-repeat bg-[url('/pictures/pierre-emmanuel-bauer-bureau.webp')] sm:h-[350px] sm:mt-24 md:mt-0 lg:h-[450px]">
-        <div className="h-full bg-black/50 px-5 flex flex-col items-center justify-center gap-y-16 sm:px-0 sm:gap-24">
-          <h3 className="font-cera text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
+      <section className="h-[300px] bg-[url('/pictures/pierre-emmanuel-bauer-bureau.webp')] bg-cover bg-center bg-no-repeat sm:mt-24 sm:h-[350px] md:mt-0 lg:h-[450px]">
+        <div className="flex h-full flex-col items-center justify-center gap-y-16 bg-black/50 px-5 sm:gap-24 sm:px-0">
+          <h3 className="text-center font-cera text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             Quel sera votre prochain tattoo ?
           </h3>
-          <LinkButton url="/rdv-et-soins" className="w-max mx-auto">
+          <LinkButton url="/rdv-et-soins" className="mx-auto w-max">
             Me contacter
           </LinkButton>
         </div>
       </section>
 
       {/* PHOTOGRAPH SECTION */}
-      <section className="flex items-center justify-center flex-col-reverse px-5 py-14 gap-16 md:px-0 md:flex-row md:py-28 xl:pt-40 xl:pb-48">
+      <section className="flex flex-col-reverse items-center justify-center gap-16 px-5 py-14 md:flex-row md:px-0 md:py-28 xl:pb-48 xl:pt-40">
         <BaseImage
           src="/pictures/newby.pics.jpg"
           width={250}
@@ -261,10 +261,10 @@ const Home = ({ posts, error }: HomeProps) => {
           className="rounded-full border border-main"
         />
         <div className="w-full md:w-[550px] lg:w-[750px]">
-          <h3 className="font-cera text-main font-bold text-center text-4xl sm:text-5xl lg:text-6xl">
+          <h3 className="text-center font-cera text-4xl font-bold text-main sm:text-5xl lg:text-6xl">
             Newby Pics
           </h3>
-          <p className="mt-6 text-text-light text-justify mx-auto sm:w-[500px] sm:mt-10 lg:text-lg lg:mt-14 xl:mt-20">
+          <p className="mx-auto mt-6 text-justify text-text-light sm:mt-10 sm:w-[500px] lg:mt-14 lg:text-lg xl:mt-20">
             Un grand merci à Newby.pics pour les magnifiques photos capturant
             l'essence du studio et de mon travail. Son œil artistique et son
             talent pour immortaliser les moments authentiques en font un
@@ -272,12 +272,12 @@ const Home = ({ posts, error }: HomeProps) => {
             l'atmosphère unique du salon, mais aussi la passion que je mets dans
             chaque tatouage.
           </p>
-          <div className="flex items-center gap-x-12 w-max mx-auto text-main mt-10 lg:mt-14 xl:mt-20">
+          <div className="mx-auto mt-10 flex w-max items-center gap-x-12 text-main lg:mt-14 xl:mt-20">
             <Link
               href={socialsLinksNewbyPics.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+              className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
               aria-label="Lien vers le profil Instagram de Newby Pics"
             >
               <CustomIcon name={IconName.Instagram} size={50} />
@@ -286,7 +286,7 @@ const Home = ({ posts, error }: HomeProps) => {
               href={socialsLinksNewbyPics.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+              className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
               aria-label="Lien vers le profil Facebook de Newby Pics"
             >
               <CustomIcon name={IconName.Facebook} size={50} />
