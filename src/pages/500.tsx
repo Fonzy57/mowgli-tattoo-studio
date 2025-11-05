@@ -1,0 +1,43 @@
+// COMPONENTS
+import { LinkButton } from "@/common/components/button/link-button";
+import Seo from "@/common/components/seo/seo";
+import BaseImage from "@/common/components/image/base-image";
+
+const Error500 = () => {
+  return (
+    <>
+      <Seo page="500" />
+      <div className="pb-10 xs:mx-auto xs:w-[375px] md:w-[944px] md:py-24 lg:w-[1200px] xl:w-[1440px]">
+        <div className="flex flex-col items-center justify-center gap-4 px-5 xs:px-0 md:flex-row md:gap-20 xl:gap-40">
+          <BaseImage
+            src={"/images/404.png"}
+            width={500}
+            height={500}
+            alt="Illustration du papillon de la mort, un papillon de nuit avec une tête de mort sur le thorax"
+            className="md:drop-shadow-[0_20px_20px_rgb(255_209_97_/_0.2)]"
+            preload
+          />
+          <div className="flex flex-col items-center gap-4 text-text-light">
+            <h1 className="text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
+              Erreur 500
+            </h1>
+            <div className="mt-4 flex flex-col items-center gap-y-2 text-justify lg:text-lg">
+              <p>
+                Une petite panne technique s’est glissée dans nos encres
+                numériques.
+              </p>
+              <p>
+                L’équipe corrige ça rapidement, le studio reste bien ouvert.
+              </p>
+            </div>
+            <div className="mt-8 w-max">
+              <LinkButton url="/">Revenir au studio</LinkButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Error500;
