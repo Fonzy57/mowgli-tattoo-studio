@@ -9,8 +9,7 @@ export const seoStructuredData = {
   name: "Mowgli Tattoo Studio",
   description:
     "Studio de tatouage spécialisé dans les tatouages réalistes en noir et gris.",
-  /* TODO VOIR SI L'IMAGE FONCTIONNE BIEN */
-  image: "https://www.mowglitattoo.com/images/mowgli-tattoo-studio-logo.png",
+  image: `${basePath}/images/mowgli-tattoo-studio-logo.png`,
   address: {
     "@type": "PostalAddress",
     streetAddress: "2a Rue des Pépinières",
@@ -18,8 +17,7 @@ export const seoStructuredData = {
     postalCode: "57050",
     addressCountry: "FR",
   },
-  /* TODO CHANGER L'URL QUAND J'AURAIS LE NOM DE DOMAINE */
-  url: "https://fonzy57.github.io/mowgli-tattoo-studio",
+  url: `${basePath}`,
   sameAs: [socialsLinksMowgli.instagram, socialsLinksMowgli.facebook],
   openingHours: ["Tu-Sa 09:00-14:00"],
 };
@@ -78,6 +76,28 @@ export const seoConfig = {
     ogImage: `${basePath}/images/mowgli-tattoo-studio-logo.png`,
     ogUrl: `${basePath}/mentions-legales`,
   },
+  politiqueDeConfidentialite: {
+    title:
+      "Politique de confidentialité - Mowgli Tattoo Studio | Données et confidentialité",
+    description:
+      "Découvrez comment le site Mowgli Tattoo Studio protège votre vie privée. Aucune donnée personnelle n’est collectée et aucun cookie de suivi n’est utilisé.",
+    ogTitle: "Politique de confidentialité - Mowgli Tattoo Studio",
+    ogDescription:
+      "Mowgli Tattoo Studio respecte votre vie privée : aucune donnée personnelle collectée, aucune publicité, aucun suivi. Consultez notre politique complète.",
+    ogImage: `${basePath}/images/mowgli-tattoo-studio-logo.png`,
+    ogUrl: `${basePath}/politique-de-confidentialite`,
+  },
+  politiqueDeCookies: {
+    title:
+      "Politique de cookies - Mowgli Tattoo Studio | Utilisation et consentement",
+    description:
+      "Le site Mowgli Tattoo Studio n’utilise que des cookies techniques essentiels nécessaires à son bon fonctionnement. Aucun cookie de suivi ni de publicité n’est utilisé.",
+    ogTitle: "Politique de cookies - Mowgli Tattoo Studio",
+    ogDescription:
+      "Aucun cookie de suivi ni publicitaire. Seuls des cookies techniques indispensables assurent le bon fonctionnement du site Mowgli Tattoo Studio.",
+    ogImage: `${basePath}/images/mowgli-tattoo-studio-logo.png`,
+    ogUrl: `${basePath}/politique-de-cookies`,
+  },
   maintenance: {
     title: "Site en maintenance - Mowgli Tattoo Studio",
     description:
@@ -97,5 +117,15 @@ export const seoConfig = {
       "Cette page n'existe pas. Découvrez nos tatouages réalistes en noir et gris pour vous inspirer.",
     ogImage: `${basePath}/images/404.png`,
     ogUrl: `${basePath}/404`,
+  },
+  "500": {
+    title: "Erreur 500 - Mowgli Tattoo Studio | Problème serveur",
+    description:
+      "Erreur 500 : un incident technique est survenu. Pas d’inquiétude, notre équipe corrige ça pendant que vous explorez les réalisations du studio.",
+    ogTitle: "Erreur 500 - Erreur serveur - Mowgli Tattoo Studio",
+    ogDescription:
+      "Une erreur interne est survenue. Revenez bientôt ou découvrez nos tatouages réalistes en noir et gris en attendant.",
+    ogImage: `${basePath}/images/404.png`,
+    ogUrl: `${basePath}/500`,
   },
 };
