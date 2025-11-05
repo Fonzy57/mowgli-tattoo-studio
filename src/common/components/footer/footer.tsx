@@ -85,21 +85,30 @@ const other = [
   },
 ];
 
+const legalLinks = [
+  { label: "Mentions légales", link: "/mentions-legales" },
+  {
+    label: "Politique de confidentialité",
+    link: "/politique-de-confidentialite",
+  },
+  { label: "Politique de cookies", link: "/politique-de-cookies" },
+];
+
 const Footer = () => {
   const titleStyle =
     "font-cera uppercase font-bold text-xl text-text cursor-default";
   const listStyle = "mt-4 text-text flex flex-col gap-y-3";
 
   return (
-    <div className="bg-main pt-14 pb-6 px-5 sm:pt-20 lg:pt-8">
-      <div className="flex flex-col justify-center items-center mx-auto lg:flex-row lg:justify-between lg:w-[1325px] xl:w-[1560px]">
+    <div className="bg-main px-5 pb-6 pt-14 sm:pt-20 lg:pt-8">
+      <div className="mx-auto flex flex-col items-center justify-center lg:w-[1325px] lg:flex-row lg:justify-between xl:w-[1560px]">
         <BaseImage
           src="/images/the-mowgli-studio-logo-brown.svg"
           alt="Logo de The Mowgli Studio"
           width={286}
           height={107}
         />
-        <div className="flex flex-col w-full justify-center mt-14 gap-y-10 sm:flex-row sm:gap-x-20 lg:w-1/2 lg:justify-between lg:gap-x-0">
+        <div className="mt-14 flex w-full flex-col justify-center gap-y-10 sm:flex-row sm:gap-x-20 lg:w-1/2 lg:justify-between lg:gap-x-0">
           <div className="">
             <p className={titleStyle}>A propos</p>
             <div className={listStyle}>
@@ -110,7 +119,7 @@ const Footer = () => {
                     key={index}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+                    className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
                   >
                     <div className="flex items-center gap-x-3">
                       <div>{item.icon}</div>
@@ -142,7 +151,7 @@ const Footer = () => {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+                      className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
                     >
                       <div key={index} className="flex items-center gap-x-3">
                         <div>{item.icon}</div>
@@ -169,7 +178,7 @@ const Footer = () => {
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+                            className="transition duration-300 ease-in-out hover:text-secondary-hover active:text-secondary-active"
                             aria-label={social.ariaLabel}
                           >
                             <div>{social.label}</div>
@@ -184,27 +193,34 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-text text-xs text-center mt-20 lg:mt-14 xl:mt-16">
+      <p className="mt-20 text-center text-xs text-text lg:mt-14 xl:mt-16">
         © Mowgli Tattoo Studio {year} - Tous droits réservés | v{version}
       </p>
-      <p className="text-text text-xs text-center mt-2">
+      <p className="mt-2 text-center text-xs text-text">
         Site développé par{" "}
         <Link
-          href="https://www.linkedin.com/in/stephane-scheeres/"
+          href="https://stephane-scheeres.dev/"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:no-underline hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
+          className="underline transition duration-300 ease-in-out hover:text-secondary-hover hover:no-underline active:text-secondary-active"
         >
           Stéphane Scheeres
         </Link>
       </p>
-      <Link
-        href={"/mentions-legales"}
-        className="text-text text-xs text-center mt-2 block w-max mx-auto underline hover:no-underline hover:text-secondary-hover active:text-secondary-active transition duration-300 ease-in-out"
-        scroll={false}
-      >
-        Mentions légales
-      </Link>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4">
+        {legalLinks.map((legal, index) => {
+          return (
+            <Link
+              key={index}
+              href={legal.link}
+              className="block w-max text-xs text-text underline transition duration-300 ease-in-out hover:text-secondary-hover hover:no-underline active:text-secondary-active"
+              scroll={false}
+            >
+              {legal.label}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };
