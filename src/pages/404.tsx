@@ -1,7 +1,9 @@
+// NEXT
+import Image from "next/image";
+
 // COMPONENTS
 import { LinkButton } from "@/common/components/button/link-button";
 import Seo from "@/common/components/seo/seo";
-import BaseImage from "@/common/components/image/base-image";
 
 const Error404 = () => {
   return (
@@ -9,7 +11,7 @@ const Error404 = () => {
       <Seo page="404" />
       <div className="pb-10 xs:mx-auto xs:w-[375px] md:w-[944px] md:py-24 lg:w-[1200px] xl:w-[1440px]">
         <div className="flex flex-col items-center justify-center gap-4 px-5 xs:px-0 md:flex-row md:gap-20 xl:gap-40">
-          <BaseImage
+          <Image
             src={"/images/404.png"}
             width={500}
             height={500}

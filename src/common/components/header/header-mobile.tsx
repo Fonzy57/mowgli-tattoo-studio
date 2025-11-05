@@ -2,9 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
-// COMPONENTS
-import BaseImage from "../image/base-image";
+import Image from "next/image";
 
 // CONFIG
 import { navLinks } from "@/config/nav";
@@ -58,11 +56,11 @@ const HeaderMobile = () => {
     <>
       <div
         /* ${open ? "fixed inset-x-0 top-0 z-50" : ""} WAS BEFORE BUT NON NECESSARY */
-        className={`w-full flex items-center justify-between bg-main border-b border-secondary-hover px-5 py-2.5`}
+        className={`flex w-full items-center justify-between border-b border-secondary-hover bg-main px-5 py-2.5`}
       >
         <div>
           <Link href={"/"}>
-            <BaseImage
+            <Image
               src={"/images/mowgli-tattoo-studio-logo.png"}
               width={50}
               height={50}
@@ -71,23 +69,23 @@ const HeaderMobile = () => {
           </Link>
         </div>
         <div
-          className="flex items-center gap-x-[10px] cursor-pointer"
+          className="flex cursor-pointer items-center gap-x-[10px]"
           onClick={() => setOpen(!open)}
         >
-          <p className="uppercase text-text pt-0.5">Menu</p>
-          <div className={"flex flex-col gap-y-1 w-[14px] h-[14px]"}>
+          <p className="pt-0.5 uppercase text-text">Menu</p>
+          <div className={"flex h-[14px] w-[14px] flex-col gap-y-1"}>
             <span
-              className={`w-full min-h-[2px] rounded-[20px] bg-secondary-hover transition-all duration-300 ease-in-out ${
+              className={`min-h-[2px] w-full rounded-[20px] bg-secondary-hover transition-all duration-300 ease-in-out ${
                 open ? "translate-y-[6px] rotate-45" : ""
               }`}
             ></span>
             <span
-              className={`w-full min-h-[2px] rounded-[20px] bg-secondary-hover transition-all duration-300 ease-in-out ${
+              className={`min-h-[2px] w-full rounded-[20px] bg-secondary-hover transition-all duration-300 ease-in-out ${
                 open ? "opacity-0" : ""
               }`}
             ></span>
             <span
-              className={`w-full min-h-[2px] rounded-[20px] bg-secondary-hover transition-all duration-300 ease-in-out ${
+              className={`min-h-[2px] w-full rounded-[20px] bg-secondary-hover transition-all duration-300 ease-in-out ${
                 open ? "-translate-y-[6px] -rotate-45" : ""
               }`}
             ></span>
@@ -97,18 +95,18 @@ const HeaderMobile = () => {
 
       {/* NAVIGATION APPEARS FROM THE LEFT  */}
       <nav
-        className={`w-full bg-main z-50 h-[calc(100vh-71px)] fixed inset-x-0 top-[71px] bottom-0 transition-all duration-300 ease-in-out ${
+        className={`fixed inset-x-0 bottom-0 top-[71px] z-50 h-[calc(100vh-71px)] w-full bg-main transition-all duration-300 ease-in-out ${
           open ? "left-0" : "-left-full"
         } `}
       >
-        <ul className="px-5 pt-5 flex flex-col gap-5">
+        <ul className="flex flex-col gap-5 px-5 pt-5">
           {navLinks.map((navitem, index) => {
             return (
               <li key={index} className="w-full">
                 <Link
                   href={navitem.url}
                   key={index}
-                  className="w-full block pb-5 border-b border-border-dark text-lg uppercase text-text font-semibold active:text-secondary-active transition-all duration-300 ease-in-out"
+                  className="block w-full border-b border-border-dark pb-5 text-lg font-semibold uppercase text-text transition-all duration-300 ease-in-out active:text-secondary-active"
                 >
                   {navitem.label}
                 </Link>
