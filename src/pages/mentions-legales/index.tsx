@@ -3,9 +3,11 @@ import Link from "next/link";
 
 // COMPONENTS
 import Seo from "@/common/components/seo/seo";
+
+// CONFIG
 import { mowgliCongif } from "@/config/config";
 
-const MentionsLegales = () => {
+const LegalNotice = () => {
   const containerStyle =
     "mt-10 px-5 text-text-light sm:mx-auto sm:w-5/6 sm:px-0 md:mt-14 lg:w-[1025px] xl:w-[1325px]";
   const textContainerStyle = "mt-3 md:text-lg lg:w-2/3";
@@ -27,9 +29,9 @@ const MentionsLegales = () => {
           n°2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique
           (LCEN), il est porté à la connaissance des utilisateurs et visiteurs
           du site{" "}
-          <span className="w-5/12 font-semibold text-main">
+          <strong className="font-semibold text-main">
             Mowgli Tattoo Studio
-          </span>{" "}
+          </strong>{" "}
           les présentes mentions légales.
         </p>
       </div>
@@ -38,12 +40,11 @@ const MentionsLegales = () => {
         <div className={borderStyle}></div>
         <div className={textContainerStyle}>
           <p>
-            Nom de l'éditeur :{" "}
-            <span className={spanTextStyle}>Mowgli Tattoo Studio</span>
-          </p>
-          <p>
-            Statut juridique :{" "}
-            <span className={spanTextStyle}>Entrepreneur individuel</span>
+            Nom de l'éditeur :Pierre-Emmanuel Bauer, Entrepreneur individuel
+            (EI), exerçant sous l’enseigne{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>
           </p>
           <p>
             Numéro SIRET :{" "}
@@ -109,12 +110,18 @@ const MentionsLegales = () => {
         <div className={borderStyle}></div>
         <div className={textContainerStyle}>
           <p>
-            L’ensemble du contenu du site Mowgli Tattoo Studio, incluant, de
-            manière non limitative, les graphismes, images, textes, vidéos,
-            animations, sons, logos, gifs et icônes ainsi que leur mise en
-            forme, est la propriété exclusive de Mowgli Tattoo Studio, à
-            l’exception des marques, logos ou contenus appartenant à d’autres
-            sociétés partenaires ou auteurs.
+            L’ensemble du contenu du site{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>
+            , incluant, de manière non limitative, les graphismes, images,
+            textes, vidéos, animations, sons, logos, gifs et icônes ainsi que
+            leur mise en forme, est la propriété exclusive de{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>
+            , à l’exception des marques, logos ou contenus appartenant à
+            d’autres sociétés partenaires ou auteurs.
           </p>
           <p className="mt-2">
             Toute reproduction, distribution, modification, adaptation,
@@ -131,9 +138,12 @@ const MentionsLegales = () => {
           <p>
             L’éditeur met à disposition des visiteurs des informations à titre
             indicatif. Malgré un soin apporté à la mise à jour du contenu, le
-            site Mowgli Tattoo Studio ne saurait être tenu pour responsable
-            d’erreurs, d’omissions ou d’indisponibilité des informations et
-            services.
+            site{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>{" "}
+            ne saurait être tenu pour responsable d’erreurs, d’omissions ou
+            d’indisponibilité des informations et services.
           </p>
         </div>
       </div>
@@ -154,7 +164,7 @@ const MentionsLegales = () => {
         <div className={textContainerStyle}>
           <p>
             Pour toute question ou demande d'information concernant ce site,
-            vous pouvez nous contacter à l'adresse suivante :
+            vous pouvez nous contacter à l'adresse suivante :<br />
             {mowgliCongif.contactMail}
           </p>
         </div>
@@ -163,4 +173,4 @@ const MentionsLegales = () => {
   );
 };
 
-export default MentionsLegales;
+export default LegalNotice;
