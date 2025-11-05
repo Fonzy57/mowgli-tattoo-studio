@@ -15,13 +15,13 @@ const Error404 = () => {
             height={500}
             alt="Illustration du papillon de la mort, un papillon de nuit avec une tête de mort sur le thorax"
             className="md:drop-shadow-[0_20px_20px_rgb(255_209_97_/_0.2)]"
-            priority
+            preload
           />
           <div className="flex flex-col items-center gap-4 text-text-light">
             <h1 className="text-center text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
               Erreur 404
             </h1>
-            <p className="text-justify lg:text-lg">
+            <p className="mt-4 text-justify lg:text-lg">
               Cette page n'existe pas, mais votre prochain tatouage, lui, est
               bien réel.
             </p>
