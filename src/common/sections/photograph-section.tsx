@@ -1,8 +1,8 @@
 // NEXT
 import Link from "next/link";
+import Image from "next/image";
 
 // COMPONENTS
-import BaseImage from "../components/image/base-image";
 import { CustomIcon } from "../components/icons/icon";
 
 // TYPES
@@ -14,8 +14,7 @@ import { socialsLinksNewbyPics } from "@/config/socials-links";
 export const PhotographSection = () => {
   return (
     <section className="flex flex-col-reverse items-center justify-center gap-16 px-5 py-14 md:flex-row md:px-0 md:py-28 xl:pb-48 xl:pt-40">
-      {/* TODO VOIR SI LE COMPOSANT BASE IMAGE EST TOUJOURS NECESSAIRE */}
-      <BaseImage
+      <Image
         src="/pictures/newby.pics.jpg"
         width={250}
         height={250}

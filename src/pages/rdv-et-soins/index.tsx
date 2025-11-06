@@ -1,8 +1,10 @@
+// NEXT
+import Image from "next/image";
+
 // COMPONENTS
 import CareCard from "@/common/components/card/care-card";
 import Seo from "@/common/components/seo/seo";
 import TextLink from "@/common/components/link/text-link";
-import BaseImage from "@/common/components/image/base-image";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
@@ -103,7 +105,7 @@ const RdvEtSoins = () => {
             </div>
           </div>
           <div className="hidden md:block md:w-1/2 lg:w-1/3">
-            <BaseImage
+            <Image
               src={"/pictures/aiguilles-tattoo.webp"}
               width={636}
               height={508}
@@ -115,7 +117,7 @@ const RdvEtSoins = () => {
 
         <div className="mt-20 text-text-light md:mx-auto md:flex md:w-[948px] md:items-center md:gap-x-20 xl:w-[1400px] xl:justify-center xl:gap-x-44">
           <div className="hidden md:block md:w-1/2 xl:w-1/3">
-            <BaseImage
+            <Image
               src={"/pictures/decoration.webp"}
               width={636}
               height={508}

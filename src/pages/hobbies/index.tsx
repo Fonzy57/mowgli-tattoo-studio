@@ -1,7 +1,9 @@
+// NEXT
+import Image from "next/image";
+
 // COMPONENTS
 import Seo from "@/common/components/seo/seo";
 import TextLink from "@/common/components/link/text-link";
-import BaseImage from "@/common/components/image/base-image";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
@@ -37,7 +39,7 @@ const Hobbies = () => {
             Voici Boo et Frite-Mayo.
           </p>
         </div>
-        <BaseImage
+        <Image
           src={"/pictures/hobbies/Boo-et-Frites-Mayo.webp"}
           width={750}
           height={1000}
@@ -59,14 +61,14 @@ const Hobbies = () => {
           .
         </p>
         <div className="mt-8 flex flex-col items-center gap-y-4 sm:mx-auto sm:w-[700px] sm:flex-row sm:justify-center sm:gap-x-4 md:mt-10 md:w-[800px] lg:mt-14 lg:w-[1000px] lg:items-stretch lg:gap-x-10 xl:mt-20 xl:w-[1200px]">
-          <BaseImage
+          <Image
             src={"/pictures/hobbies/La-Virgule-peinture-cadre.webp"}
             width={750}
             height={750}
             alt="Peinture abstraite texturée encadrée"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
-          <BaseImage
+          <Image
             src={"/pictures/hobbies/La-Virgule-peinture-noire.webp"}
             width={750}
             height={750}
@@ -85,14 +87,14 @@ const Hobbies = () => {
           deux exemples, une planche Star Wars et une Goldorak.
         </p>
         <div className="mt-8 flex flex-col items-center gap-y-4 sm:mx-auto sm:w-[700px] sm:flex-row sm:justify-center sm:gap-x-4 md:mt-10 md:w-[800px] lg:mt-14 lg:w-[1000px] lg:gap-x-10 xl:mt-20 xl:w-[1200px]">
-          <BaseImage
+          <Image
             src={"/pictures/hobbies/mowgli-skate-star-wars.webp"}
             width={750}
             height={750}
             alt="Planche de skate customisée Star Wars"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
-          <BaseImage
+          <Image
             src={"/pictures/hobbies/mowgli-skate-goldorak.webp"}
             width={750}
             height={750}

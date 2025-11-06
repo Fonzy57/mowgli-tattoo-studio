@@ -19,7 +19,7 @@ const Seo = ({ page }: SeoProps) => {
     <Head>
       <title>{seoTitle}</title>
       <meta name="description" content={seoDescription} />
-      {/* TODO DELETE FOR PRODUCTION */}
+      {/* TODO PROD DELETE FOR PRODUCTION */}
       <meta name="robots" content="noindex, nofollow" />
 
       {/* OPEN GRAPH */}

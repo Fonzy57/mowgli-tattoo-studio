@@ -1,10 +1,10 @@
 // REACT & NEXT
 import Link from "next/link";
+import Image from "next/image";
 
 // COMPONENTS
 import { CustomIcon } from "../icons/icon";
 import { IconName } from "../icons/icon.enum";
-import BaseImage from "../image/base-image";
 
 // CONFIG
 import { version } from "@/config/version";
@@ -13,13 +13,14 @@ import {
   socialsLinksMowgli,
   socialsLinksNewbyPics,
 } from "@/config/socials-links";
+import { mowgliCongif } from "@/config/config";
 
 const year = new Date().getFullYear();
 
 const about = [
   {
     name: "mail",
-    label: "mowgli.bauer@gmail.com",
+    label: mowgliCongif.contactMail,
     icon: <CustomIcon name={IconName.Envelope} size={20} />,
   },
   {
@@ -102,7 +103,7 @@ const Footer = () => {
   return (
     <div className="bg-main px-5 pb-6 pt-14 sm:pt-20 lg:pt-8">
       <div className="mx-auto flex flex-col items-center justify-center lg:w-[1325px] lg:flex-row lg:justify-between xl:w-[1560px]">
-        <BaseImage
+        <Image
           src="/images/the-mowgli-studio-logo-brown.svg"
           alt="Logo de The Mowgli Studio"
           width={286}

@@ -1,7 +1,9 @@
+// NEXT
+import Image from "next/image";
+
 // COMPONENTS
 import TextLink from "../components/link/text-link";
 import { LinkButton } from "../components/button/link-button";
-import BaseImage from "../components/image/base-image";
 
 // CONFIG
 import { socialsLinksGrigri } from "@/config/socials-links";
@@ -52,7 +54,7 @@ export const AboutSection = () => {
         </div>
       </div>
       <div className="relative sm:w-1/2 lg:w-auto">
-        <BaseImage
+        <Image
           src="/pictures/pierre-emmanuel-bauer-hero.webp"
           alt="Photo en noir et blanc du tatoueur Mowgli"
           width={700}
