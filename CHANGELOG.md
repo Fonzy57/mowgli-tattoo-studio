@@ -14,6 +14,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.1] - 2025-11-06
+
+### Changed
+
+- **ESLint Configuration Overhaul**
+  - Migrated to the new **Flat Config** format (`eslint.config.js`).
+  - Updated ignore patterns to properly exclude build outputs (`.next`, `out`, `build`, etc.).
+  - Fixed false-positive lint errors coming from generated Next.js files.
+  - Improved compatibility with **TypeScript**, **React Hooks**, and **Next.js** rules.
+- **Lint Cleanup**
+  - Replaced all `any` types with proper typings.
+  - Removed unused imports and variables.
+  - Kept only intentional warnings (e.g., allowed `<img>` usage for specific cases).
+
+### Added
+
+- Added explicit **global environment definitions** for browser and Node contexts.
+- Added strict **React Hooks rules** (`react-hooks/rules-of-hooks` and `react-hooks/exhaustive-deps`).
+
+### Summary
+
+This version focuses on **code quality and tooling stability**.  
+It standardizes linting behavior across the project, removes false positives from generated files, and ensures a **clean and maintainable developer environment**.
+
+---
+
 ## [v2.0.0] - 2025-11-06
 
 ### Added
