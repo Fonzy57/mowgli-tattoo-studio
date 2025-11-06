@@ -13,13 +13,14 @@ import {
   socialsLinksMowgli,
   socialsLinksNewbyPics,
 } from "@/config/socials-links";
+import { mowgliCongif } from "@/config/config";
 
 const year = new Date().getFullYear();
 
 const about = [
   {
     name: "mail",
-    label: "mowgli.bauer@gmail.com",
+    label: mowgliCongif.contactMail,
     icon: <CustomIcon name={IconName.Envelope} size={20} />,
   },
   {
