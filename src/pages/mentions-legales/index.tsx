@@ -1,122 +1,176 @@
-// COMPONENTS
-import Seo from "@/components/seo/seo";
+// NEXT
+import Link from "next/link";
 
-const MentionsLegales = () => {
+// COMPONENTS
+import Seo from "@/common/components/seo/seo";
+
+// CONFIG
+import { mowgliCongif } from "@/config/config";
+
+const LegalNotice = () => {
   const containerStyle =
-    "px-5 text-text-light mt-10 sm:px-0 sm:w-5/6 sm:mx-auto md:mt-16 lg:w-[1025px] xl:w-[1325px]";
-  const titleStyle = "font-cera font-semibold text-main text-2xl underline";
-  const firstTextStyle = "mt-3 md:text-lg";
-  const textStyle = "mt-3 md:text-lg sm:mt-1 md:mt-0";
-  const longTextStyle = "md:w-[650px] lg:w-[750px] xl:w-[950px]";
-  const spanStyle = "font-bold";
+    "mt-10 px-5 text-text-light sm:mx-auto sm:w-5/6 sm:px-0 md:mt-14 lg:w-[1025px] xl:w-[1325px]";
+  const textContainerStyle = "mt-3 md:text-lg lg:w-2/3";
+  const titleStyle = "font-cera text-2xl font-semibold text-main md:text-4xl";
+  const borderStyle = "mt-0.5 h-1 bg-secondary md:w-5/12";
+  const spanTextStyle = "font-bold";
 
   return (
     <>
       <Seo page="mentionsLegales" />
-      <div className="pt-16 pb-8 px-5 sm:pt-20 sm:pb-8 sm:px-0 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
-        <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl">
+      <div className="px-5 pb-8 pt-16 sm:px-0 sm:pb-8 sm:pt-20 md:p-0 md:pt-20 lg:pt-10 xl:pt-20">
+        <h1 className="text-center font-cera text-4xl font-semibold text-main sm:text-6xl md:text-7xl">
           Mentions legales
         </h1>
       </div>
       <div className={containerStyle}>
+        <p className="md:text-lg">
+          Conformément aux dispositions des articles 6-III et 19 de la loi
+          n°2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique
+          (LCEN), il est porté à la connaissance des utilisateurs et visiteurs
+          du site{" "}
+          <strong className="font-semibold text-main">
+            Mowgli Tattoo Studio
+          </strong>{" "}
+          les présentes mentions légales.
+        </p>
+      </div>
+      <div className={containerStyle}>
         <h2 className={titleStyle}>Editeur du site :</h2>
-        <p className={firstTextStyle}>
-          Nom de l'éditeur :{" "}
-          <span className={spanStyle}>Mowgli Tattoo Studio</span>
-        </p>
-        <p className={textStyle}>
-          Statut juridique :{" "}
-          <span className={spanStyle}>Entrepreneur individuel</span>
-        </p>
-        <p className={textStyle}>
-          Numéro SIRET : <span className={spanStyle}>804 100 220 00032</span>
-        </p>
-        <p className={textStyle}>
-          Adresse :{" "}
-          <span className={spanStyle}>
-            2 A Rue des Pépinières, 57050 LONGEVILLE-LES-METZ
-          </span>
-        </p>
-        <p className={textStyle}>
-          Contact : <span className={spanStyle}>mowgli.bauer@gmail.com</span>
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            Nom de l'éditeur :Pierre-Emmanuel Bauer, Entrepreneur individuel
+            (EI), exerçant sous l’enseigne{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>
+          </p>
+          <p>
+            Numéro SIRET :{" "}
+            <span className={spanTextStyle}>804 100 220 00032</span>
+          </p>
+          <p>
+            Adresse :{" "}
+            <span className={spanTextStyle}>
+              2 A Rue des Pépinières, 57050 LONGEVILLE-LES-METZ
+            </span>
+          </p>
+          <p>
+            Contact :{" "}
+            <span className={spanTextStyle}>{mowgliCongif.contactMail}</span>
+          </p>
+        </div>
       </div>
       <div className={containerStyle}>
         <h2 className={titleStyle}>Responsable de publication :</h2>
-        <p className={firstTextStyle}>
-          Nom : <span className={spanStyle}>Mowgli Tattoo Studio</span>
-        </p>
-        <p className={textStyle}>
-          Contact : <span className={spanStyle}>mowgli.bauer@gmail.com</span>
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            Nom : <span className={spanTextStyle}>Mowgli Tattoo Studio</span>
+          </p>
+          <p>
+            Contact :{" "}
+            <span className={spanTextStyle}>{mowgliCongif.contactMail}</span>
+          </p>
+        </div>
       </div>
 
-      {/* TODO FAIRE LES MODIFICATIONS DES INFORMATIONS */}
       <div className={containerStyle}>
         <h2 className={titleStyle}>Hébergement :</h2>
-        <p className={firstTextStyle}>
-          Nom de l'hébergeur :{" "}
-          <span className={spanStyle}>
-            [Nom de l'hébergeur, ex : OVH, AWS, etc.]
-          </span>
-        </p>
-        <p className={textStyle}>
-          Adresse :{" "}
-          <span className={spanStyle}>
-            [Adresse complète de l'hébergeur, ex : 2 Rue Kellermann, 59100
-            Roubaix, France]
-          </span>
-        </p>
-        <p className={textStyle}>
-          Téléphone :{" "}
-          <span className={spanStyle}>
-            [Numéro de téléphone de l'hébergeur, ex : +33 9 72 10 10 07]
-          </span>
-        </p>
-        <p className={textStyle}>
-          Site web :{" "}
-          <span className={spanStyle}>
-            [Lien vers le site de l'hébergeur, ex : https://www.ovhcloud.com]
-          </span>
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            Nom de l'hébergeur : <span className={spanTextStyle}>OVH SAS</span>
+          </p>
+          <p>
+            Adresse :{" "}
+            <span className={spanTextStyle}>
+              2 rue Kellermann, 59100 Roubaix, France
+            </span>
+          </p>
+          <p>
+            Téléphone : <span className={spanTextStyle}>+33 9 72 10 10 07</span>
+          </p>
+          <p>
+            Site web :{" "}
+            <Link
+              href={"https://www.ovhcloud.com/fr/"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-main hover:underline"
+            >
+              https://www.ovhcloud.com/fr/
+            </Link>
+          </p>
+        </div>
       </div>
       <div className={containerStyle}>
         <h2 className={titleStyle}>Propriété intellectuelle :</h2>
-        <p className={`${firstTextStyle} ${longTextStyle}`}>
-          Tous les contenus présents sur ce site (textes, images, graphismes)
-          sont protégés par les lois en vigueur sur la propriété intellectuelle
-          et sont la propriété exclusive de Mowgli Tattoo Studio. Toute
-          reproduction, modification, distribution ou exploitation est interdite
-          sans autorisation écrite préalable.
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            L’ensemble du contenu du site{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>
+            , incluant, de manière non limitative, les graphismes, images,
+            textes, vidéos, animations, sons, logos, gifs et icônes ainsi que
+            leur mise en forme, est la propriété exclusive de{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>
+            , à l’exception des marques, logos ou contenus appartenant à
+            d’autres sociétés partenaires ou auteurs.
+          </p>
+          <p className="mt-2">
+            Toute reproduction, distribution, modification, adaptation,
+            retransmission ou publication, même partielle, de ces différents
+            éléments est strictement interdite sans l’accord écrit de Mowgli
+            Tattoo Studio.
+          </p>
+        </div>
       </div>
       <div className={containerStyle}>
         <h2 className={titleStyle}>Limitation de responsabilité :</h2>
-        <p className={`${firstTextStyle} ${longTextStyle}`}>
-          Les informations présentes sur ce site sont fournies à titre indicatif
-          et peuvent être modifiées sans préavis. Mowgli Tattoo Studio ne
-          saurait être tenu responsable des éventuels dommages résultant de
-          l'utilisation des informations ou des contenus présents sur ce site.
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            L’éditeur met à disposition des visiteurs des informations à titre
+            indicatif. Malgré un soin apporté à la mise à jour du contenu, le
+            site{" "}
+            <strong className="font-semibold text-main">
+              Mowgli Tattoo Studio
+            </strong>{" "}
+            ne saurait être tenu pour responsable d’erreurs, d’omissions ou
+            d’indisponibilité des informations et services.
+          </p>
+        </div>
       </div>
       <div className={containerStyle}>
         <h2 className={titleStyle}>Liens externes :</h2>
-        <p className={`${firstTextStyle} ${longTextStyle}`}>
-          Ce site peut contenir des liens vers des sites tiers. Mowgli Tattoo
-          Studio n'exerce aucun contrôle sur ces sites et ne peut être tenu
-          responsable de leur contenu ou de leur politique de confidentialité.
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            Ce site peut contenir des liens vers des sites tiers. Mowgli Tattoo
+            Studio n'exerce aucun contrôle sur ces sites et ne peut être tenu
+            responsable de leur contenu ou de leur politique de confidentialité.
+          </p>
+        </div>
       </div>
       <div className={`${containerStyle} mb-20 sm:mb-28 md:mb-32`}>
         <h2 className={titleStyle}>Contact :</h2>
-        <p className={`${firstTextStyle} ${longTextStyle}`}>
-          Pour toute question ou demande d'information concernant ce site, vous
-          pouvez nous contacter à l'adresse suivante :{" "}
-          <span className={spanStyle}>mowgli.bauer@gmail.com</span>
-        </p>
+        <div className={borderStyle}></div>
+        <div className={textContainerStyle}>
+          <p>
+            Pour toute question ou demande d'information concernant ce site,
+            vous pouvez nous contacter à l'adresse suivante :<br />
+            {mowgliCongif.contactMail}
+          </p>
+        </div>
       </div>
     </>
   );
 };
 
-export default MentionsLegales;
+export default LegalNotice;

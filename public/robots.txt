@@ -1,4 +1,6 @@
 # Robots.txt pour Mowgli Tattoo Studio
+# TODO PROD une fois que tout est fonctionnel Allow: *
 User-agent: *
 Disallow: /
 
+# TODO BIEN METTRE EN DISALLOW ALL AVANT D'AVOIR L'API INSTA

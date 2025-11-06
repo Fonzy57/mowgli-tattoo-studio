@@ -1,7 +1,9 @@
+// NEXT
+import Image from "next/image";
+
 // COMPONENTS
-import Seo from "@/components/seo/seo";
-import TextLink from "@/components/link/text-link";
-import BaseImage from "@/components/image/base-image";
+import Seo from "@/common/components/seo/seo";
+import TextLink from "@/common/components/link/text-link";
 
 // CONFIG
 import { socialsLinksMowgli } from "@/config/socials-links";
@@ -10,14 +12,14 @@ const Hobbies = () => {
   return (
     <>
       <Seo page="hobbies" />
-      <h1 className="px-5 font-cera text-center font-semibold text-main pt-10 text-4xl sm:px-0 sm:pt-14 sm:text-5xl md:pt-20 md:text-6xl lg:text-8xl">
+      <h1 className="px-5 pt-10 text-center font-cera text-4xl font-semibold text-main sm:px-0 sm:pt-14 sm:text-5xl md:pt-20 md:text-6xl lg:text-8xl">
         Mes hobbies
       </h1>
-      <div className="px-5 flex flex-col gap-y-4 text-text-light mt-8 text-justify mx-auto sm:px-0 sm:w-[700px] md:w-[800px] md:mt-10 lg:text-lg lg:mt-20">
+      <div className="mx-auto mt-8 flex flex-col gap-y-4 px-5 text-justify text-text-light sm:w-[700px] sm:px-0 md:mt-10 md:w-[800px] lg:mt-20 lg:text-lg">
         <p>
           En dehors du tatouage, je partage mon quotidien avec mes deux chats
           Sphynx, Boo et Frite-Mayo. Je consacre aussi une partie de mon temps
-          libre à <span className="italic font-semibold">La Virgule</span>, mon
+          libre à <span className="font-semibold italic">La Virgule</span>, mon
           activité artistique où je réalise des peintures abstraites texturées
           et je customise des planches de skate.
         </p>
@@ -28,16 +30,16 @@ const Hobbies = () => {
         </p>
       </div>
 
-      <section className="px-5 flex flex-col items-center mt-12 sm:px-0 md:w-[948px] md:mx-auto lg:mt-20 lg:w-[1125px] lg:justify-center xl:w-[1400px] xl:mt-32">
+      <section className="mt-12 flex flex-col items-center px-5 sm:px-0 md:mx-auto md:w-[948px] lg:mt-20 lg:w-[1125px] lg:justify-center xl:mt-32 xl:w-[1400px]">
         <div className="">
-          <h2 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+          <h2 className="text-center font-cera text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
             Mes chats
           </h2>
-          <p className="text-text-light text-center mt-4 lg:text-lg lg:w-[500px] mx-auto">
+          <p className="mx-auto mt-4 text-center text-text-light lg:w-[500px] lg:text-lg">
             Voici Boo et Frite-Mayo.
           </p>
         </div>
-        <BaseImage
+        <Image
           src={"/pictures/hobbies/Boo-et-Frites-Mayo.webp"}
           width={750}
           height={1000}
@@ -47,26 +49,26 @@ const Hobbies = () => {
         />
       </section>
 
-      <section className="px-5 mt-12 sm:mt-20 sm:px-0 lg:mt-28 xl:mt-32">
-        <h2 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+      <section className="mt-12 px-5 sm:mt-20 sm:px-0 lg:mt-28 xl:mt-32">
+        <h2 className="text-center font-cera text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           La Virgule
         </h2>
-        <p className="text-text-light text-justify mt-4 xs:text-center sm:text-center lg:text-lg lg:mt-8">
+        <p className="mt-4 text-justify text-text-light xs:text-center sm:text-center lg:mt-8 lg:text-lg">
           Vous pouvez voir tous mes projets sur{" "}
           <TextLink href={socialsLinksMowgli.virgule} blank={true}>
             Instagram
           </TextLink>
           .
         </p>
-        <div className="flex flex-col items-center mt-8 gap-y-4 sm:w-[700px] sm:mx-auto sm:flex-row sm:gap-x-4 sm:justify-center md:w-[800px] md:mt-10 lg:w-[1000px] lg:items-stretch lg:mt-14 lg:gap-x-10 xl:w-[1200px] xl:mt-20">
-          <BaseImage
+        <div className="mt-8 flex flex-col items-center gap-y-4 sm:mx-auto sm:w-[700px] sm:flex-row sm:justify-center sm:gap-x-4 md:mt-10 md:w-[800px] lg:mt-14 lg:w-[1000px] lg:items-stretch lg:gap-x-10 xl:mt-20 xl:w-[1200px]">
+          <Image
             src={"/pictures/hobbies/La-Virgule-peinture-cadre.webp"}
             width={750}
             height={750}
             alt="Peinture abstraite texturée encadrée"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
-          <BaseImage
+          <Image
             src={"/pictures/hobbies/La-Virgule-peinture-noire.webp"}
             width={750}
             height={750}
@@ -76,23 +78,23 @@ const Hobbies = () => {
         </div>
       </section>
 
-      <section className="px-5 mt-12 pb-24 sm:px-0 sm:mt-20 sm:pb-32 lg:mt-28 lg:pb-52 xl:mt-32 xl:pb-64">
-        <h2 className="font-cera text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-main">
+      <section className="mt-12 px-5 pb-24 sm:mt-20 sm:px-0 sm:pb-32 lg:mt-28 lg:pb-52 xl:mt-32 xl:pb-64">
+        <h2 className="text-center font-cera text-3xl font-semibold text-main sm:text-5xl lg:text-6xl xl:text-7xl">
           Planches de skate
         </h2>
-        <p className="text-text-light text-justify mt-4 xs:text-center sm:text-center sm:w-[500px] sm:mx-auto lg:w-[560px] lg:text-lg lg:mt-8">
+        <p className="mt-4 text-justify text-text-light xs:text-center sm:mx-auto sm:w-[500px] sm:text-center lg:mt-8 lg:w-[560px] lg:text-lg">
           La customisation de planches de skate est faite sur demande. Voici
           deux exemples, une planche Star Wars et une Goldorak.
         </p>
-        <div className="flex flex-col items-center mt-8 gap-y-4 sm:w-[700px] sm:mx-auto sm:flex-row sm:gap-x-4 sm:justify-center md:w-[800px] md:mt-10 lg:w-[1000px] lg:mt-14 lg:gap-x-10 xl:w-[1200px] xl:mt-20">
-          <BaseImage
+        <div className="mt-8 flex flex-col items-center gap-y-4 sm:mx-auto sm:w-[700px] sm:flex-row sm:justify-center sm:gap-x-4 md:mt-10 md:w-[800px] lg:mt-14 lg:w-[1000px] lg:gap-x-10 xl:mt-20 xl:w-[1200px]">
+          <Image
             src={"/pictures/hobbies/mowgli-skate-star-wars.webp"}
             width={750}
             height={750}
             alt="Planche de skate customisée Star Wars"
             className="rounded-lg sm:w-1/2 md:shadow-full-main"
           />
-          <BaseImage
+          <Image
             src={"/pictures/hobbies/mowgli-skate-goldorak.webp"}
             width={750}
             height={750}

@@ -8,11 +8,75 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-- Register the domain name mowgli-tattoo-studio.fr (IMPORTANT)
 - Set up a database to store necessary project data, including Instagram access tokens.
 - Implement a cron job to refresh the Instagram access token every 60 days automatically.
-- Update the **legal notice** once the hosting provider is chosen.
 - Generate and integrate an automatic **sitemap** for better SEO and site indexing.
+
+---
+
+## [v2.0.1] - 2025-11-06
+
+### Changed
+
+- **ESLint Configuration Overhaul**
+  - Migrated to the new **Flat Config** format (`eslint.config.js`).
+  - Updated ignore patterns to properly exclude build outputs (`.next`, `out`, `build`, etc.).
+  - Fixed false-positive lint errors coming from generated Next.js files.
+  - Improved compatibility with **TypeScript**, **React Hooks**, and **Next.js** rules.
+- **Lint Cleanup**
+  - Replaced all `any` types with proper typings.
+  - Removed unused imports and variables.
+  - Kept only intentional warnings (e.g., allowed `<img>` usage for specific cases).
+
+### Added
+
+- Added explicit **global environment definitions** for browser and Node contexts.
+- Added strict **React Hooks rules** (`react-hooks/rules-of-hooks` and `react-hooks/exhaustive-deps`).
+
+### Summary
+
+This version focuses on **code quality and tooling stability**.  
+It standardizes linting behavior across the project, removes false positives from generated files, and ensures a **clean and maintainable developer environment**.
+
+---
+
+## [v2.0.0] - 2025-11-06
+
+### Added
+
+- **Prettier Tailwind Plugin**: Ensures consistent Tailwind class ordering across the project.
+- **Homepage Sections**: Split the homepage into multiple sections for better readability and structure.
+- **Docker Support**: Added `Dockerfile`, `docker-compose.yml`, and `.dockerignore` for containerized deployment.
+- **Global Configuration File**: Centralized application settings and constants.
+- **Legal Pages** for compliance:
+  - Legal Notice
+  - Privacy Policy
+  - Cookie Policy
+- **Footer Links**: Added links to all legal pages.
+- **Custom Error Pages**: Created dedicated `404` and `500` pages with SEO-friendly metadata.
+- **CI/CD Workflow**: Introduced `deploy.yml` for automated VPS deployment.
+
+### Changed
+
+- **Dependencies**: Updated project dependencies to their latest compatible versions.
+- **Configuration**:
+  - Simplified `next.config.js` and `postcss.config.js`.
+  - Updated Tailwind configuration.
+  - Updated runtime config imports for base paths and SEO.
+- **Sitemap**: Improved structure and added comments for clarity.
+- **Footer**: Email address now dynamically loaded from the global config.
+- **SEO**: Enhanced metadata for legal and error pages.
+- **Styling**: Adjusted visuals and spacing for legal and error pages for better user experience.
+
+### Removed
+
+- **`BaseImage` Component**: Replaced with Next.js native `Image` for better optimization.
+- **GitHub Pages Configurations**: Removed outdated GitHub Pages–specific setup and files.
+- **Redundant Code**: Deleted obsolete comments and unused configuration variables.
+
+### Summary
+
+This major release improves the project’s architecture, enhances deployment automation, optimizes SEO and compliance, and prepares the site for production hosting beyond GitHub Pages.
 
 ---
 

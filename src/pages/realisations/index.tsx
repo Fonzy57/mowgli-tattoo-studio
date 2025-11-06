@@ -9,10 +9,10 @@ import { easeInOut, motion } from "framer-motion";
 import { socialsLinksMowgli } from "@/config/socials-links";
 
 // COMPONENTS
-import Seo from "@/components/seo/seo";
-import { LinkButton } from "@/components/button/link-button";
-import { Button } from "@/components/button/button";
-import ApiErrorGalleryDisplay from "@/components/skeleton-loader/error-gallery-display";
+import Seo from "@/common/components/seo/seo";
+import { LinkButton } from "@/common/components/button/link-button";
+import { Button } from "@/common/components/button/button";
+import ApiErrorGalleryDisplay from "@/common/components/skeleton-loader/error-gallery-display";
 
 // TYPING
 import { Post } from "@/dto/posts.dto";
@@ -36,10 +36,10 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
   return (
     <>
       <Seo page="realisations" />
-      <h1 className="font-cera text-center font-semibold text-main pt-10 text-4xl sm:pt-14 sm:text-5xl md:text-6xl lg:pt-20 lg:text-8xl">
+      <h1 className="pt-10 text-center font-cera text-4xl font-semibold text-main sm:pt-14 sm:text-5xl md:text-6xl lg:pt-20 lg:text-8xl">
         Mes derniers tatouages
       </h1>
-      <div className="px-5 flex flex-col gap-y-8 text-text-light text-justify w-full mx-auto mt-8 sm:text-lg sm:mt-10 sm:gap-y-4 md:px-0 md:text-left md:w-[700px] lg:mt-12 lg:gap-y-3">
+      <div className="mx-auto mt-8 flex w-full flex-col gap-y-8 px-5 text-justify text-text-light sm:mt-10 sm:gap-y-4 sm:text-lg md:w-[700px] md:px-0 md:text-left lg:mt-12 lg:gap-y-3">
         <p>
           Bienvenue dans mon univers du{" "}
           <strong className="font-normal">
@@ -72,7 +72,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
       {
         /* !isFetching && !isLoading && posts && */ posts.length > 0 && (
           <motion.div
-            className={`grid grid-cols-1 gap-5 max-w-[1560px] mx-auto mt-20 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:px-0 xl:gap-10 relative overflow-hidden gallery-container`}
+            className={`gallery-container relative mx-auto mt-20 grid max-w-[1560px] grid-cols-1 gap-5 overflow-hidden px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:gap-10 xl:px-0`}
             initial={{ maxHeight: 700 }}
             animate={{ maxHeight: seeMore ? 20000 : 700 }}
             transition={{
@@ -103,7 +103,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
               );
             })}
             <motion.div
-              className={`inset-x-0 bottom-0 flex justify-center pt-44 pb-10 bg-gradient-to-t from-bgDark absolute xs:pt-56 xs:pb-20 sm:pt-52 md:pt-60 md:pb-24 lg:pt-56 lg:pb-20 xl:pt-48`}
+              className={`absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-bgDark pb-10 pt-44 xs:pb-20 xs:pt-56 sm:pt-52 md:pb-24 md:pt-60 lg:pb-20 lg:pt-56 xl:pt-48`}
               initial={{ opacity: 1, pointerEvents: "auto" }}
               animate={{
                 opacity: seeMore ? 0 : 1,
@@ -120,7 +120,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
         )
       }
       <motion.div
-        className={`w-max mx-auto mb-20`}
+        className={`mx-auto mb-20 w-max`}
         initial={{ marginTop: 150 }}
         animate={{
           marginTop: seeMore ? 80 : 150,
