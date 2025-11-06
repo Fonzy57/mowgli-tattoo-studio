@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import defaultTheme from "tailwindcss/defaultTheme";
+const { fontFamily } = defaultTheme;
 
 const config: Config = {
   content: [

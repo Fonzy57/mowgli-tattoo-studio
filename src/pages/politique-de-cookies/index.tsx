@@ -11,7 +11,7 @@ const CookiePolicy = () => {
   const titleStyle = "font-cera text-2xl font-semibold text-main md:text-4xl";
   const borderStyle = "mt-0.5 h-1 bg-secondary md:w-5/12";
   const spanTextStyle = "font-bold";
-  const strongTextStyle = "";
+  const strongTextStyle = "font-semibold text-main";
 
   return (
     <>
@@ -29,9 +29,7 @@ const CookiePolicy = () => {
           <p>
             La présente politique a pour objet d’informer les utilisateurs du
             site{" "}
-            <strong className={"font-semibold text-main"}>
-              Mowgli Tattoo Studio
-            </strong>{" "}
+            <strong className={strongTextStyle}>Mowgli Tattoo Studio</strong>{" "}
             sur l’utilisation des cookies et autres traceurs susceptibles d’être
             déposés sur leur terminal lors de la navigation.
           </p>
@@ -58,9 +56,7 @@ const CookiePolicy = () => {
         <div className={textContainerStyle}>
           <p>
             Le site{" "}
-            <strong className={"font-semibold text-main"}>
-              Mowgli Tattoo Studio
-            </strong>{" "}
+            <strong className={strongTextStyle}>Mowgli Tattoo Studio</strong>{" "}
             n’utilise{" "}
             <span className={spanTextStyle}>
               aucun cookie à des fins de suivi, de publicité ou de mesure

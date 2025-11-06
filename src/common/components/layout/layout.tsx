@@ -1,6 +1,6 @@
 // REACT & NEXT
 import { useRouter } from "next/router";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 
 // FRAMER MOTION
 import { AnimatePresence } from "framer-motion";

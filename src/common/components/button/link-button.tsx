@@ -29,7 +29,6 @@ export const LinkButton = ({
   size,
   disabled,
   className,
-  loading,
 }: LinkButtonProps) => {
   let target = "_self";
   let rel = "";

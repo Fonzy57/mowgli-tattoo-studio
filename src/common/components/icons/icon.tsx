@@ -25,7 +25,7 @@ interface CustomIconProps {
   size: number;
   name: IconName;
   className?: string;
-  onClick?: any;
+  onClick?: React.MouseEventHandler<HTMLSpanElement>;
 }
 
 export const iconComponents = {
