@@ -2,7 +2,7 @@
 import { LinkButton } from "../button/link-button";
 
 // CONFIG
-import { socialsLinksMowgli } from "@/config/socials-links";
+import { socialsLinksMowgli } from "@/config/socials-links.config";
 
 const ApiErrorGalleryDisplay = () => {
   return (

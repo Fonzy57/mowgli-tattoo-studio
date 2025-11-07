@@ -6,7 +6,7 @@ import { useState } from "react";
 import { easeInOut, motion } from "framer-motion";
 
 // CONFIG
-import { socialsLinksMowgli } from "@/config/socials-links";
+import { socialsLinksMowgli } from "@/config/socials-links.config";
 
 // COMPONENTS
 import Seo from "@/common/components/seo/seo";
