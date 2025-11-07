@@ -2,129 +2,101 @@
 
 [🇬🇧 Read this document in English](./README.md)
 
-Ce projet est un site web créé pour **Mowgli Tattoo Studio**, un studio de tatouage spécialisé dans les tatouages réalistes en noir et gris. Le site met en avant les réalisations du tatoueur, son style artistique, et offre une présentation professionnelle tout en récupérant automatiquement ses publications Instagram via l'API Graph de Meta.
+**Mowgli Tattoo Studio** est un site web moderne et entièrement responsive conçu pour mettre en valeur l’art d’un studio de tatouage spécialisé dans les **tatouages réalistes en noir et gris**.  
+La plateforme met l’accent sur l’esthétique, la performance et la conformité, offrant un portfolio numérique immersif destiné aux clients et aux passionnés de tatouage.
 
 ---
 
-<details>
-<summary>Table des matières</summary>
+## 🧭 Présentation du projet
 
-- [Technologies utilisées](#technologies-utilisées)
-- [Fonctionnalités principales](#fonctionnalités-principales)
-- [Installation et lancement](#installation-et-lancement)
-  - [Prérequis](#prérequis)
-  - [Étapes d'installation](#étapes-dinstallation)
-- [Ressources utiles](#ressources-utiles)
-- [Copyright](#copyright)
-</details>
+Ce projet sert de **vitrine numérique professionnelle** pour Mowgli Tattoo Studio.  
+Il met en avant le style de l’artiste, fournit les informations essentielles aux clients et garantit une visibilité optimale grâce à une structure optimisée pour le référencement naturel (SEO).
+
+Au-delà de son aspect visuel, le site a été conçu pour être **facile à maintenir et évolutif**, intégrant des fonctionnalités prêtes pour la production telles que la compatibilité **Docker**, un **déploiement automatisé**, la **conformité légale**, et une **galerie dynamique alimentée par l’API Graph de Meta (Instagram)**.
 
 ---
 
-## Technologies utilisées
+## ⚙️ Technologies principales
 
-Ce projet a été développé avec les technologies suivantes :
-
-- **[Next.js](https://nextjs.org/)** (v13.5.7) : Framework React pour le rendu côté serveur (SSR) et les fonctionnalités modernes.
-- **[TypeScript](https://www.typescriptlang.org/)** : Ajout de typage statique pour un code plus robuste et maintenable.
-- **[Tailwind CSS](https://tailwindcss.com/)** : Framework CSS utilitaire pour un design personnalisé et réactif.
-- **[Instagram Graph API](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)** : Pour récupérer dynamiquement les publications Instagram du tatoueur.
-- **[Framer Motion](https://motion.dev/docs)**: Utilisé pour créer des animations fluides et des transitions élégantes sur le site.
-
----
-
-## Fonctionnalités principales
-
-Ce site web est conçu pour offrir une expérience utilisateur optimale et refléter le style unique de **Mowgli Tattoo Studio**.  
-Voici ses principales fonctionnalités :
-
-- **Galerie des réalisations** : Présente les derniers tatouages réalisés par le studio.
-- **Connexion Instagram dynamique** : Les publications Instagram sont automatiquement récupérées et affichées sur le site grâce à l'API Graph de Meta.
-- **Responsive Design** : Optimisé pour une expérience utilisateur fluide sur mobiles, tablettes et ordinateurs.
-- **SEO optimisé** : Intégration de données structurées (`JSON-LD`) pour améliorer la visibilité du site dans les moteurs de recherche.
-- **Mode maintenance** : Permet d'afficher un message dédié lorsque le site est temporairement indisponible pour mise à jour ou maintenance technique.
+- **[Next.js 16](https://nextjs.org/)** — Framework moderne basé sur React pour créer des applications performantes avec SSR et SSG.
+- **[React 19](https://react.dev/)** — Dernière version de React pour une interface dynamique et modulaire.
+- **[TypeScript](https://www.typescriptlang.org/)** — Ajoute un typage statique pour un code plus robuste et maintenable.
+- **[Tailwind CSS](https://tailwindcss.com/)** — Framework CSS utilitaire pour une mise en page fluide et responsive.
+- **[Framer Motion](https://motion.dev/)** — Pour des animations et transitions fluides entre les pages et composants.
+- **[API Instagram Graph](https://developers.facebook.com/docs/instagram-platform/)** — Récupère et affiche automatiquement les dernières publications Instagram de l’artiste.
+- **[Docker](https://www.docker.com/)** — Environnement conteneurisé pour des déploiements fiables et reproductibles.
+- **[ESLint](https://eslint.org/)** + **[Prettier](https://prettier.io/)** — Garantissent un code propre et cohérent sur l’ensemble du projet.
+- **[CI/CD GitHub Actions](https://docs.github.com/en/actions)** — Pipeline de déploiement automatisé pour un hébergement sur VPS.
 
 ---
 
-## Installation et lancement
+## 🌐 Fonctionnalités principales
 
-### Prérequis
-
-- **Node.js** (version 16.8 ou supérieure)
-
-  Vérifiez votre version de Node.js :
-
-  ```bash
-  node -v
-  ```
-
-  Si vous n'avez pas la version requise, téléchargez et installez la dernière version depuis [Node.js](https://nodejs.org/).
-
-- **npm**, **yarn**, ou **pnpm** pour gérer les dépendances
-
-### Étapes d'installation
-
-1. **Clonez le dépôt** :
-
-   ```bash
-   git clone https://github.com/Fonzy57/mowgli-tattoo-studio.git
-   ```
-
-2. **Accédez au dossier du projet** :
-
-   ```bash
-   cd mowgli-tattoo-studio
-   ```
-
-3. **Installez les dépendances** :
-
-   ```bash
-   npm install
-   # ou
-   yarn install
-   ```
-
-4. **Configurez les variables d'environnement** :
-
-   - Créez un fichier `.env.local` à la racine du projet.
-   - Ajoutez les clés nécessaires, comme le token d'accès à l'API Graph d'Instagram :
-     <br>
-     <br>
-
-   ```env
-   # Permet l'authentification et l'appel à l'API Graph Instagram
-   # Pour générer ce token, connectez-vous à votre compte Meta Developer et créez une application. Assurez-vous que votre compte Instagram est lié.
-   INSTAGRAM_TOKEN=your-instagram-access-token
-
-   # Tester le mode maintenance en passant la variable à true
-   NEXT_PUBLIC_MAINTENANCE_MODE=false
-
-   ```
-
-5. **Lancez le serveur de développement** :
-
-   ```bash
-   npm run dev
-   # ou
-   yarn run dev
-   ```
-
-6. **Ouvrez l'application dans votre navigateur** :  
-   Accédez à [http://localhost:3000](http://localhost:3000) ou [http://127.0.0.1:3000/](http://127.0.0.1:3000/) pour visualiser le site.
+- **Galerie dynamique** — Affiche les dernières publications Instagram via l’API Graph de Meta.
+- **Pages légales** — Comprend les mentions légales, la politique de confidentialité et la politique de cookies, conformément à la réglementation européenne.
+- **Déploiement Dockerisé** — Prêt pour l’hébergement sur VPS grâce à une architecture conteneurisée.
+- **Code cohérent** — ESLint et Prettier (avec plugin Tailwind) assurent une structure claire et uniforme.
+- **Structure modulaire** — Page d’accueil divisée en sections pour une meilleure lisibilité et maintenance.
+- **Optimisation SEO** — Métadonnées personnalisées et sitemap structuré pour un meilleur référencement.
+- **Pages d’erreur personnalisées** — Pages 404 et 500 dédiées avec métadonnées adaptées au référencement.
+- **Workflow CI/CD automatisé** — Simplifie les mises à jour de production via GitHub Actions.
 
 ---
 
-## Ressources utiles
+## 🧑‍⚖️ Conformité et éthique
 
-- [Next.js Documentation](https://nextjs.org/docs/13/getting-started)
-- [Instagram Graph API Documentation](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
-- [Framer Motion Documentation](https://motion.dev/docs)
+Pour garantir la transparence et le respect des lois en vigueur, le projet inclut :
+
+- **Mentions légales**
+- **Politique de confidentialité**
+- **Politique de cookies**
+
+L’ensemble du contenu est conforme au **RGPD** (Règlement Général sur la Protection des Données) et aux exigences du droit numérique français.
 
 ---
 
-## Copyright
+## 🚀 Déploiement et infrastructure
 
-© 2024 Mowgli Tattoo Studio. Tous droits réservés.
+Le site est **dockerisé** et déployé automatiquement via **GitHub Actions** (`deploy.yml`) sur un **serveur VPS**.  
+Cette configuration assure des builds cohérents, des rollbacks rapides et un environnement de production reproductible.
 
-Ce projet, incluant son code, son design et son contenu, est la propriété intellectuelle de son auteur.  
-Toute utilisation, distribution ou modification non autorisée est strictement interdite sans consentement écrit préalable.
+---
+
+## 🧩 Normes de développement
+
+- **Linting :** géré par ESLint (`eslint-config-next`, `typescript-eslint`, `eslint-plugin-react-hooks`).
+- **Formatage :** assuré par Prettier et le plugin **Tailwind CSS**.
+- **Typage :** contrôlé par TypeScript pour éviter les erreurs à l’exécution.
+- **Style de code :** conforme aux conventions modernes de React et Next.js.
+
+---
+
+## 📈 Référencement et accessibilité
+
+Le site intègre :
+
+- Des métadonnées personnalisées pour chaque page (titre, description, balises Open Graph).
+- Un sitemap généré et maintenu automatiquement.
+- Une structure optimisée et un HTML sémantique pour un meilleur référencement.
+- Des bonnes pratiques d’accessibilité pour une expérience fluide sur tous les appareils.
+
+---
+
+## 🧾 Versioning
+
+Le projet suit la **[sémantique de versionnage](https://semver.org/lang/fr/)** :
+
+- **MAJEUR** — Changements structurels ou rétro-incompatibles
+- **MINEUR** — Nouvelles fonctionnalités rétro-compatibles
+- **PATCH** — Corrections et améliorations mineures
+
+Dernière version stable : **v2.0.2**
+
+---
+
+## 🖋️ Auteur
+
+Développé et maintenu par **[Fonzy57](https://github.com/Fonzy57)**  
+© 2025 Mowgli Tattoo Studio. Tous droits réservés.
+
+Toute reproduction, distribution ou modification non autorisée est strictement interdite.

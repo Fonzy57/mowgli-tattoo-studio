@@ -1,5 +1,5 @@
 // CONFIG
-import { socialsLinksMowgli } from "./socials-links";
+import { socialsLinksMowgli } from "./socials-links.config";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
 

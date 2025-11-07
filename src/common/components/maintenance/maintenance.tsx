@@ -3,7 +3,7 @@ import { LinkButton } from "../button/link-button";
 import Seo from "../seo/seo";
 
 // CONFIG
-import { socialsLinksMowgli } from "@/config/socials-links";
+import { socialsLinksMowgli } from "@/config/socials-links.config";
 
 // TYPING
 interface MaintenanceProps {
@@ -15,18 +15,18 @@ const Maintenance = ({ className }: MaintenanceProps) => {
     <>
       <Seo page="maintenance" />
       <div
-        className={`${className} h-screen bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/pictures/mowgli-hero.webp')]`}
+        className={`${className} h-screen bg-[url('/pictures/mowgli-hero.webp')] bg-cover bg-fixed bg-center bg-no-repeat`}
       >
-        <div className="flex items-center justify-center h-full bg-black bg-opacity-70">
+        <div className="flex h-full items-center justify-center bg-black bg-opacity-70">
           <div>
-            <h1 className="font-cera text-center font-semibold text-main text-4xl sm:text-6xl md:text-7xl xl:text-8xl">
+            <h1 className="text-center font-cera text-4xl font-semibold text-main sm:text-6xl md:text-7xl xl:text-8xl">
               Site en maintenance
             </h1>
-            <div className="text-text-light text-center mt-5 flex flex-col gap-y-1 md:mt-8 sm:text-lg lg:mt-10 lg:gap-y-3 lg:text-xl">
+            <div className="mt-5 flex flex-col gap-y-1 text-center text-text-light sm:text-lg md:mt-8 lg:mt-10 lg:gap-y-3 lg:text-xl">
               <p>🚧 Nous travaillons actuellement sur le site 🚧</p>
               <p>En attendant, retrouvez moi sur Insta 👇</p>
             </div>
-            <div className="w-max mx-auto mt-8 lg:mt-12">
+            <div className="mx-auto mt-8 w-max lg:mt-12">
               <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
                 Instagram Mowgli Tattoo
               </LinkButton>

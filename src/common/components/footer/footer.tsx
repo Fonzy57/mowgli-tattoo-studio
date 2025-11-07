@@ -7,12 +7,11 @@ import { CustomIcon } from "../icons/icon";
 import { IconName } from "../icons/icon.enum";
 
 // CONFIG
-import { version } from "@/config/version";
 import {
   socialsLinksGrigri,
   socialsLinksMowgli,
   socialsLinksNewbyPics,
-} from "@/config/socials-links";
+} from "@/config/socials-links.config";
 import { mowgliCongif } from "@/config/config";
 
 const year = new Date().getFullYear();
@@ -195,7 +194,8 @@ const Footer = () => {
         </div>
       </div>
       <p className="mt-20 text-center text-xs text-text lg:mt-14 xl:mt-16">
-        © Mowgli Tattoo Studio {year} - Tous droits réservés | v{version}
+        © Mowgli Tattoo Studio {year} - Tous droits réservés | v
+        {mowgliCongif.version}
       </p>
       <p className="mt-2 text-center text-xs text-text">
         Site développé par{" "}
