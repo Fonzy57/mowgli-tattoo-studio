@@ -66,7 +66,11 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
       </div>
 
       {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
-      {error && <ApiErrorGalleryDisplay />}
+      {error && (
+        <div className="px-5 pb-20">
+          <ApiErrorGalleryDisplay />
+        </div>
+      )}
 
       {/* DISPLAYING LAST 40 INSTAGRAM POSTS */}
       {
