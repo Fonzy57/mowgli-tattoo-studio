@@ -14,6 +14,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.2] - 2025-11-07
+
+### Updated
+
+- **Tailwind CSS Classes** — Reordered utility classes for consistent styling across components.
+- **Layout and Spacing** — Improved padding and layout for better responsiveness on mobile and desktop.
+- **UI Text** — Refined wording and labels for greater clarity and consistency.
+
+### Renamed
+
+- `social-links.ts` → `social-links.config.ts`
+- `seo.ts` → `seo.config.ts`
+- `nav.ts` → `nav.config.ts`
+
+These changes unify the naming convention of configuration files for better organization.
+
+### Added
+
+- **Project Version Number** — Now included in the global configuration file to ensure version traceability within the app.
+
+---
+
 ## [v2.0.1] - 2025-11-06
 
 ### Changed
