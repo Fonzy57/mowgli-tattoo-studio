@@ -6,7 +6,7 @@ import { useState } from "react";
 import { easeInOut, motion } from "framer-motion";
 
 // CONFIG
-import { socialsLinksMowgli } from "@/config/socials-links";
+import { socialsLinksMowgli } from "@/config/socials-links.config";
 
 // COMPONENTS
 import Seo from "@/common/components/seo/seo";
@@ -66,7 +66,11 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
       </div>
 
       {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
-      {error && <ApiErrorGalleryDisplay />}
+      {error && (
+        <div className="px-5 pb-20">
+          <ApiErrorGalleryDisplay />
+        </div>
+      )}
 
       {/* DISPLAYING LAST 40 INSTAGRAM POSTS */}
       {

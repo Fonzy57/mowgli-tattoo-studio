@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // CONFIG
-import { navLinks } from "@/config/nav";
+import { navLinks } from "@/config/nav.config";
 
 const HeaderMobile = () => {
   const [open, setOpen] = useState(false);

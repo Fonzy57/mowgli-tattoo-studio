@@ -9,7 +9,7 @@ import { CustomIcon } from "../components/icons/icon";
 import { IconName } from "../components/icons/icon.enum";
 
 // CONFIG
-import { socialsLinksNewbyPics } from "@/config/socials-links";
+import { socialsLinksNewbyPics } from "@/config/socials-links.config";
 
 export const PhotographSection = () => {
   return (

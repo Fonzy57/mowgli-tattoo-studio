@@ -6,7 +6,7 @@ import TextLink from "../components/link/text-link";
 import { LinkButton } from "../components/button/link-button";
 
 // CONFIG
-import { socialsLinksGrigri } from "@/config/socials-links";
+import { socialsLinksGrigri } from "@/config/socials-links.config";
 
 export const AboutSection = () => {
   return (

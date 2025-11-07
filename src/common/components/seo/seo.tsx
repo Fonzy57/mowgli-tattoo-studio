@@ -2,7 +2,7 @@
 import Head from "next/head";
 
 // CONFIG
-import { seoConfig, seoStructuredData } from "@/config/seo";
+import { seoConfig, seoStructuredData } from "@/config/seo.config";
 
 // TYPING
 type SeoPage = keyof typeof seoConfig;

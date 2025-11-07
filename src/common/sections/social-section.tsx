@@ -8,7 +8,7 @@ import { CustomIcon } from "../components/icons/icon";
 import { IconName } from "../components/icons/icon.enum";
 
 // CONFIG
-import { socialsLinksMowgli } from "@/config/socials-links";
+import { socialsLinksMowgli } from "@/config/socials-links.config";
 
 export const SocialSection = () => {
   return (
