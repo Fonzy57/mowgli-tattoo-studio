@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 // CONFIG
-import { navLinks } from "@/config/nav";
+import { navLinks } from "@/config/nav.config";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
