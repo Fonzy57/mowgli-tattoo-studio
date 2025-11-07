@@ -96,7 +96,7 @@ const RdvEtSoins = () => {
               </p>
               <p>
                 Je suis disponible pour répondre à toutes vos questions et vous
-                accompagner dans le processus de réservation. personnalisée.
+                accompagner dans le processus de réservation personnalisée.
               </p>
               <p>
                 Assurez-vous de fournir un maximum de détails pour que je puisse
@@ -189,7 +189,7 @@ const RdvEtSoins = () => {
             return <CareCard key={index} icon={item.icon} parts={item.parts} />;
           })}
         </div>
-        <p className="mt-10 px-5 pb-20 text-justify text-text-light md:px-0 lg:mt-20 lg:text-lg">
+        <p className="mt-10 px-5 pb-20 text-justify text-text-light md:px-0 md:pb-40 lg:mt-20 lg:text-lg">
           <strong className="text-main underline">Important :</strong> Mettre de
           l'indice 50 au soleil et ne pas donner son sang pendant 4 mois.
         </p>
