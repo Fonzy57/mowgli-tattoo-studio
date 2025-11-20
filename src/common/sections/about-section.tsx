@@ -6,7 +6,7 @@ import TextLink from "../components/link/text-link";
 import { LinkButton } from "../components/button/link-button";
 
 // CONFIG
-import { socialsLinksGrigri } from "@/config/socials-links.config";
+import { socialsLinksCasseNoisette } from "@/config/socials-links.config";
 
 export const AboutSection = () => {
   return (
@@ -43,10 +43,10 @@ export const AboutSection = () => {
             propre studio. Depuis, je vis pleinement cette aventure artistique
             et humaine, en partageant cet espace de création avec ma collègue
             talentueuse,{" "}
-            <TextLink href={socialsLinksGrigri.site} blank={true}>
-              Le Grigri
+            <TextLink href={socialsLinksCasseNoisette.instagram} blank={true}>
+              Casse Noisette
             </TextLink>
-            , depuis un an et demi.
+            .
           </p>
         </div>
         <div className="mx-auto mt-10 w-max lg:mt-14 xl:mt-20">

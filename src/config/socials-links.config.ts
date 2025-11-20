@@ -9,7 +9,6 @@ export const socialsLinksNewbyPics = {
   facebook: "https://www.facebook.com/people/Newbypics/61563660336691/",
 };
 
-export const socialsLinksGrigri = {
-  instagram: "https://www.instagram.com/legrigritattoo/",
-  site: "https://legrigritattoofr.wordpress.com/",
+export const socialsLinksCasseNoisette = {
+  instagram: "https://www.instagram.com/casse.noisette.tattoo/",
 };

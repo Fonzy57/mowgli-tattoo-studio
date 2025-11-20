@@ -7,6 +7,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: "0 5 * * 0" # Tous les dimanches à 05:00 UTC
 
 jobs:
   # 1️⃣ Validation du code
@@ -32,63 +34,15 @@ jobs:
       - name: Dry-run build check
         run: npm run build --dry-run
 
-  # 2️⃣ Build et upload de l’image Docker
-  build_and_push_image:
-    if: github.event_name == 'push'
-    name: Build & Upload Docker Image
+  # 2️⃣ Build + déploiement sur le VPS (tout se fait côté serveur)
+  deploy_to_vps:
+    if: github.event_name == 'push' || github.event_name == 'schedule'
+    name: Build & Deploy on VPS
     runs-on: ubuntu-latest
     needs: lint_and_test
-    outputs:
-      version: ${{ steps.pkg.outputs.version }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Read version from package.json
-        id: pkg
-        run: |
-          VERSION=$(jq -r .version package.json)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Building version: $VERSION"
-
-      - name: Build Docker image (versioned only)
-        run: |
-          docker build \
-            --build-arg NEXT_PUBLIC_BASE_URL=https://mowgli-tattoo-studio.fr \
-            -t mowgli-tattoo-app:${{ steps.pkg.outputs.version }} .
-
-      - name: Save Docker image as tarball
-        run: docker save mowgli-tattoo-app:${{ steps.pkg.outputs.version }} -o mowgli-tattoo-app-${{ steps.pkg.outputs.version }}.tar
-
-      - name: Fix permissions on tar file
-        run: chmod 644 mowgli-tattoo-app-${{ steps.pkg.outputs.version }}.tar
-
-      - name: Verify tarball exists
-        run: ls -lh mowgli-tattoo-app-${{ steps.pkg.outputs.version }}.tar
-
-      - name: Upload image to VPS
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          source: "mowgli-tattoo-app-${{ steps.pkg.outputs.version }}.tar"
-          target: "~/mowgli-tattoo-studio/"
-          overwrite: true
-
-  # 3️⃣ Déploiement sur le VPS
-  deploy_to_vps:
-    if: github.event_name == 'push'
-    name: Deploy on VPS
-    runs-on: ubuntu-latest
-    needs: build_and_push_image
-
-    steps:
-      - name: Connect & Deploy via SSH
+      - name: Connect & Build/Deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -96,9 +50,13 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             set -euo pipefail
-            VERSION=${{ needs.build_and_push_image.outputs.version }}
 
             cd ~/mowgli-tattoo-studio
+
+            echo "📥 Git pull last main"
+            git fetch --all --prune
+            git checkout main
+            git pull origin main
 
             echo "🔒 Checking .env.production presence..."
             if [ ! -f .env.production ]; then
@@ -106,17 +64,28 @@ jobs:
               exit 1
             fi
 
-            echo "📦 Load image version $VERSION"
-            docker load -i mowgli-tattoo-app-${VERSION}.tar
+            echo "🔑 Loading INSTAGRAM_TOKEN from .env.production"
+            # On exporte juste INSTAGRAM_TOKEN pour le build Docker
+            export $(grep -E '^INSTAGRAM_TOKEN=' .env.production | xargs)
+
+            echo "📦 Compute version from package.json"
+            VERSION=$(node -p "require('./package.json').version")
+            echo "Building version: $VERSION"
 
             echo "🌐 Ensure 'web' network exists"
             docker network inspect web >/dev/null 2>&1 || docker network create web
 
-            echo "🧹 Stop & remove previous container"
+            echo "🏗️ Build Docker image on VPS (with INSTAGRAM_TOKEN for next build)"
+            docker build \
+              --build-arg INSTAGRAM_TOKEN=$INSTAGRAM_TOKEN \
+              --build-arg NEXT_PUBLIC_BASE_URL=https://mowgli-tattoo-studio.fr \
+              -t mowgli-tattoo-app:${VERSION} .
+
+            echo "🛑 Stop & remove previous container"
             docker stop mowgli_tattoo_app || true
             docker rm mowgli_tattoo_app || true
 
-            echo "🚀 Run container (version: $VERSION)"
+            echo "🚀 Run new container (version: $VERSION)"
             docker run -d --name mowgli_tattoo_app \
               --network web \
               --restart always \
@@ -125,11 +94,7 @@ jobs:
               mowgli-tattoo-app:${VERSION}
 
             echo "🧼 Cleanup old images (keep 2 latest)"
-            docker image prune -f
             docker image ls mowgli-tattoo-app --format '{{.Repository}}:{{.Tag}}' | tail -n +3 | xargs -r docker rmi || true
-
-            echo "🧽 Cleaning old .tar archives (keep 2 latest)"
-            ls -1t mowgli-tattoo-app-*.tar | tail -n +3 | xargs -r rm -f
 
             LOG_FILE=~/mowgli-tattoo-studio/deploy.log
             DATE=$(date '+%Y-%m-%d %H:%M:%S')
