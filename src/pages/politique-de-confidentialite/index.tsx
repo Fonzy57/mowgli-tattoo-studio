@@ -147,7 +147,7 @@ const PrivacyPolicy = () => {
               href="https://www.cnil.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-main hover:underline"
+              className="text-main underline hover:no-underline"
             >
               CNIL
             </Link>
