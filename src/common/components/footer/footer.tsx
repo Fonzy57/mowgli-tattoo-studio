@@ -8,7 +8,7 @@ import { IconName } from "../icons/icon.enum";
 
 // CONFIG
 import {
-  socialsLinksGrigri,
+  socialsLinksCasseNoisette,
   socialsLinksMowgli,
   socialsLinksNewbyPics,
 } from "@/config/socials-links.config";
@@ -48,20 +48,14 @@ const socialsMowgli = [
 
 const other = [
   {
-    name: "grigri",
-    label: "Le Grigri Tattoo",
+    name: "casse-noisette",
+    label: "Casse Noisette",
     socials: [
       {
         name: "instagram",
         label: <CustomIcon name={IconName.Instagram} size={20} />,
-        url: socialsLinksGrigri.instagram,
-        ariaLabel: "Lien vers le profil Instagram Le Grigri Tattoo",
-      },
-      {
-        name: "wp",
-        label: <CustomIcon name={IconName.Wordpress} size={20} />,
-        url: socialsLinksGrigri.site,
-        ariaLabel: "Lien vers le profil Wordpress Le Grigri Tattoo",
+        url: socialsLinksCasseNoisette.instagram,
+        ariaLabel: "Lien vers le profil Instagram casse.noisette.tattoo",
       },
     ],
   },

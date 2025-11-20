@@ -14,6 +14,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.3] - 2025-11-20
+
+### Changed
+
+- **Deployment Workflow** — Updated the CI/CD pipeline to perform Docker builds directly on the VPS instead of GitHub Actions, enhancing build reliability and reducing external dependencies.
+- **Environment Variable Handling** — Securely injected server-only environment variables at build time using Docker build arguments.
+- **Replace Grigri with Case Noisette** — Change tattoo artist.
+
+### Improved
+
+- **Security** — Strengthened protection of sensitive environment variables by enforcing strict file permissions and reapplying immutable attributes on `.env.production`.
+- **Maintainability** — Simplified version management and rollback by retaining only the latest Docker images on the VPS.
+
+---
+
 ## [v2.0.2] - 2025-11-07
 
 ### Updated
