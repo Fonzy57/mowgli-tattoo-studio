@@ -1,7 +1,7 @@
 // CONFIG
 import { socialsLinksMowgli } from "./socials-links.config";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
+const basePath = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const seoStructuredData = {
   "@context": "https://schema.org",
@@ -19,7 +19,19 @@ export const seoStructuredData = {
   },
   url: `${basePath}`,
   sameAs: [socialsLinksMowgli.instagram, socialsLinksMowgli.facebook],
-  openingHours: ["Tu-Sa 09:00-14:00"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "14:00",
+    },
+  ],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 49.11421791826955,
+    longitude: 6.15398614925654,
+  },
 };
 
 export const seoConfig = {
