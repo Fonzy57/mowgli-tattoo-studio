@@ -69,8 +69,9 @@ jobs:
             export $(grep -E '^INSTAGRAM_TOKEN=' .env.production | xargs)
 
             echo "📦 Compute version from package.json"
-            VERSION=$(node -p "require('./package.json').version")
+            VERSION=$(grep '"version"' package.json | head -n 1 | sed -E 's/.*"version": *"([^"]+)".*/\1/')
             echo "Building version: $VERSION"
+
 
             echo "🌐 Ensure 'web' network exists"
             docker network inspect web >/dev/null 2>&1 || docker network create web
