@@ -65,19 +65,18 @@ jobs:
             fi
 
             echo "🔑 Loading INSTAGRAM_TOKEN from .env.production"
-            # On exporte juste INSTAGRAM_TOKEN pour le build Docker
             export $(grep -E '^INSTAGRAM_TOKEN=' .env.production | xargs)
 
             echo "📦 Compute version from package.json"
             VERSION=$(grep '"version"' package.json | head -n 1 | sed -E 's/.*"version": *"([^"]+)".*/\1/')
             echo "Building version: $VERSION"
 
-
             echo "🌐 Ensure 'web' network exists"
             docker network inspect web >/dev/null 2>&1 || docker network create web
 
-            echo "🏗️ Build Docker image on VPS (with INSTAGRAM_TOKEN for next build)"
+            echo "🏗️ Build Docker image on VPS"
             docker build \
+              --progress=plain \
               --build-arg INSTAGRAM_TOKEN=$INSTAGRAM_TOKEN \
               --build-arg NEXT_PUBLIC_BASE_URL=https://mowgli-tattoo-studio.fr \
               -t mowgli-tattoo-app:${VERSION} .
