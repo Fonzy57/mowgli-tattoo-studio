@@ -14,6 +14,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.4] - 2025-11-20
+
+### Changed
+
+- Updated the deployment workflow to include detailed Docker build logs from the VPS, improving monitoring and troubleshooting during deployments.
+- Ensured that all build-time secrets remain fully protected, with no exposure in GitHub Actions logs.
+- Refined SSH-based deployment script logic for better transparency and reliability.
+
+### Security
+
+- Validated that sensitive environment variables never leave the VPS and remain invisible in all CI/CD logs, even with verbose build output enabled.
+
+---
+
 ## [v2.0.3] - 2025-11-20
 
 ### Changed
