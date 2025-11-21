@@ -108,7 +108,7 @@ const CookiePolicy = () => {
                 href={"https://policies.google.com/privacy"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-main hover:underline"
+                className="text-main underline hover:no-underline"
               >
                 Politique de confidentialité de Google
               </Link>
@@ -128,7 +128,7 @@ const CookiePolicy = () => {
                 href={"https://help.instagram.com"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-main hover:underline"
+                className="text-main underline hover:no-underline"
               >
                 https://help.instagram.com
               </Link>
@@ -194,7 +194,7 @@ const CookiePolicy = () => {
                 href={"https://support.google.com/chrome/answer/95647?hl=fr"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-main hover:underline"
+                className="text-main underline hover:no-underline"
               >
                 Google Chrome
               </Link>
@@ -207,7 +207,7 @@ const CookiePolicy = () => {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-main hover:underline"
+                className="text-main underline hover:no-underline"
               >
                 Mozilla Firefox
               </Link>
@@ -220,7 +220,7 @@ const CookiePolicy = () => {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-main hover:underline"
+                className="text-main underline hover:no-underline"
               >
                 Microsoft Edge
               </Link>
@@ -233,7 +233,7 @@ const CookiePolicy = () => {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-main hover:underline"
+                className="text-main underline hover:no-underline"
               >
                 Safari
               </Link>

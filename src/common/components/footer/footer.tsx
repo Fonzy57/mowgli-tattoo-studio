@@ -202,7 +202,7 @@ const Footer = () => {
           Stéphane Scheeres
         </Link>
       </p>
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4">
+      <div className="mt-4 flex flex-col flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
         {legalLinks.map((legal, index) => {
           return (
             <Link

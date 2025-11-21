@@ -1,6 +1,23 @@
-# Robots.txt pour Mowgli Tattoo Studio
-# TODO PROD une fois que tout est fonctionnel Allow: *
-User-agent: *
-Disallow: /
+# Robots.txt for Mowgli Tattoo Studio
+# This website does not use cookies or tracking tools.
 
-# TODO BIEN METTRE EN DISALLOW ALL AVANT D'AVOIR L'API INSTA
+User-agent: *
+# Allow all pages to be crawled
+Allow: /
+
+# Prevent search engines from crawling internal technical paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /scripts/
+Disallow: /server/
+
+# Block potential draft or preview pages
+Disallow: /draft/
+Disallow: /preview/
+
+# Block temporary maintenance page
+Disallow: /maintenance
+
+# Sitemap location
+Sitemap: https://mowgli-tattoo-studio.fr/sitemap.xml
