@@ -8,9 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-- Set up a database to store necessary project data, including Instagram access tokens.
-- Implement a cron job to refresh the Instagram access token every 60 days automatically.
-- Generate and integrate an automatic **sitemap** for better SEO and site indexing.
+---
+
+## [v2.0.6] - 2025-11-21
+
+### Infrastructure
+
+- **Automatically refresh the long-lived Instagram access token** - Added a VPS-side Bash script and cron job to automatically refresh the long-lived Instagram access token used by the gallery component. No functional changes to the application code.
 
 ---
 
