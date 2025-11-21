@@ -23,7 +23,7 @@ const TextLink = ({ href, children, blank }: TextLinkProps) => {
       href={href}
       target={target}
       rel={rel}
-      className="text-main font-semibold hover:text-main-hover active:underline transition duration-300 ease-in-out"
+      className="font-semibold text-main transition duration-300 ease-in-out hover:text-main-hover active:underline"
     >
       {children}
     </Link>

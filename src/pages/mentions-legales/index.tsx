@@ -40,7 +40,7 @@ const LegalNotice = () => {
         <div className={borderStyle}></div>
         <div className={textContainerStyle}>
           <p>
-            Nom de l'éditeur :Pierre-Emmanuel Bauer, Entrepreneur individuel
+            Nom de l'éditeur : Pierre-Emmanuel Bauer, Entrepreneur individuel
             (EI), exerçant sous l’enseigne{" "}
             <strong className="font-semibold text-main">
               Mowgli Tattoo Studio
@@ -98,7 +98,7 @@ const LegalNotice = () => {
               href={"https://www.ovhcloud.com/fr/"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-main hover:underline"
+              className="text-main underline hover:no-underline"
             >
               https://www.ovhcloud.com/fr/
             </Link>
