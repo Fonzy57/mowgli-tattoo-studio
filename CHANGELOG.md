@@ -14,6 +14,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.5] - 2025-11-21
+
+### Added
+
+- **Dynamic Sitemap Generation** — Introduced automated sitemap creation for improved SEO and easier maintenance.
+
+### Updated
+
+- **Sitemap** — Replaced the old static version with a dynamic one that updates automatically based on site content.
+- **Robots.txt** — Enhanced indexing behavior for better SEO performance.
+- **Tailwind CSS Classes** — Reordered utility classes to ensure consistent styling.
+- **Skill Cards** — Fixed shadow rendering for a cleaner and more uniform appearance.
+- **Legal Pages** — Improved link styles and visual consistency.
+- **SEO Configuration** — Fixed metadata issues and refined logic in the SEO component for more accurate indexing.
+
+### Removed
+
+- **Obsolete Comments** — Cleaned up unused and redundant comments for a leaner, more readable codebase.
+
+### Summary
+
+This release focuses on **SEO optimization**, **visual refinement**, and **code cleanup**.  
+The addition of a **dynamic sitemap** modernizes SEO management, while style improvements and minor fixes enhance both **user experience** and **maintainability**.
+
+---
+
 ## [v2.0.4] - 2025-11-20
 
 ### Changed
