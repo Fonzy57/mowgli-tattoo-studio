@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.7] - 2025-12-04
+
+### Security
+
+- **Updated Next.js to version 16.0.7**, addressing the React Flight protocol RCE vulnerability reported by GitHub Dependabot.
+- **Forced `glob` to version 13.0.0 using npm overrides**, ensuring that all transitive dependencies (including Tailwind CSS) use a patched, non-vulnerable version.
+
+### Technical Notes
+
+- Regenerated `package-lock.json` through a clean dependency installation.
+- Verified successful build after dependency updates.
+
+---
+
 ## [v2.0.6] - 2025-11-21
 
 ### Infrastructure
