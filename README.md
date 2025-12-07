@@ -90,7 +90,7 @@ The project follows **[Semantic Versioning](https://semver.org/)**:
 - **MINOR** — New features (backward-compatible)
 - **PATCH** — Fixes and performance improvements
 
-Latest stable version: **v2.0.7**
+Latest stable version: **v2.0.8**
 
 ---
 

@@ -10,6 +10,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.0.8] - 2025-12-07
+
+### Added
+
+- Added a new `favicon.png` (512×512) to improve browser and Google SERP branding.
+- Declared the favicon in `_document.tsx` using an absolute path to ensure proper detection by search engines.
+- Added a `logo` field to the website's JSON-LD structured data using `ImageObject`.
+
+### Updated
+
+- Improved structured data to provide Google with richer and clearer brand information.
+- Ensured favicon compatibility with Google indexing requirements.
+
+---
+
 ## [v2.0.7] - 2025-12-04
 
 ### Security
