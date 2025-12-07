@@ -18,6 +18,10 @@ export const seoStructuredData = {
     addressCountry: "FR",
   },
   url: `${basePath}`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${basePath}/images/mowgli-tattoo-studio-logo.png`,
+  },
   sameAs: [socialsLinksMowgli.instagram, socialsLinksMowgli.facebook],
   openingHoursSpecification: [
     {
