@@ -10,6 +10,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.0] - 2025-12-19
+
+### Changed
+
+- Migrated Instagram pages (`Home`, `Realisations`) from static generation to **Server-Side Rendering (SSR)** to ensure always-fresh media URLs.
+- Updated the deployment workflow to rely on **runtime environment variables only**, removing sensitive tokens from Docker build arguments.
+- Simplified the deployment pipeline by removing the scheduled weekly rebuild, as SSR now guarantees up-to-date Instagram content.
+
+### Improved
+
+- Improved reliability of the Instagram gallery by handling expired or invalid media URLs at runtime.
+- Added client-side image load error detection using `onError` on `<img>` elements to gracefully display a fallback error component when media fails to load.
+- Ensured consistent UI behavior by preventing partial rendering (gallery and error message cannot be displayed at the same time).
+
+### Security
+
+- Improved secret handling by ensuring the Instagram access token is injected only at container runtime via `.env.production`.
+
+---
+
 ## [v2.0.8] - 2025-12-07
 
 ### Added

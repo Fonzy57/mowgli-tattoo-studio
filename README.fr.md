@@ -90,7 +90,7 @@ Le projet suit la **[sémantique de versionnage](https://semver.org/lang/fr/)** 
 - **MINEUR** — Nouvelles fonctionnalités rétro-compatibles
 - **PATCH** — Corrections et améliorations mineures
 
-Dernière version stable : **v2.0.8**
+Dernière version stable : **v2.1.0**
 
 ---
 
