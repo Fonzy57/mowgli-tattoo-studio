@@ -1,6 +1,7 @@
 // NEXT
 import Link from "next/link";
 import { useState } from "react";
+import { GetServerSideProps } from "next";
 
 // FRAMER MOTION
 import { easeInOut, motion } from "framer-motion";
@@ -14,10 +15,11 @@ import { LinkButton } from "@/common/components/button/link-button";
 import { Button } from "@/common/components/button/button";
 import ApiErrorGalleryDisplay from "@/common/components/skeleton-loader/error-gallery-display";
 
+// UTILS
+import { fetchInstagramPosts } from "@/utils/fetch-instagram-posts";
+
 // TYPING
 import { Post } from "@/dto/posts.dto";
-import { GetStaticProps } from "next";
-import { fetchInstagramPosts } from "@/utils/fetch-instagram-posts";
 
 // Props pour la page
 interface RealisationsPageProps {
@@ -27,6 +29,8 @@ interface RealisationsPageProps {
 
 const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
   const [seeMore, setSeeMore] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const showError = error || imgError;
 
   const handleSeeMore = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -66,63 +70,62 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
       </div>
 
       {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
-      {error && (
+      {showError && (
         <div className="px-5 pb-20">
           <ApiErrorGalleryDisplay />
         </div>
       )}
 
       {/* DISPLAYING LAST 40 INSTAGRAM POSTS */}
-      {
-        /* !isFetching && !isLoading && posts && */ posts.length > 0 && (
+      {!showError && posts.length > 0 && (
+        <motion.div
+          className={`gallery-container relative mx-auto mt-20 grid max-w-[1560px] grid-cols-1 gap-5 overflow-hidden px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:gap-10 xl:px-0`}
+          initial={{ maxHeight: 700 }}
+          animate={{ maxHeight: seeMore ? 20000 : 700 }}
+          transition={{
+            duration: 3,
+            ease: easeInOut,
+          }}
+        >
+          {posts.map((post: Post, index: number) => {
+            return (
+              <div key={index} className="gallery-item">
+                <Link
+                  href={post.permalink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    width={"auto"}
+                    height={"auto"}
+                    src={post.media_url}
+                    alt={
+                      post.caption ||
+                      "Photo d'un tatouage au style réaliste en noir et gris"
+                    }
+                    className="aspect-square rounded-lg"
+                    onError={() => setImgError(true)}
+                  />
+                </Link>
+              </div>
+            );
+          })}
           <motion.div
-            className={`gallery-container relative mx-auto mt-20 grid max-w-[1560px] grid-cols-1 gap-5 overflow-hidden px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:gap-10 xl:px-0`}
-            initial={{ maxHeight: 700 }}
-            animate={{ maxHeight: seeMore ? 20000 : 700 }}
+            className={`absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-bgDark pb-10 pt-44 xs:pb-20 xs:pt-56 sm:pt-52 md:pb-24 md:pt-60 lg:pb-20 lg:pt-56 xl:pt-48`}
+            initial={{ opacity: 1, pointerEvents: "auto" }}
+            animate={{
+              opacity: seeMore ? 0 : 1,
+              pointerEvents: seeMore ? "none" : "auto", // DISABLES CLICKS WHEN OPACITY IS 0
+            }}
             transition={{
               duration: 3,
               ease: easeInOut,
             }}
           >
-            {posts.map((post: Post, index: number) => {
-              return (
-                <div key={index} className="gallery-item">
-                  <Link
-                    href={post.permalink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      width={"auto"}
-                      height={"auto"}
-                      src={post.media_url}
-                      alt={
-                        post.caption ||
-                        "Photo d'un tatouage au style réaliste en noir et gris"
-                      }
-                      className="aspect-square rounded-lg"
-                    />
-                  </Link>
-                </div>
-              );
-            })}
-            <motion.div
-              className={`absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-bgDark pb-10 pt-44 xs:pb-20 xs:pt-56 sm:pt-52 md:pb-24 md:pt-60 lg:pb-20 lg:pt-56 xl:pt-48`}
-              initial={{ opacity: 1, pointerEvents: "auto" }}
-              animate={{
-                opacity: seeMore ? 0 : 1,
-                pointerEvents: seeMore ? "none" : "auto", // DISABLES CLICKS WHEN OPACITY IS 0
-              }}
-              transition={{
-                duration: 3,
-                ease: easeInOut,
-              }}
-            >
-              <Button onClick={handleSeeMore}>Voir plus</Button>
-            </motion.div>
+            <Button onClick={handleSeeMore}>Voir plus</Button>
           </motion.div>
-        )
-      }
+        </motion.div>
+      )}
       <motion.div
         className={`mx-auto mb-20 w-max`}
         initial={{ marginTop: 150 }}
@@ -134,7 +137,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
           ease: easeInOut,
         }}
       >
-        {!error && (
+        {!showError && (
           <LinkButton url={socialsLinksMowgli.instagram} blank={true}>
             Aller sur Instagram
           </LinkButton>
@@ -146,7 +149,7 @@ const RealisationsPage = ({ posts, error }: RealisationsPageProps) => {
 
 export default RealisationsPage;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const token = process.env.INSTAGRAM_TOKEN as string;
   const { posts, error } = await fetchInstagramPosts(token);
 

@@ -1,6 +1,6 @@
 // REACT & NEXT
 import Link from "next/link";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 // COMPONENTS
 import Seo from "@/common/components/seo/seo";
@@ -29,8 +29,12 @@ interface HomeProps {
 // UTILS
 import { handleClickAnchor } from "@/utils/scroll-to";
 import { fetchInstagramPosts } from "@/utils/fetch-instagram-posts";
+import { useState } from "react";
 
 const Home = ({ posts, error }: HomeProps) => {
+  const [imgError, setImgError] = useState(false);
+  const showError = error || imgError;
+
   return (
     <>
       <Seo page="home" />
@@ -64,10 +68,10 @@ const Home = ({ posts, error }: HomeProps) => {
         </h2>
 
         {/* DISPLAY IF ERROR WHITH THE INSTAGRAM API */}
-        {error && <ApiErrorGalleryDisplay />}
+        {showError && <ApiErrorGalleryDisplay />}
 
         {/* DISPLAYING LAST 4 INSTAGRAM POSTS */}
-        {posts.length > 0 && (
+        {!showError && posts.length > 0 && (
           <div className="gallery-container relative mx-auto mt-20 grid max-w-[1350px] grid-cols-1 gap-5 overflow-hidden sm:grid-cols-2 md:grid-cols-4 lg:gap-8 xl:gap-10 xl:px-0">
             {posts.slice(0, 4).map((post: Post, index: number) => {
               return (
@@ -86,6 +90,7 @@ const Home = ({ posts, error }: HomeProps) => {
                         "Photo d'un tatouage au style réaliste en noir et gris"
                       }
                       className="aspect-square rounded-lg"
+                      onError={() => setImgError(true)}
                     />
                   </Link>
                 </div>
@@ -93,7 +98,7 @@ const Home = ({ posts, error }: HomeProps) => {
             })}
           </div>
         )}
-        {!error && (
+        {!showError && (
           <div className="mx-auto w-max">
             <LinkButton
               url="/realisations"
@@ -113,9 +118,9 @@ const Home = ({ posts, error }: HomeProps) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const token = process.env.INSTAGRAM_TOKEN as string;
-  const { posts, error } = await fetchInstagramPosts(token);
+  const { posts, error } = await fetchInstagramPosts(token, 4);
 
   return {
     props: {
