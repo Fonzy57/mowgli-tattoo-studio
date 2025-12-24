@@ -10,6 +10,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.1] - 2025-12-24
+
+### Security
+
+- **Upgraded Next.js to version 16.1.1**, addressing multiple security vulnerabilities related to Server Components and Server Actions.
+- **Forced `js-yaml` to version 4.1.1** via npm overrides to prevent prototype pollution introduced by transitive dependencies.
+- Regenerated `package-lock.json` to ensure all patched dependency versions are consistently applied.
+
+---
+
 ## [v2.1.0] - 2025-12-19
 
 ### Changed
