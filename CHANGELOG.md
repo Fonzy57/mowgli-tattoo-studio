@@ -10,6 +10,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.2] - 2026-02-10
+
+### Security
+
+- **Upgraded Next.js to version 16.1.5**, addressing multiple denial-of-service (DoS) vulnerabilities reported by Dependabot.
+- Fixed unbounded memory consumption issues affecting:
+  - the Image Optimizer when using `remotePatterns`
+  - the PPR resume endpoint in minimal mode
+  - HTTP request deserialization in React Server Components
+- Regenerated `package-lock.json` to ensure all patched dependency versions are consistently applied.
+
+---
+
 ## [v2.1.1] - 2025-12-24
 
 ### Security
