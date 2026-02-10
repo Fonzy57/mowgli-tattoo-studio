@@ -1,4 +1,4 @@
 export const mowgliCongif = {
-  version: "2.1.1",
+  version: "2.1.2",
   contactMail: "contact@mowgli-tattoo-studio.fr",
 };
