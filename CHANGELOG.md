@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.3] - 2026-03-07
+
+### Security
+
+- **Forced `minimatch` to version 10.2.3** via npm overrides to patch three Dependabot alerts (#43, #46, #47) related to a ReDoS (Regular Expression Denial of Service) vulnerability.
+- Fixed unbounded recursive backtracking in `matchOne()` when glob patterns contain multiple non-adjacent `**` (GLOBSTAR) segments, which could stall the Node.js event loop for several seconds.
+- Affected transitive dependencies resolved:
+  - `minimatch@10.1.1` introduced via `tailwindcss`
+  - `minimatch@9.0.5` introduced via `eslint-config-next` and `typescript-eslint`
+  - `minimatch@3.0.8` introduced via `postcss-url`
+- Regenerated `package-lock.json` to ensure all patched dependency versions are consistently applied.
+
+---
+
 ## [v2.1.2] - 2026-02-10
 
 ### Security
