@@ -10,6 +10,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.4] - 2026-03-18
+
+### Security
+
+- **Upgraded Next.js to version 16.1.7**, addressing four security vulnerabilities reported by Dependabot (#50, #51, #52, #53):
+  - Fixed `Origin: null` bypass in dev HMR WebSocket CSRF checks (#50)
+  - Fixed `Origin: null` bypass in Server Actions CSRF validation — requests from sandboxed iframes could execute state-changing actions with victim credentials (#51)
+  - Fixed unbounded postponed resume buffering DoS via oversized `next-resume` POST payloads in non-minimal PPR deployments (#52)
+  - Fixed HTTP request smuggling via rewrites using chunked `DELETE`/`OPTIONS` requests (#53)
+- **Forced `flatted` to version 3.4.0** via npm overrides to patch an unbounded recursion DoS in `flatted.parse()` — a crafted payload with deeply nested `$` indices could cause a stack overflow crashing the Node.js process.
+  - Affected transitive dependency: `flatted@3.3.3` introduced via `eslint`
+- Investigated and dismissed Dependabot alert for `ajv` — cannot be patched without breaking ESLint compatibility. Affects dev tooling only, no production runtime exposure.
+- Regenerated `package-lock.json` to ensure all patched dependency versions are consistently applied.
+
+---
+
 ## [v2.1.3] - 2026-03-07
 
 ### Security

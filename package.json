@@ -1,6 +1,6 @@
 {
   "name": "mowgli-tattoo-studio",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "private": true,
   "scripts": {
     "dev": "next dev -p 52055 -H 127.0.0.1",
