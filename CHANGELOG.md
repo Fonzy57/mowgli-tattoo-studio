@@ -10,6 +10,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.5] - 2026-04-01
+
+### Security
+
+- **Forced `picomatch` to version 4.0.4** via npm overrides to patch Dependabot alert #54 — a method injection vulnerability (CWE-1321) in `POSIX_REGEX_SOURCE` where specially crafted POSIX bracket expressions (e.g., `[[:constructor:]]`) could reference inherited `Object.prototype` methods, leading to incorrect glob matching behavior.
+  - Affected transitive dependency: `picomatch@4.0.3` introduced via `eslint-config-next`
+- **Forced `brace-expansion` to version 5.0.5** via npm overrides to patch a zero-step sequence vulnerability causing process hang and memory exhaustion.
+- **Forced `yaml` to version 2.8.3** via npm overrides to patch a stack overflow vulnerability triggered by deeply nested YAML collections.
+- Investigated and dismissed `ajv` moderate vulnerability — cannot be patched without breaking ESLint compatibility. Affects dev tooling only, no production runtime exposure.
+- Regenerated `package-lock.json` to ensure all patched dependency versions are consistently applied.
+
+---
+
 ## [v2.1.4] - 2026-03-18
 
 ### Security
