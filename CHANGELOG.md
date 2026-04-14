@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.6] - 2026-04-14
+
+### Security
+
+- **Upgraded Next.js to version 16.2.3**, addressing Dependabot alert #59 — a denial of service vulnerability (CVE-2026-23869) in App Router Server Components where a specially crafted HTTP request sent to any Server Function endpoint could trigger excessive CPU usage when deserialized.
+
+---
+
 ## [v2.1.5] - 2026-04-01
 
 ### Security
