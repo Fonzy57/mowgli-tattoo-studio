@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.7] - 2026-04-30
+
+### Security
+
+- **Upgraded `postcss` devDependency to version 8.5.10** to patch Dependabot alert #60 — an XSS vulnerability where `</style>` sequences in CSS values were not escaped during stringification, allowing injection into HTML `<style>` tags.
+- A second instance of `postcss@8.4.31` vendored internally by `next@16.2.3` cannot be patched without downgrading Next.js to 9.3.3. This internal instance is used by Next.js for its own CSS pipeline and is not exposed to the XSS attack vector described in the advisory. Alert dismissed pending an upstream Next.js release.
+
+---
+
 ## [v2.1.6] - 2026-04-14
 
 ### Security
