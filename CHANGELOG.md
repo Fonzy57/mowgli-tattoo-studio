@@ -10,6 +10,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.8] - 2026-05-13
+
+### Security
+
+- **Upgraded Next.js to version 16.2.6**, addressing 13 security vulnerabilities reported by Dependabot (#61–#73):
+  - Fixed DoS via Server Components deserialization (CVE-2026-23870) (#61)
+  - Fixed middleware bypass in Pages Router with i18n — unprefixed `/_next/data` routes skipped middleware (#62)
+  - Fixed middleware bypass in App Router via segment-prefetch `.rsc` routes (#63)
+  - Fixed XSS in `beforeInteractive` scripts with unsanitized untrusted input (#64)
+  - Fixed cache poisoning in RSC responses via incorrect `Vary` handling (#65)
+  - Fixed SSRF via crafted WebSocket upgrade requests on self-hosted deployments (#66)
+  - Fixed DoS in Image Optimization API via unbounded local image memory buffering (#67)
+  - Fixed middleware bypass via dynamic route parameter injection through query strings (#68)
+  - Fixed cache poisoning via `x-nextjs-data` header injection on middleware redirects (#69)
+  - Fixed cache poisoning via `_rsc` cache-busting collisions in RSC responses (#70)
+  - Fixed middleware bypass via segment-prefetch routes with Turbopack — incomplete fix follow-up (#71)
+  - Fixed DoS via connection exhaustion in Cache Components using crafted POST to Server Actions (#72)
+  - Fixed XSS via malformed CSP nonce values reflected into cached HTML in App Router (#73)
+- Dependabot alert #60 (`postcss` XSS) remains dismissed — the vulnerable instance is vendored internally by Next.js and cannot be patched without downgrading to Next.js 9.3.3. The attack vector does not apply to Next.js internal CSS pipeline usage.
+
+---
+
 ## [v2.1.7] - 2026-04-30
 
 ### Security
