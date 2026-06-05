@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.9] - 2026-06-05
+
+### Fixed
+
+- Corrected grammatical error in the `SkillsSection` — "Je suis très fiers" → "Je suis très fier".
+
+---
+
 ## [v2.1.8] - 2026-05-13
 
 ### Security
