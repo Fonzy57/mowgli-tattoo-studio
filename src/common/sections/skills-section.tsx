@@ -20,7 +20,7 @@ const skills = [
     icon: IconName.Couch,
     title: "Ambiance détendue",
     content:
-      "Le studio est propre et professionnel, mais aussi détendu et confortable. Je suis très fiers de chaque tatouage que je crée.",
+      "Le studio est propre et professionnel, mais aussi détendu et confortable. Je suis très fier de chaque tatouage que je crée.",
   },
 ];
 
