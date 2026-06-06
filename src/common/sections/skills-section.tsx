@@ -14,7 +14,7 @@ const skills = [
     icon: IconName.Eye,
     title: "Votre vision appliquée",
     content:
-      "Apportez-moi vos idées et je vous aiderai à les transformer en un tatouage unique et personnel. J'ai l'expérience à laquelle vous pouvez faire confiance !",
+      "Apportez-moi vos idées et je vous aiderai à les transformer en un tatouage unique et personnel. J'ai l'expérience en laquelle vous pouvez avoir confiance !",
   },
   {
     icon: IconName.Couch,
