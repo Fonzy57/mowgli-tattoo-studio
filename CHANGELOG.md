@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.10] - 2026-06-06
+
+### Fixed
+
+- Corrected grammatical construction in the `SkillsSection` — "à laquelle vous pouvez faire confiance" → "en laquelle vous pouvez avoir confiance".
+
+---
+
 ## [v2.1.9] - 2026-06-05
 
 ### Fixed
