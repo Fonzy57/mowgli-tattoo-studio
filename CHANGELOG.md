@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.11] - 2026-07-19
+
+### Security
+
+- **Updated `js-yaml` override to version 4.2.0** to patch Dependabot alert #77 — a quadratic-complexity DoS vulnerability in merge key handling where repeated aliases in a YAML merge sequence caused O(K×M) CPU exhaustion with O(K+M) input size, blocking the Node.js event loop for several seconds with payloads of tens of KB.
+  - Affected transitive dependency: `js-yaml@4.1.1` introduced via `eslint`
+- **Forced `@babel/core` to version 7.29.6** via npm overrides to patch Dependabot alert #76 — an arbitrary file read vulnerability where a maliciously crafted `sourceMappingURL` comment in attacker-controlled input could cause Babel to read any source map from the filesystem.
+  - Affected transitive dependency: `@babel/core@7.28.5` introduced via `eslint-config-next` and `eslint-plugin-react-hooks`
+- **Updated `brace-expansion` override to version 5.0.6** — a DoS vulnerability where large numeric ranges defeated the documented `max` protection by allocating the full intermediate array before applying the limit (~505 MB, ~800ms per call).
+- All affected packages are dev dependencies only — no production runtime is exposed to these vulnerabilities.
+- Dependabot alert #60 (`postcss` XSS) remains dismissed — the vulnerable instance is vendored internally by Next.js and cannot be patched without downgrading to Next.js 9.3.3. The attack vector does not apply to Next.js internal CSS pipeline usage.
+
+---
+
 ## [v2.1.10] - 2026-06-06
 
 ### Fixed
