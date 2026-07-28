@@ -10,6 +10,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.12] - 2026-07-28
+
+### Security
+
+- **Upgraded Next.js to version 16.2.12** (resolved via `^16.2.11`), addressing eight security vulnerabilities reported by Dependabot (#80–#87):
+  - Fixed SSRF in Server Actions on custom servers via attacker-controlled Host header (#80)
+  - Fixed DoS in App Router via crafted requests targeting Server Actions (#81)
+  - Fixed cache confusion for requests with non-UTF-8 body charset (#82)
+  - Fixed DoS in Image Optimization API via malicious SVG content (#83)
+  - Fixed cache confusion of response bodies for requests with different init objects (#84)
+  - Fixed unauthenticated disclosure of internal Server Function endpoints via static chunks (#85)
+  - Fixed SSRF in rewrites via attacker-controlled destination hostname dynamic segments (#86)
+  - Fixed middleware bypass in App Router using Turbopack with single locale (#87)
+- **Forced `sharp` to version 0.35.0** via npm overrides to patch Dependabot alert #78 — four inherited libvips vulnerabilities (CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591), two rated High via CVSSv4.
+- **Updated `js-yaml` override to version 5.2.2** to patch Dependabot alert #88 — exponential parsing time in flow collections causing DoS with a payload under 200 bytes, affecting `js-yaml@5.2.1` introduced via `eslint`.
+- **Upgraded `postcss` devDependency to version 8.5.18** to patch Dependabot alert #79 — arbitrary file read and information disclosure via attacker-controlled `sourceMappingURL` in CSS comments.
+- **Updated `brace-expansion` override to version 5.0.8** — DoS via unbounded expansion length causing out-of-memory process crash.
+- Remaining dismissals:
+  - `ajv` moderate — cannot be patched without breaking ESLint. Dev tooling only.
+  - `postcss` vendored by Next.js internally — cannot be patched without downgrading to Next.js 9.3.3. Attack vector does not apply to Next.js internal CSS pipeline.
+
+---
+
 ## [v2.1.11] - 2026-07-19
 
 ### Security
