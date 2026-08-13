@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.13] - 2026-08-13
+
+### Security
+
+- **Forced `nanoid` to version 3.3.17** via npm overrides to patch Dependabot alert #92 — an infinite loop in `customAlphabet` and `customRandom` when `size` is 0, causing a thread hang and DoS.
+  - Affected transitive dependency: `nanoid@3.3.16` introduced via `next`, `postcss`, and `tailwindcss`
+- **Upgraded `postcss` devDependency to version 8.5.23** to patch Dependabot alert #91 — an incomplete fix of GHSA-6g55-p6wh-862q where attacker-controlled `sourceMappingURL` could still read arbitrary `.map` files when the `from` option is unset.
+- **Updated `brace-expansion` override to version 5.0.9** — DoS via unbounded intermediate arrays bypassing the CVE-2026-14257 mitigation.
+- Remaining dismissals:
+  - `ajv` moderate — cannot be patched without breaking ESLint. Dev tooling only.
+  - `postcss` vendored by Next.js internally — cannot be patched without downgrading to Next.js 9.3.3. Attack vector does not apply to Next.js internal CSS pipeline. Dismissed with "Vulnerable code is not actually used".
+
+---
+
 ## [v2.1.12] - 2026-07-28
 
 ### Security
