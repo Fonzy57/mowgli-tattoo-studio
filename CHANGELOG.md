@@ -10,6 +10,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.14] - 2026-09-08
+
+### Security
+
+- **Forced `postcss-selector-parser` to version 6.1.3** via npm overrides to patch Dependabot alert #93 — uncontrolled AST recursion in `toString()` causing DoS via remotely exploitable stack overflow.
+  - Affected transitive dependency: `postcss-selector-parser@6.1.2` introduced via `tailwindcss`
+- **Forced `@humanfs/node` to version 0.16.8** via npm overrides to patch Dependabot alert #94 — recursive copy follows symlinked files, allowing arbitrary file read outside the source tree via attacker-controlled symlinks in `copyAll()`.
+  - Affected transitive dependency: `@humanfs/node@0.16.7` introduced via `eslint`
+- **Forced `browserslist` to version 4.28.7** via npm overrides to patch Dependabot alert #96 — prototype pollution and uncaught crash via untrusted `browserslist-stats.json`, where an unguarded `for...in` over attacker-controlled keys crashes the process on any `browserslist()` call.
+  - Affected transitive dependency: `browserslist@4.24.2` introduced via `autoprefixer`, `eslint-config-next`, and `eslint-plugin-react-hooks`
+- All affected packages are dev dependencies only — no production runtime is exposed to these vulnerabilities.
+- Remaining dismissals:
+  - `ajv` moderate — cannot be patched without breaking ESLint. Dev tooling only.
+  - `postcss` vendored by Next.js internally — cannot be patched without downgrading to Next.js 9.3.3. Dismissed with "Vulnerable code is not actually used".
+
+---
+
 ## [v2.1.13] - 2026-08-13
 
 ### Security
