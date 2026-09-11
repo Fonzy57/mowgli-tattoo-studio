@@ -10,6 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v2.1.15] - 2026-09-11
+
+### Security
+
+- **Upgraded Next.js to version 16.3.4** (resolved via `^16.3.3`) to patch two critical Remote Code Execution vulnerabilities:
+  - Unauthenticated RCE on Windows-hosted servers (GHSA-p293-qw3h-jr36)
+  - Unauthenticated RCE in Image Optimization API when AVIF files are used (GHSA-2xp9-vwfh-vxw4)
+- **Updated `sharp` override to version 0.35.4** to patch Dependabot alert #97 — two vulnerabilities in libheif (GHSA-g89c-p67h-r497, GHSA-2jg2-4ch7-h545) rated Critical via CVSSv3, with potential RCE on glibc-based Linux when processing untrusted AVIF images.
+- Remaining dismissals:
+  - `ajv` moderate — cannot be patched without breaking ESLint. Dev tooling only.
+  - `postcss` vendored by Next.js internally — cannot be patched without downgrading to Next.js 9.3.3. Dismissed with "Vulnerable code is not actually used".
+
+---
+
 ## [v2.1.14] - 2026-09-08
 
 ### Security
